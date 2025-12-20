@@ -81,6 +81,57 @@
     </div>
 </section>
 
+<section class="pt-32 pb-20 bg-jhl-foreground">
+    <div class="container flex justify-between items-center">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-[44px] mb-6 font-light">
+                Penghargaan Kami
+            </h2>
+            <p class="text-[13px] font-medium leading-6 md:max-w-[426px] mx-auto">
+                Perjalanan kami di industri otomotif telah diakui melalui berbagai penghargaan bergengsi. Berikut
+                deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.
+            </p>
+        </div>
+        <div class="flex space-x-14 gap-4">
+            <div class="text-center group active">
+                <div class="mb-4 opacity-100 transition-opacity">
+                    <img class="w-[140px] h-auto object-contain"
+                        src="<?php echo get_template_directory_uri() ?>/images/award-1.png" alt="">
+                </div>
+                <p class="text-[13px] font-medium leading-6 block">
+                    Award #1
+                </p>
+            </div>
+
+            <div class="text-center group">
+                <div class="mb-4 opacity-40 transition-opacity">
+                    <img class="w-[140px] h-auto object-contain"
+                        src="<?php echo get_template_directory_uri() ?>/images/award-1.png" alt="">
+                </div>
+                <p class="text-[13px] font-medium leading-6 hidden">
+                    Award #2
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.text-center').forEach(item => {
+        item.addEventListener('click', function () {
+            // Remove active state and hide text from all
+            document.querySelectorAll('.text-center').forEach(el => {
+                el.querySelector('div').classList.replace('opacity-100', 'opacity-40');
+                el.querySelector('p').classList.replace('block', 'hidden');
+            });
+
+            // Add active state to clicked item
+            this.querySelector('div').classList.replace('opacity-40', 'opacity-100');
+            this.querySelector('p').classList.replace('hidden', 'block');
+        });
+    });
+</script>
+
 <section class=" pt-32 pb-20 bg-jhl-gray-3 ">
     <div class="container">
         <div class="text-center mb-12">
@@ -112,6 +163,25 @@
                         Read More
                     </a>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative h-screen w-full py-16">
+    <img src="<?php echo get_template_directory_uri() ?>/images/hero-image.png" alt="Hero Image"
+        class=" top-0 left-0 w-full h-full object-cover absolute">
+    <div class="container">
+        <div class="bg-jhl-background/20 backdrop-blur-2xl p-7">
+            <p class="mb-5 text-[10px] tracking-wider">Loyalty</p>
+            <h4 class="text-[44px] mb-6">MYJHL</h4>
+            <p>Your gateway to exclusive experience and limitless leisure</p>
+            <p>Berbagai keistimewaan, kemudahan, dan layanan spesial yang menemani setiap langkah Anda dapat Anda
+                rasakan dalam ekosistem JHL Group.</p>
+            <p>Download Now</p>
+            <div class="flex space-x-6">
+                <img src="" alt="">
+                <img src="" alt="">
             </div>
         </div>
     </div>
