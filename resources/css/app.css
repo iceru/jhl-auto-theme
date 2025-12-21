@@ -51,7 +51,7 @@ html {
   color: var(--color-jhl-black);
 }
 
-.jhl-text {
+.body {
   font-size: 13px;
   line-height: 24px;
   font-weight: 500;
@@ -97,4 +97,27 @@ header {
   /* Ensure no stray margins are pushing the image up/down */
   margin: 0 !important;
   padding: 0 !important;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 27px;
+  line-height: 36px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 53px;
+}
+
+h5 {
+  letter-spacing: 1%;
+  @apply text-jhl-gray-2 font-medium text-base;
+}
+
+p.body {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
 }

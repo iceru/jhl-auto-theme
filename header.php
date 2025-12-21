@@ -36,7 +36,7 @@
                             <li><a href="/" class="uppercase text-[13px] !no-underline">Home</a></li>
 
                             <li class="group relative py-2">
-                                <a href="/about-us" class="uppercase text-[13px] !no-underline">About Us</a>
+                                <div class="uppercase text-[13px] !no-underline">About Us</div>
 
                                 <ul
                                     class="absolute left-0 top-full py-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-0">
@@ -66,7 +66,7 @@
                             </li>
 
                             <li class="group relative py-2">
-                                <a href="/about-us" class="uppercase text-[13px] !no-underline">Brands</a>
+                                <div class="uppercase text-[13px] !no-underline">Brands</div>
 
                                 <ul
                                     class="absolute left-0 top-full py-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-0">

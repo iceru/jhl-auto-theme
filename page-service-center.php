@@ -1,0 +1,23 @@
+<?php get_header(); ?>
+
+<section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px]">
+    <div>
+        <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
+            src="<?php echo get_template_directory_uri() ?>/images/service-hero.png" alt="">
+    </div>
+    <div class="absolute left-0 bottom-0 w-full h-[80%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
+    <div class="container text-white relative z-10">
+        <h2>
+            JHL Auto Service Center
+        </h2>
+    </div>
+</section>
+
+<section class="container py-20">
+    <p class="body max-w-[638px]">
+        Bengkel resmi JHL Auto memberikan perawatan purna jual berstandar global untuk BAIC, serta layanan servis khusus
+        untuk kendaraan unik Premium Car (service only). Fasilitas kami dilengkapi peralatan modern dan teknisi
+        bersertifikat untuk memastikan kendaraan Anda selalu dalam kondisi optimal.
+    </p>
+</section>
+<?php get_footer();

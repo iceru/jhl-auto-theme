@@ -11,7 +11,7 @@
         <h2 class="text-2xl md:text-[44px] mb-11 font-light">
             Sekilas Tentang Kami
         </h2>
-        <p class="jhl-text md:mb-[73px]">
+        <p class="body md:mb-[73px]">
             Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di
             Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya
             sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.
@@ -31,7 +31,7 @@
         <h2 class="text-2xl md:text-[44px] mb-6 font-light">
             Promo Terbaru
         </h2>
-        <p class="text-jhl-gray-1 jhl-text">
+        <p class="text-jhl-gray-1 body">
             Nikmati penawaran terbaik kami hanya untuk Anda. <br />
             Manfaatkan promonya dan segera dapatkan kendaraan baru yang Anda impikan!
         </p>
@@ -57,7 +57,7 @@
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 Cabang Kami
             </h2>
-            <p class="jhl-text md:max-w-[486px] mx-auto">
+            <p class="body md:max-w-[486px] mx-auto">
                 Rasakan pengalaman profesional JHL Auto di berbagai lokasi strategis terdekat yang siap melayani
                 kebutuhan
                 mobilitas Anda setiap saat.
@@ -72,7 +72,7 @@
                 <h4 class="leading-7 text-xl mb-4">
                     BAIC Alam Sutera
                 </h4>
-                <p class="jhl-text">
+                <p class="body">
                     Dealer Resmi 3S dan Head Office JHL Auto dengan fasilitas bengkel bersertifikasi internasional untuk
                     layanan premium & aman.
                 </p>
@@ -87,7 +87,7 @@
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 Penghargaan Kami
             </h2>
-            <p class="jhl-text md:max-w-[426px] mx-auto">
+            <p class="body md:max-w-[426px] mx-auto">
                 Perjalanan kami di industri otomotif telah diakui melalui berbagai penghargaan bergengsi. Berikut
                 deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.
             </p>
@@ -98,7 +98,7 @@
                     <img class="w-[140px] h-auto object-contain"
                         src="<?php echo get_template_directory_uri() ?>/images/award-1.png" alt="">
                 </div>
-                <p class="jhl-text block">
+                <p class="body block">
                     Award #1
                 </p>
             </div>
@@ -108,7 +108,7 @@
                     <img class="w-[140px] h-auto object-contain"
                         src="<?php echo get_template_directory_uri() ?>/images/award-1.png" alt="">
                 </div>
-                <p class="jhl-text hidden">
+                <p class="body hidden">
                     Award #2
                 </p>
             </div>
@@ -138,7 +138,7 @@
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 Berita Terbaru
             </h2>
-            <p class="jhl-text  md:max-w-[547px] mx-auto">
+            <p class="body  md:max-w-[547px] mx-auto">
                 Jadilah yang pertama tahu mengenai JHL Auto. Peluncuran model kendaraan terkini, aktivitas dealer resmi,
                 hingga layanan dan inovasi, semua ada di sini.
             </p>

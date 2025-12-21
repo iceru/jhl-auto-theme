@@ -105,7 +105,7 @@
     <h5 class="mb-11 text-xl text-black">
         The Power to Success
     </h5>
-    <p class="jhl-text mx-auto md:max-w-[859px] mb-11">
+    <p class="body mx-auto md:max-w-[859px] mb-11">
         JHL Auto berpegang pada nilai-nilai Panca Krida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras
         dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang
         inovatif dan terpercaya.
@@ -163,7 +163,7 @@
                 <h3 class="mb-8 font-light text-[27px]">
                     Visi
                 </h3>
-                <p class="jhl-text max-w-[254px]">
+                <p class="body max-w-[254px]">
                     Menjadi group dealer otomotif terdepan di Indonesia dalam inovasi, kualitas, dan layanan
                     pelanggan
                 </p>
@@ -172,8 +172,8 @@
                 <h3 class="mb-8 font-light text-[27px]">
                     Misi
                 </h3>
-                <p class="jhl-text max-w-[254px]">
-                <ul class="list-disc jhl-text pl-4">
+                <p class="body max-w-[254px]">
+                <ul class="list-disc body pl-4">
                     <li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.
                     </li>
                     <li>
@@ -250,6 +250,39 @@
             Unit <br />
             Mobil Terjual
         </h5>
+    </div>
+</section>
+
+<section class="py-[110px] bg-jhl-foreground/30">
+    <div class="container">
+        <div class="flex mb-28">
+            <div class="bg-jhl-gray-3/20 p-16 md:w-[60%]">
+                <h3 class="mb-3">Johnnathan Salim</h3>
+                <h5 class="mb-11">Direktur Utama</h5>
+                <p class="body md:max-w-[494px]">
+                    Sebagai Direktur Utama yang visioner, Johnnathan Salim memimpin JHL Auto dengan komitmen terhadap
+                    inovasi berkelanjutan dan pengembangan industri otomotif di Indonesia. Berbekal lebih dari sepuluh
+                    tahun pengalaman, beliau berhasil memposisikan JHL Auto sebagai perusahaan yang tangguh dan adaptif,
+                    memperluas jaringan distribusi, meningkatkan standar pelayanan, serta membangun kemitraan strategis
+                    untuk menghadirkan kendaraan premium ke Indonesia. Dedikasi ini memastikan JHL Auto tetap berada di
+                    garis terdepan dalam menyediakan solusi otomotif berkualitas tinggi.
+                </p>
+            </div>
+            <div class="bg-white md:w-[40%] pt-10">
+                <img class="w-full h-full  max-h-[438px] object-contain"
+                    src="<?php echo get_template_directory_uri() ?>/images/direktur.png" alt="">
+            </div>
+        </div>
+        <div>
+            <h2 class="mb-11">
+                Sosok-Sosok di Balik JHL Auto
+            </h2>
+            <p class="body text-jhl-gray-1 md:max-w-[579px]">
+                Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang
+                kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama
+                mewujudkan visi perusahaan.
+            </p>
+        </div>
     </div>
 </section>
 
