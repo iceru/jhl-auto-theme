@@ -169,19 +169,29 @@
 </section>
 
 <section class="relative h-screen w-full py-16">
-    <img src="<?php echo get_template_directory_uri() ?>/images/hero-image.png" alt="Hero Image"
+    <img src="<?php echo get_template_directory_uri() ?>/images/header-home-1.png" alt="Hero Image"
         class=" top-0 left-0 w-full h-full object-cover absolute">
-    <div class="container">
-        <div class="bg-jhl-background/20 backdrop-blur-2xl p-7">
-            <p class="mb-5 text-[10px] tracking-wider">Loyalty</p>
-            <h4 class="text-[44px] mb-6">MYJHL</h4>
-            <p>Your gateway to exclusive experience and limitless leisure</p>
-            <p>Berbagai keistimewaan, kemudahan, dan layanan spesial yang menemani setiap langkah Anda dapat Anda
-                rasakan dalam ekosistem JHL Group.</p>
-            <p>Download Now</p>
-            <div class="flex space-x-6">
-                <img src="" alt="">
-                <img src="" alt="">
+    <div class="container flex flex-col justify-center h-full">
+        <div
+            class="bg-jhl-background/20 backdrop-blur-2xl p-7 text-white w-full md:w-[486px] rounded-xl flex space-x-4">
+            <div>
+                <p class="mb-5 text-[10px] tracking-wider">Loyalty</p>
+                <h4 class="text-[44px] mb-6">MYJHL</h4>
+                <p class="mb-8 font-medium leading-[22px]">Your gateway to exclusive experience and limitless leisure
+                </p>
+                <p class="mb-10 text-xs leading-6">Berbagai keistimewaan, kemudahan, dan layanan spesial yang menemani
+                    setiap
+                    langkah Anda
+                    dapat Anda
+                    rasakan dalam ekosistem JHL Group.</p>
+                <p>Download Now</p>
+                <div class="flex space-x-4 items-center">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/app-store.png" alt="App Store">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/google-play.png" alt="Google Play">
+                </div>
+            </div>
+            <div class="shrink-0">
+                <img src="<?php echo get_template_directory_uri() ?>/images/my-jhl.svg" class="w-14" alt="MyJHL App">
             </div>
         </div>
     </div>

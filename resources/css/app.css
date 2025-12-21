@@ -22,6 +22,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -58,4 +59,23 @@ h4,
 h5,
 h6 {
   font-family: "Newsreader", serif;
+}
+
+
+.forced-blur {
+  /* Background color with transparency */
+  background-color: rgba(23, 23, 23, 0.4) !important;
+
+  /* The Blur Effect */
+  backdrop-filter: blur(25px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+
+  /* Fix for some browsers to trigger hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Ensure the parent header doesn't clip the submenu */
+header {
+  overflow: visible !important;
 }
