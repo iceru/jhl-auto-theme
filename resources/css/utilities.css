@@ -1,5 +1,10 @@
 @utility container {
-    max-width: var(--wp--style--global--wide-size);
+    max-width: 1200px;
+    padding-inline: 0;
+
+    @media (max-width: theme('screens.sm')) {
+        padding-inline: 1.5rem;
+    }
 }
 
 @utility alignfull {

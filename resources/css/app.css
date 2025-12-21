@@ -43,7 +43,6 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 4rem;
 }
 
 body,
@@ -52,12 +51,16 @@ html {
   color: var(--color-jhl-black);
 }
 
+.jhl-text {
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   font-family: "Newsreader", serif;
 }
 
@@ -78,4 +81,20 @@ h6 {
 /* Ensure the parent header doesn't clip the submenu */
 header {
   overflow: visible !important;
+}
+
+
+#car {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Optional: helps debug */
+}
+
+#car img {
+  /* Ensure no stray margins are pushing the image up/down */
+  margin: 0 !important;
+  padding: 0 !important;
 }
