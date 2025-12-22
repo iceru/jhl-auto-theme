@@ -20,4 +20,22 @@
         bersertifikat untuk memastikan kendaraan Anda selalu dalam kondisi optimal.
     </p>
 </section>
+
+<section class="py-20 bg-beijing-black">
+    <div class="container text-white">
+        <div class="text-[28px] leading-[30px] mb-12">PROMOTIONS</div>
+        <div class="grid grid-cols-2  md:grid-cols-5 gap-[14px]">
+            <div>
+                <img src="<?php echo get_template_directory_uri() ?>/images/promo-1.png"
+                    class="rounded-lg w-full object-cover mb-8" alt="">
+                <h5 class="mb-8 !text-white">
+                    Discover innovation and adventure at the Mall Exhi...
+                </h5>
+                <a href="" class="text-xs text-jhl-gray-1 font-semibold uppercase tracking-wide !no-underline">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 <?php get_footer();
