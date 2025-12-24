@@ -151,4 +151,60 @@
 
     </div>
 </section>
+
+<section class="bg-jhl-gray-2 text-white py-20">
+    <div class="container mx-auto">
+        <h2 class="mb-24 text-4xl font-bold">
+            Temukan Peran Berikut Kamu
+        </h2>
+
+        <?php
+        $args = array(
+            'post_type' => 'vacancies',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+        $vacancies_query = new WP_Query($args);
+        $vacancies = $vacancies_query->posts;
+
+        if ($vacancies) : ?>
+        <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+            <div class="md:col-span-3 flex flex-col gap-4 p-6 border border-white rounded-lg">
+                <h5 class="font-bold uppercase mb-10">Roles</h5>
+                <?php foreach ($vacancies as $index => $vacancy) : 
+                        $active_class = ($index === 0) ? 'opacity-100 border-white bg-white/10 is-active' : 'opacity-40 border-white/20 hover:opacity-70';
+                    ?>
+                <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
+                    class="vacancy-trigger text-left border transition-all duration-300 group <?php echo $active_class; ?>">
+                    <h5><?php echo get_the_title($vacancy->ID); ?></h5>
+                </button>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="md:col-span-9 bg-white/5 rounded-lg p-8 border border-white/10 relative min-h-[400px]">
+                <?php foreach ($vacancies as $index => $vacancy) : 
+                        // Show first item by default, hide others
+                        $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
+                    ?>
+                <div id="vacancy-<?php echo $vacancy->ID; ?>" class="vacancy-content"
+                    style="<?php echo $display_style; ?>">
+
+                    <div class="prose prose-invert max-w-none prose-p:text-gray-300">
+                        <?php echo apply_filters('the_content', $vacancy->post_content); ?>
+                    </div>
+
+                    <a href="<?php echo get_permalink($vacancy->ID); ?>"
+                        class="inline-block mt-8 px-8 py-3 bg-white text-jhl-gray-2 font-bold rounded-full hover:bg-gray-200 transition-colors">
+                        Apply Now
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+        <?php wp_reset_postdata(); endif; ?>
+    </div>
+</section>
 <?php get_footer();

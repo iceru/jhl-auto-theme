@@ -13,12 +13,46 @@
     </div>
 </section>
 
-<section class="container py-20">
-    <p class="body max-w-[638px]">
-        Bengkel resmi JHL Auto memberikan perawatan purna jual berstandar global untuk BAIC, serta layanan servis khusus
-        untuk kendaraan unik Premium Car (service only). Fasilitas kami dilengkapi peralatan modern dan teknisi
-        bersertifikat untuk memastikan kendaraan Anda selalu dalam kondisi optimal.
-    </p>
+<section class="container py-20 overflow-hidden">
+    <div class="flex justify-between items-end mb-10">
+        <p class="body max-w-[638px] text-jhl-gray-1">
+            Bengkel resmi JHL Auto memberikan perawatan purna jual berstandar global untuk BAIC, serta layanan servis
+            khusus
+            untuk kendaraan unik Premium Car (service only). Fasilitas kami dilengkapi peralatan modern dan teknisi
+            bersertifikat untuk memastikan kendaraan Anda selalu dalam kondisi optimal.
+        </p>
+        <div id="service-arrows" class="flex gap-2"></div>
+    </div>
+
+    <div id="services-slider" class="-mx-3">
+        <?php
+        $service_query = new WP_Query([
+            'post_type' => 'services', // Change this to your actual CPT slug
+            'posts_per_page' => -1,
+        ]);
+
+        if ($service_query->have_posts()) : 
+            while ($service_query->have_posts()) : $service_query->the_post(); ?>
+
+        <div class="px-3 outline-none">
+            <div class="flex flex-col h-full">
+                <div class="rounded-lg overflow-hidden aspect-video mb-4">
+                    <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover']); ?>
+                    <?php else : ?>
+                    <div class="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
+                    <?php endif; ?>
+                </div>
+
+                <h3 class="text-xl font-bold mb-2"><?php the_title(); ?></h3>
+                <div class="text-jhl-gray-1 text-sm line-clamp-3">
+                    <?php echo get_the_excerpt(); ?>
+                </div>
+            </div>
+        </div>
+
+        <?php endwhile; wp_reset_postdata(); endif; ?>
+    </div>
 </section>
 
 <section class="py-20 bg-beijing-black">

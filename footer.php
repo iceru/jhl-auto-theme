@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-auto py-12">
+        <div class="mx-auto py-12">
             <?php do_action('tailpress_footer'); ?>
             <div class="text-sm text-zinc-700">
                 &copy; <?php echo esc_html(date_i18n('Y')); ?> - <?php bloginfo('name'); ?>

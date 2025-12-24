@@ -80,10 +80,12 @@
                 const x = svgRect.left + (point.x * scaleX);
                 const y = svgRect.top + (point.y * scaleY) + yOffset;
 
-                const angle = Math.atan2((nextPoint.y - point.y) * scaleY, (nextPoint.x - point.x) * scaleX) * 180 / Math.PI;
+                const angle = Math.atan2((nextPoint.y - point.y) * scaleY, (nextPoint.x - point.x) * scaleX) *
+                    180 / Math.PI;
 
                 // Apply transform
-                car.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${angle + 90}deg)`;
+                car.style.transform =
+                    `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${angle + 90}deg)`;
             } else {
                 car.style.display = "none";
             }
@@ -173,16 +175,16 @@
                     Misi
                 </h3>
                 <p class="body max-w-[254px]">
-                <ul class="list-disc body pl-4">
-                    <li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.
-                    </li>
-                    <li>
-                        Mendorong pengembangan organisasi yang berkelanjutan.
-                    </li>
-                    <li>
-                        Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik
-                    </li>
-                </ul>
+                    <ul class="list-disc body pl-4">
+                        <li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.
+                        </li>
+                        <li>
+                            Mendorong pengembangan organisasi yang berkelanjutan.
+                        </li>
+                        <li>
+                            Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik
+                        </li>
+                    </ul>
                 </p>
             </div>
         </div>
@@ -277,11 +279,49 @@
             <h2 class="mb-11">
                 Sosok-Sosok di Balik JHL Auto
             </h2>
-            <p class="body text-jhl-gray-1 md:max-w-[579px]">
-                Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang
-                kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama
-                mewujudkan visi perusahaan.
-            </p>
+            <div class="flex justify-between items-end mb-8">
+                <p class="body text-jhl-gray-1 md:max-w-[579px]">
+                    Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang
+                    kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama
+                    mewujudkan visi perusahaan.
+                </p>
+                <div id="team-arrows" class="flex gap-2"></div>
+            </div>
+
+            <?php
+            $args = array(
+                'post_type'      => 'team',
+                'posts_per_page' => -1, // Show all team members
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
+            );
+
+            $team_query = new WP_Query($args);
+
+            if ($team_query->have_posts()) : ?>
+            <div class="teams -mx-2">
+                <?php while ($team_query->have_posts()) : $team_query->the_post(); 
+                $position = get_field('position');
+                $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
+            ?>
+                <div class="px-2 outline-none">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <?php if ($thumbnail) : ?>
+                        <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
+                            class="w-full h-full object-cover transition-transform duration-500">
+                        <?php endif; ?>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
+                            <h5 class="text-white"><?php the_title(); ?></h5>
+                            <?php if ($position) : ?>
+                            <p class="body text-white"><?php echo esc_html($position); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
