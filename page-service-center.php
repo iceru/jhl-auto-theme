@@ -58,17 +58,40 @@
 <section class="py-20 bg-beijing-black">
     <div class="container text-white">
         <div class="text-[28px] leading-[30px] mb-12">PROMOTIONS</div>
-        <div class="grid grid-cols-2  md:grid-cols-5 gap-[14px]">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-[14px]">
+            <?php
+            $args = array(
+                'post_type'      => 'promotions',
+                'posts_per_page' => 5,
+                'orderby'        => 'date',
+                'order'          => 'DESC'
+            );
+            $promo_query = new WP_Query($args);
+
+            if ($promo_query->have_posts()) :
+                while ($promo_query->have_posts()) : $promo_query->the_post(); ?>
+
             <div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/promo-1.png"
-                    class="rounded-lg w-full object-cover mb-8" alt="">
-                <h5 class="mb-8 !text-white">
-                    Discover innovation and adventure at the Mall Exhi...
+                <?php if (has_post_thumbnail()) : ?>
+                <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover mb-8"
+                    alt="<?php the_title(); ?>">
+                <?php endif; ?>
+
+                <h5 class="mb-8 !text-white line-clamp-2 overflow-ellipsis">
+                    <?php the_title(); ?>
                 </h5>
-                <a href="" class="text-xs text-jhl-gray-1 font-semibold uppercase tracking-wide !no-underline">
-                    Learn More
+
+                <a href="<?php the_permalink(); ?>"
+                    class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold uppercase tracking-wide !no-underline">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                    <span>
+                        Learn More
+                    </span>
                 </a>
             </div>
+
+            <?php endwhile; wp_reset_postdata(); 
+            endif; ?>
         </div>
     </div>
 </section>
