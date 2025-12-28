@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme footer template.
  *
@@ -12,9 +13,9 @@
 
 <?php do_action('tailpress_content_after'); ?>
 
-<footer class="bg-jhl-black text-white pt-16 pb-8" role="contentinfo">
+<footer class="bg-jhl-black text-white py-11 md:pt-16 md:pb-8" role="contentinfo">
     <div class="container">
-        <div class="flex justify-between">
+        <div class="flex flex-wrap justify-between space-x-24 md:space-x-0">
             <div class="flex items-center" id="logo">
                 <div class="pr-10 mr-10 border-r border-jhl-gray-2">
                     <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="" class="mb-5">
@@ -33,7 +34,7 @@
                 </div>
             </div>
             <div class="flex space-x-16 " id="footer-nav">
-                <div>
+                <div class="w-[45%] md:w-fit">
                     <p class="font-medium text-[10px] text-jhl-gray-1 uppercase leading-[27px] tracking-widest mb-6">
                         NAVIGASI
                     </p>
@@ -55,7 +56,7 @@
                         </li>
                     </ul>
                 </div>
-                <div>
+                <div class="w-[45%] md:w-fit">
                     <p class="font-medium text-[10px] text-jhl-gray-1 uppercase leading-[27px] tracking-widest mb-6">
                         Brands
                     </p>
@@ -72,7 +73,7 @@
                         </li>
                     </ul>
                 </div>
-                <div>
+                <div class="w-[45%] md:w-fit">
                     <p class="font-medium text-[10px] text-jhl-gray-1 uppercase leading-[27px] tracking-widest mb-6">
                         Updates
                     </p>
@@ -91,7 +92,7 @@
                 </div>
             </div>
         </div>
-        <div class="mx-auto pt-6 border-t text-center mt-20 border-jhl-gray-1 opacity-60">
+        <div class="mx-auto pt-6 border-t md:text-center mt-20 border-jhl-gray-1 opacity-60">
             <div class="text-xs text-[#939598]">
                 &copy; JHL Auto <?php echo esc_html(date_i18n('Y')); ?> - | All Rights Reserved
             </div>

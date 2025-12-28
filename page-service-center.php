@@ -31,27 +31,29 @@
             'posts_per_page' => -1,
         ]);
 
-        if ($service_query->have_posts()) : 
+        if ($service_query->have_posts()) :
             while ($service_query->have_posts()) : $service_query->the_post(); ?>
 
-        <div class="px-3 outline-none">
-            <div class="flex flex-col h-full">
-                <div class="rounded-lg overflow-hidden aspect-video mb-4">
-                    <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover']); ?>
-                    <?php else : ?>
-                    <div class="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
-                    <?php endif; ?>
+                <div class="px-3 outline-none">
+                    <div class="flex flex-col h-full">
+                        <div class="rounded-lg overflow-hidden aspect-video mb-4">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('large', ['class' => 'w-full h-[426px] rounded object-cover']); ?>
+                            <?php else : ?>
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
+                            <?php endif; ?>
+                        </div>
+
+                        <h4 class="text-xl font-bold mb-2"><?php the_title(); ?></h4>
+                        <p class="body text-jhl-gray-1 text-sm">
+                            <?php echo get_the_excerpt(); ?>
+                        </p>
+                    </div>
                 </div>
 
-                <h3 class="text-xl font-bold mb-2"><?php the_title(); ?></h3>
-                <div class="text-jhl-gray-1 text-sm line-clamp-3">
-                    <?php echo get_the_excerpt(); ?>
-                </div>
-            </div>
-        </div>
-
-        <?php endwhile; wp_reset_postdata(); endif; ?>
+        <?php endwhile;
+            wp_reset_postdata();
+        endif; ?>
     </div>
 </section>
 
@@ -71,26 +73,27 @@
             if ($promo_query->have_posts()) :
                 while ($promo_query->have_posts()) : $promo_query->the_post(); ?>
 
-            <div>
-                <?php if (has_post_thumbnail()) : ?>
-                <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover mb-8"
-                    alt="<?php the_title(); ?>">
-                <?php endif; ?>
+                    <div>
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover mb-8"
+                                alt="<?php the_title(); ?>">
+                        <?php endif; ?>
 
-                <h5 class="mb-8 !text-white line-clamp-2 overflow-ellipsis">
-                    <?php the_title(); ?>
-                </h5>
+                        <h5 class="mb-8 !text-white line-clamp-2 overflow-ellipsis">
+                            <?php the_title(); ?>
+                        </h5>
 
-                <a href="<?php the_permalink(); ?>"
-                    class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold uppercase tracking-wide !no-underline">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
-                    <span>
-                        Learn More
-                    </span>
-                </a>
-            </div>
+                        <a href="<?php the_permalink(); ?>"
+                            class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold uppercase tracking-wide !no-underline">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                            <span>
+                                Learn More
+                            </span>
+                        </a>
+                    </div>
 
-            <?php endwhile; wp_reset_postdata(); 
+            <?php endwhile;
+                wp_reset_postdata();
             endif; ?>
         </div>
     </div>

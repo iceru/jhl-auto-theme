@@ -11,7 +11,7 @@
 </section>
 
 <section class="grid md:grid-cols-2 md:h-screen bg-jhl-foreground/30">
-    <div class="flex flex-col justify-center px-20">
+    <div class="flex flex-col justify-center px-4 md:px-20 py-20 md:py-0">
         <h2 class="text-2xl md:text-[44px] mb-11 font-light">
             <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
         </h2>
@@ -36,7 +36,7 @@
     </div>
 </section>
 
-<section class="container pt-32 pb-20">
+<section class="container py-20 md:pt-32 md:pb-20">
     <div class="text-center mb-12">
         <h2 class="text-2xl md:text-[44px] mb-6 font-light">
             <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
@@ -80,13 +80,13 @@
                     </a>
                 </div>
 
-            <?php endwhile;
+        <?php endwhile;
             wp_reset_postdata();
         endif; ?>
     </div>
 </section>
 
-<section class="pt-32 pb-20 bg-black/80 text-white">
+<section class="py-20 md:pt-32 md:pb-20 bg-black/80 text-white">
     <div class="container">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
@@ -125,14 +125,14 @@
                         </div>
                     </div>
 
-                <?php endwhile;
+            <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
     </div>
 </section>
 
-<section class="pt-32 pb-20 bg-jhl-foreground">
+<section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground">
     <div class="container flex justify-between items-center">
         <div class="mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
@@ -158,11 +158,11 @@
                 while ($awards_query->have_posts()):
                     $awards_query->the_post();
                     $is_first = ($count === 0);
-                    ?>
+            ?>
 
                     <div class="award-item text-center group cursor-pointer <?php echo $is_first ? 'active' : ''; ?>">
                         <div class="award-image-wrapper mb-4 <?php echo $is_first ? 'opacity-100' : 'opacity-40'; ?>">
-                            <img class="w-[140px] h-auto object-contain"
+                            <img class="w-auto h-[130px] object-contain"
                                 src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
                         </div>
 
@@ -171,7 +171,8 @@
                         </p>
                     </div>
 
-                    <?php $count++; endwhile;
+                <?php $count++;
+                endwhile;
                 wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
@@ -179,8 +180,8 @@
 </section>
 
 <script>
-    jQuery(document).ready(function ($) {
-        $('.award-item').on('click', function () {
+    jQuery(document).ready(function($) {
+        $('.award-item').on('click', function() {
             $('.award-image-wrapper').removeClass('opacity-100').addClass('opacity-40');
             $('.award-title').addClass('hidden').removeClass('block');
 
@@ -190,7 +191,7 @@
     });
 </script>
 
-<section class="pt-32 pb-20 bg-jhl-gray-3">
+<section class="py-20 md:pt-32 md:pb-20 bg-jhl-gray-3">
     <div class="container">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
@@ -239,28 +240,40 @@
                         </div>
                     </div>
 
-                <?php endwhile;
+            <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
     </div>
 </section>
 
-<section class="relative h-[70vh] w-full py-16">
+<section class="relative md:h-[70vh] w-full py-16">
     <?php
     $loyalty_bg = get_field('loyalty_bg');
     $loyalty_bg_url = $loyalty_bg ? $loyalty_bg['url'] : get_template_directory_uri() . '/images/header-home-1.png';
     ?>
     <img src="<?php echo esc_url($loyalty_bg_url); ?>" alt="Hero Image"
-        class=" top-0 left-0 w-full h-full object-cover absolute">
-    <div class="container flex flex-col justify-center h-full">
+        class="hidden md:block top-0 left-0 w-full h-full object-cover absolute">
+    <div class="container flex flex-col justify-center h-full p-4 md:p-0">
         <div
             class="bg-jhl-background/20 backdrop-blur-2xl p-7 text-white w-full md:w-[486px] rounded-xl flex space-x-4 relative z-10">
             <div>
-                <p class="mb-5 text-[10px] tracking-wider uppercase">
-                    <?php echo get_field('loyalty_tag_text') ?: 'Loyalty'; ?>
-                </p>
-                <h2 class="text-[44px] mb-6"><?php echo get_field('loyalty_title') ?: 'MYJHL'; ?></h2>
+
+                <div class="flex justify-between">
+                    <div>
+                        <p class="mb-5 text-[10px] tracking-wider uppercase">
+                            <?php echo get_field('loyalty_tag_text') ?: 'Loyalty'; ?>
+                        </p>
+                        <h2 class="text-[44px] mb-6"><?php echo get_field('loyalty_title') ?: 'MYJHL'; ?></h2>
+                    </div>
+                    <div class="shrink-0 block md:hidden">
+                        <?php
+                        $loyalty_logo = get_field('loyalty_logo');
+                        $loyalty_logo_url = $loyalty_logo ? $loyalty_logo['url'] : get_template_directory_uri() . '/images/my-jhl.svg';
+                        ?>
+                        <img src="<?php echo esc_url($loyalty_logo_url); ?>" class="w-14" alt="MyJHL App">
+                    </div>
+                </div>
                 <p class="mb-8 font-medium leading-[22px]">
                     <?php echo get_field('loyalty_tagline') ?: 'Your gateway to exclusive experience and limitless leisure'; ?>
                 </p>
@@ -278,7 +291,7 @@
                     </a>
                 </div>
             </div>
-            <div class="shrink-0">
+            <div class="shrink-0 hidden md:block">
                 <?php
                 $loyalty_logo = get_field('loyalty_logo');
                 $loyalty_logo_url = $loyalty_logo ? $loyalty_logo['url'] : get_template_directory_uri() . '/images/my-jhl.svg';
