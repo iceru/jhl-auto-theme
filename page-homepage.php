@@ -37,7 +37,7 @@
 </section>
 
 <section class="container py-20 md:pt-32 md:pb-20">
-    <div class="text-center mb-12">
+    <div class="md:text-center mb-12">
         <h2 class="text-2xl md:text-[44px] mb-6 font-light">
             <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
         </h2>
@@ -46,7 +46,7 @@
         </p>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-6">
+    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6">
         <?php
         $args = array(
             'post_type' => 'promotion',
@@ -60,10 +60,10 @@
             while ($promo_query->have_posts()):
                 $promo_query->the_post(); ?>
 
-                <div>
+                <div class="flex-none w-[75%] snap-start md:w-full">
                     <div class="mb-8">
                         <?php if (has_post_thumbnail()): ?>
-                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg">
+                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
                         <?php endif; ?>
                     </div>
 
@@ -88,7 +88,7 @@
 
 <section class="py-20 md:pt-32 md:pb-20 bg-black/80 text-white">
     <div class="container">
-        <div class="text-center mb-12">
+        <div class="md:text-center mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 <?php echo get_field('branches_title') ?: 'Cabang Kami'; ?>
             </h2>
@@ -96,7 +96,8 @@
                 <?php echo get_field('branches_description') ?: 'Rasakan pengalaman profesional JHL Auto di berbagai lokasi strategis terdekat yang siap melayani kebutuhan mobilitas Anda setiap saat.'; ?>
             </p>
         </div>
-        <div class="grid md:grid-cols-4 gap-4">
+
+        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6">
             <?php
             $args = array(
                 'post_type' => 'dealer',
@@ -110,7 +111,7 @@
                 while ($dealers_query->have_posts()):
                     $dealers_query->the_post(); ?>
 
-                    <div>
+                    <div class="flex-none w-[75%] snap-start md:w-full">
                         <div class="mb-4">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                 alt="<?php the_title(); ?>" class="rounded-lg h-[318px] object-cover w-full">
@@ -132,8 +133,20 @@
     </div>
 </section>
 
+<style>
+    /* Add this to your CSS file to hide the scrollbars while keeping functionality */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
 <section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground">
-    <div class="container flex justify-between items-center">
+    <div class="container flex flex-wrap justify-between items-center">
         <div class="mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 <?php echo get_field('awards_title') ?: 'Penghargaan Kami'; ?>
@@ -143,7 +156,7 @@
                 Berikut deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.'; ?>
             </p>
         </div>
-        <div class="awards-container flex flex-wrap items-start space-x-14 gap-4">
+        <div class="awards-container grid grid-cols-2 gap-11 md:flex items-start space-x-14">
             <?php
             $args = array(
                 'post_type' => 'awards',

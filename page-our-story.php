@@ -190,13 +190,13 @@
         window.addEventListener("resize", updateTimeline);
     });
 </script>
-<section class="py-32 container text-center">
-    <h2 class="text-2xl md:text-[44px] mb-6 font-light text-black">
+<section class="py-32 container md:text-center">
+    <h2 class="text-2xl md:text-[44px] mb-2 font-light text-black">
         <?php echo get_field('panca_krida_title') ?: 'Panca Krida'; ?>
     </h2>
-    <h5 class="mb-11 text-xl text-black">
+    <h4 class="mb-11 text-xl text-black">
         <?php echo get_field('panca_krida_subtitle') ?: 'The Power to Success'; ?>
-    </h5>
+    </h4>
     <p class="body mx-auto md:max-w-[859px] mb-11">
         <?php echo get_field('panca_krida_desc') ?: 'JHL Auto berpegang pada nilai-nilai Panca Krida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang inovatif dan terpercaya.'; ?>
     </p>
@@ -251,15 +251,15 @@
     </div>
 </section>
 
-<section class="h-screen w-full flex space-x-16 bg-[#404040] relative ">
-    <div class="absolute h-full w-[426px] 2xl:w-[580px] left-0">
+<section class="h-screen w-full flex flex-col md:flex-row space-x-16 bg-[#404040] relative ">
+    <div class="md:absolute h-full w-full md:w-[426px] 2xl:w-[580px] md:left-0">
         <?php
         $vm_img = get_field('vm_side_image');
         $vm_img_url = $vm_img ? $vm_img['url'] : get_template_directory_uri() . '/images/story-image-1.png';
         ?>
         <img class="w-full h-full object-cover" src="<?php echo esc_url($vm_img_url); ?>" alt="">
     </div>
-    <div class=" flex flex-col justify-center w-full container">
+    <div class="flex flex-col justify-center w-full py-7 container">
         <div class="flex space-x-6 mb-20 justify-end">
             <div class="bg-jhl-foreground p-11 rounded-lg lg:max-w-[380px] xxl:max-w-[403px] w-full">
                 <h3 class="mb-8 font-light text-[27px]">Visi</h3>
@@ -275,14 +275,14 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-center md:ml-[420px] space-x-20">
+        <div class="grid grid-cols-2 md:flex items-center justify-center md:ml-[420px] space-x-20">
             <?php for ($i = 1; $i <= 4; $i++):
                 $icon = get_field('culture_icon_' . $i);
                 $label = get_field('culture_label_' . $i);
                 $def_labels = ['', 'Integritas', 'Semangat', 'Kepuasan Pelanggan', 'Kerja Sama tim'];
                 $def_imgs = ['', 'Warranty.png', 'Fist.png', 'Heart.png', 'Crowd.png'];
             ?>
-                <div>
+                <div class="flex flex-col justify-center items-center">
                     <img class="w-20 h-20 object-contain mb-7"
                         src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/images/' . $def_imgs[$i]; ?>"
                         alt="">
@@ -295,7 +295,7 @@
     </div>
 </section>
 
-<section class="container py-32 grid md:grid-cols-4">
+<section class="container py-32 grid gap-16 md:gap-0 md:grid-cols-4">
     <?php
     $stats = [
         ['field' => 'stat_1', 'def_num' => '14', 'def_label' => 'Tahun <br /> Beroperasi'],
@@ -314,8 +314,8 @@
 
 <section class="py-[110px] bg-jhl-foreground/30">
     <div class="container">
-        <div class="flex mb-28">
-            <div class="bg-jhl-gray-3/20 p-16 md:w-[60%]">
+        <div class="flex flex-col md:flex-row mb-28">
+            <div class="bg-jhl-gray-3/20 order-2 md:order-1 p-16 md:w-[60%]">
                 <h3 class="mb-3"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?></h3>
                 <h5 class="mb-11"><?php echo get_field('director_title') ?: 'Direktur Utama'; ?></h5>
                 <div class="body md:max-w-[494px]">
@@ -326,7 +326,7 @@
                      berada di garis terdepan dalam menyediakan solusi otomotif berkualitas tinggi.'; ?>
                 </div>
             </div>
-            <div class="bg-white md:w-[40%] pt-10">
+            <div class="bg-white md:w-[40%] pt-10 order-1 md:order-2">
                 <?php
                 $dir_img = get_field('director_image');
                 $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur.png';

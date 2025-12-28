@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme header template.
  *
@@ -37,14 +38,14 @@
     <div id="page" class="min-h-screen flex flex-col">
         <?php do_action('tailpress_header'); ?>
 
-        <header class="fixed z-40 top-4 left-1/2 -translate-x-1/2 max-w-[1200px] w-full">
+        <header class="fixed z-40 top-4 left-1/2 -translate-x-1/2 max-w-[1200px] hidden md:block w-full">
 
             <div class="flex items-center justify-between text-white rounded-full py-[11px] px-[35px] isolate w-full">
                 <div class="absolute inset-0 bg-[#171717]/30 backdrop-blur-2xl rounded-full -z-10"></div>
 
-                <div>
+                <a href="/">
                     <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" class="h-7" alt="">
-                </div>
+                </a>
                 <div class="hidden md:block">
                     <nav>
                         <ul class="flex items-center space-x-10 text-sm font-medium">
@@ -129,6 +130,106 @@
             </div>
         </header>
 
+        <header class="w-full absolute left-0 top-0 px-4 py-11 bg-gradient-to-b from-black to-transparent flex justify-between items-center z-50">
+            <div class="space-y-1.5 cursor-pointer" id="sidebar-btn">
+                <div class="h-[1px] w-8 bg-white"></div>
+                <div class="h-[1px] w-8 bg-white"></div>
+            </div>
+            <div>
+                <a href="/">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" class="h-7" alt="">
+                </a>
+            </div>
+        </header>
+
+        <aside id="main-sidebar" class="fixed inset-0 z-[60] bg-jhl-gray-1 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col justify-between items-center h-full pt-[22px] pb-36 px-4">
+
+                <div class="flex justify-between items-center w-full px-4" id="sidebar-header">
+                    <div id="back-container" class="invisible opacity-0 transition-opacity duration-200 cursor-pointer">
+                        <div class="back-to-main text-white text-sm uppercase tracking-widest font-medium">← Back</div>
+                    </div>
+                    <div id="close-sidebar" class="text-white text-sm uppercase tracking-widest font-medium cursor-pointer">✕</div>
+                </div>
+
+                <div>
+                    <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" class="h-14" alt="">
+                </div>
+
+                <div class="w-full relative overflow-hidden h-[300px]">
+                    <ul id="menu-main" class="flex flex-col space-y-8 justify-center items-center px-10 text-center transition-all duration-300">
+                        <li><a href="/" class="text-white uppercase font-medium tracking-widest">Home</a></li>
+                        <li><a href="javascript:void(0)" data-target="submenu-about" class="submenu-trigger text-white uppercase font-medium tracking-widest">About Us</a></li>
+                        <li><a href="javascript:void(0)" data-target="submenu-brands" class="submenu-trigger text-white uppercase font-medium tracking-widest">Brands</a></li>
+                        <li><a href="/news" class="text-white uppercase font-medium tracking-widest">News & Promotion</a></li>
+                    </ul>
+
+                    <ul id="submenu-about" class="hidden absolute inset-0 flex flex-col space-y-8 justify-center items-center px-10 text-center transition-all duration-300">
+                        <li><a href="/our-story" class="text-white uppercase font-medium tracking-widest">Our Story</a></li>
+                        <li><a href="/career" class="text-white uppercase font-medium tracking-widest">Career</a></li>
+                    </ul>
+
+                    <ul id="submenu-brands" class="hidden absolute inset-0 flex flex-col space-y-8 justify-center items-center px-10 text-center transition-all duration-300">
+                        <li><a href="#" class="text-white uppercase font-medium tracking-widest">BAIC</a></li>
+                        <li><a href="/service-center" class="text-white uppercase font-medium tracking-widest">Service Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <a href="javascript:void(0)" id="open-contact" class="text-[13px] font-medium flex items-center !no-underline space-x-1 text-white">
+                        <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3 invert" alt="">
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <script>
+            $(document).ready(function() {
+                // Function to reset menu state
+                function resetMenu() {
+                    $('#back-container').addClass('invisible opacity-0');
+                    $('[id^="submenu-"]').addClass('hidden').hide();
+                    $('#menu-main').show().css('opacity', '1');
+                }
+
+                // Open Sidebar
+                $('#sidebar-btn').on('click', function() {
+                    $('#main-sidebar').removeClass('-translate-x-full');
+                });
+
+                // Close Sidebar
+                $('#close-sidebar').on('click', function() {
+                    $('#main-sidebar').addClass('-translate-x-full');
+                    // Reset to main menu after slide-out animation completes
+                    setTimeout(resetMenu, 300);
+                });
+
+                // Open Submenu
+                $('.submenu-trigger').on('click', function() {
+                    const target = $(this).data('target');
+
+                    $('#menu-main').fadeOut(200, function() {
+                        $('#' + target).removeClass('hidden').fadeIn(200);
+                        // Show Back button in header
+                        $('#back-container').removeClass('invisible opacity-0');
+                    });
+                });
+
+                // Back to Main Menu
+                $('.back-to-main').on('click', function() {
+                    const visibleSubmenu = $('[id^="submenu-"]:visible');
+
+                    visibleSubmenu.fadeOut(200, function() {
+                        $(this).addClass('hidden');
+                        $('#menu-main').fadeIn(200);
+                        // Hide Back button in header
+                        $('#back-container').addClass('invisible opacity-0');
+                    });
+                });
+            });
+        </script>
+
         <div id="contact-popup" class="fixed inset-0 z-[100] hidden items-center justify-center">
             <div class="absolute inset-0 bg-black/40" id="close-overlay"></div>
 
@@ -199,27 +300,27 @@
         </div>
 
         <script>
-            $(document).ready(function ($) {
+            $(document).ready(function($) {
                 // Open Popup
-                $('#open-contact').on('click', function () {
+                $('#open-contact').on('click', function() {
                     $('#contact-popup').removeClass('hidden').addClass('flex');
                     $('body').addClass('overflow-hidden'); // Disable scroll
                 });
 
                 // Close Popup (Button or Overlay)
-                $('#close-contact, #close-overlay').on('click', function () {
+                $('#close-contact, #close-overlay').on('click', function() {
                     $('#contact-popup').addClass('hidden').removeClass('flex');
                     $('body').removeClass('overflow-hidden');
                 });
 
                 // Close on ESC key
-                $(document).keyup(function (e) {
+                $(document).keyup(function(e) {
                     if (e.key === "Escape") {
                         $('#close-contact').click();
                     }
                 });
                 $('#social-toggle').css('transform', 'rotate(180deg)');
-                $('#social-toggle').on('click', function () {
+                $('#social-toggle').on('click', function() {
                     const $btn = $(this);
                     const $container = $('#social-expandable');
                     const $iconArrow = $('#toggle-icon');
