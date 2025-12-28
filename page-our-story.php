@@ -2,30 +2,23 @@
 
 <section class="h-screen relative flex flex-col justify-end pb-[107px]">
     <div class="absolute h-full w-full left-0 top-0">
-        <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/images/story-header.png"
-            alt="">
+        <?php
+        $header_img = get_field('story_header_image');
+        $header_img_url = $header_img ? $header_img['url'] : get_template_directory_uri() . '/images/story-header.png';
+        ?>
+        <img class="w-full h-full object-cover" src="<?php echo esc_url($header_img_url); ?>" alt="">
     </div>
-    <div class="absolute w-[90%] left-0 top-0 h-full bg-gradient-to-r from-jhl-black to-jhl-black/0">
-
-    </div>
+    <div class="absolute w-[90%] left-0 top-0 h-full bg-gradient-to-r from-jhl-black to-jhl-black/0"></div>
     <div class="container z-10 relative text-white">
         <h1 class="text-[44px]">
-            Awal Perjalanan
+            <?php echo get_field('story_header_title') ?: 'Awal Perjalanan'; ?>
         </h1>
-        <p class="mb-4">
-            Setiap perjalanan besar dimulai dari satu langkah berani. Pada 12 Januari 2012, JHL Auto resmi berdiri
-            sebagai
-            bagian dari JHL Group, menandai awal kiprah perusahaan dalam menghadirkan pengalaman otomotif premium di
-            Indonesia.
-        </p>
-        <p>
-            Sejak awal, JHL Auto membawa semangat integritas, inovasi, dan pelayanan berstandar internasional, dengan
-            tujuan
-            menjadi mitra mobilitas terpercaya bagi masyarakat Indonesia. Dari momentum bersejarah sebagai bagian dari
-            Jaringan resmi Jeep di Indonesia, JHL Auto terus berkembang hingga pada Maret 2024 dipercaya sebagai
-            Authorized
-            BAIC Dealer, memperkuat posisinya sebagai bagian dari grup otomotif besar yang dinamis dan progresif.
-        </p>
+        <div class="mb-4">
+            <?php echo get_field('story_header_desc_1') ?: 'Setiap perjalanan besar dimulai dari satu langkah berani. Pada 12 Januari 2012, JHL Auto resmi berdiri sebagai bagian dari JHL Group, menandai awal kiprah perusahaan dalam menghadirkan pengalaman otomotif premium di Indonesia.'; ?>
+        </div>
+        <div>
+            <?php echo get_field('story_header_desc_2') ?: 'Sejak awal, JHL Auto membawa semangat integritas, inovasi, dan pelayanan berstandar internasional, dengan tujuan menjadi mitra mobilitas terpercaya bagi masyarakat Indonesia. Dari momentum bersejarah sebagai bagian dari Jaringan resmi Jeep di Indonesia, JHL Auto terus berkembang hingga pada Maret 2024 dipercaya sebagai Authorized BAIC Dealer, memperkuat posisinya sebagai bagian dari grup otomotif besar yang dinamis dan progresif.'; ?>
+        </div>
     </div>
 </section>
 <section id="timeline-container" class="relative w-full max-w-4xl mx-auto mt-16" style="height: 1899px;">
@@ -35,15 +28,41 @@
             d="M2.5 2.5V349.437H515.079L553.59 558.084H256.01V617.12H565.493L579.496 827.385H173.388V1075.66H579.496C579.73 1129.3 568.294 1278.65 568.294 1278.65H256.711V1341.72H558.491L526.282 1546.33H2.5V1896.5"
             stroke="#808285" stroke-width="5" stroke-linecap="round" opacity="0.7" />
     </svg>
+
     <div id="car"
         class="fixed top-0 left-0 w-[120px] h-[120px] z-50 pointer-events-none flex items-center justify-center"
         style="display: none; will-change: transform;">
-
-
-        <img src="<?php echo get_template_directory_uri() ?>/images/car.png" id="car-img"
-            style="width: 44px; height: 99px; transform: translateY(0px);" class="object-contain rotate-180" alt="car">
+        <?php
+        $car_icon = get_field('timeline_car_icon');
+        $car_icon_url = $car_icon ? $car_icon['url'] : get_template_directory_uri() . '/images/car.png';
+        ?>
+        <img src="<?php echo esc_url($car_icon_url); ?>" id="car-img" style="width: 44px; height: 99px;"
+            class="object-contain rotate-180" alt="car">
     </div>
 
+    <div id="story-layer" class="absolute inset-0 pointer-events-none">
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.03">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2012</h3>
+                <h4 class="font-bold text-sm my-2">Authorised Jeep Dealer</h4>
+                <p class="body">Dealer Otomotif pertama JHL Auto, dan memperoleh penghargaan MURI untuk
+                    konsep Dealer "Amazon Jungle".</p>
+            </div>
+        </div>
+
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.2">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2012</h3>
+                <h4 class="font-bold text-sm my-2">Authorised Jeep Dealer</h4>
+                <p class="body">Dealer Otomotif pertama JHL Auto, dan memperoleh penghargaan MURI untuk
+                    konsep Dealer "Amazon Jungle".</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <script>
@@ -51,104 +70,126 @@
         const path = document.querySelector("#road-path");
         const car = document.querySelector("#car");
         const container = document.querySelector("#timeline-container");
+        const storyPoints = document.querySelectorAll(".story-point");
         const svgElement = path.ownerSVGElement;
         const pathLength = path.getTotalLength();
 
-        function updateCarPosition() {
+        function updateTimeline() {
             const rect = container.getBoundingClientRect();
             const svgRect = svgElement.getBoundingClientRect();
             const viewHeight = window.innerHeight;
+            const viewBox = svgElement.viewBox.baseVal;
+            const scaleX = svgRect.width / viewBox.width;
+            const scaleY = svgRect.height / viewBox.height;
 
+            // 1. Update Car Position
             let progress = (viewHeight / 2 - rect.top) / rect.height;
             progress = Math.max(0, Math.min(1, progress));
 
             if (progress > 0 && progress < 1) {
                 car.style.display = "flex";
-
                 const point = path.getPointAtLength(progress * pathLength);
                 const nextPoint = path.getPointAtLength(Math.min(progress * pathLength + 1, pathLength));
-
-                const viewBox = svgElement.viewBox.baseVal;
-                const scaleX = svgRect.width / viewBox.width;
-                const scaleY = svgRect.height / viewBox.height;
-
-                // MATH FIX:
-                // Based on your screenshot, the dot is about 5-10px too low.
-                // We add yOffset to nudge the red dot exactly onto the gray line.
-                const yOffset = 0; // <--- Adjust this value until the red dot is on the line
-
                 const x = svgRect.left + (point.x * scaleX);
-                const y = svgRect.top + (point.y * scaleY) + yOffset;
-
-                const angle = Math.atan2((nextPoint.y - point.y) * scaleY, (nextPoint.x - point.x) * scaleX) *
-                    180 / Math.PI;
-
-                // Apply transform
-                car.style.transform =
-                    `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${angle + 90}deg)`;
+                const y = svgRect.top + (point.y * scaleY);
+                const angle = Math.atan2((nextPoint.y - point.y) * scaleY, (nextPoint.x - point.x) * scaleX) * 180 / Math.PI;
+                car.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${angle + 90}deg)`;
             } else {
                 car.style.display = "none";
             }
+
+            // 2. Position and Animate Story Points
+            storyPoints.forEach(pointEl => {
+                const dotProgress = parseFloat(pointEl.dataset.pathProgress);
+                const pathPoint = path.getPointAtLength(dotProgress * pathLength);
+
+                // Convert SVG coords → screen coords
+                const x = svgRect.left + (pathPoint.x * scaleX);
+                const y = svgRect.top + (pathPoint.y * scaleY);
+
+                // Slight horizontal offset so content doesn't sit ON the line
+                const OFFSET_X = -8;
+
+                pointEl.style.position = "fixed";
+                pointEl.style.left = `${x + OFFSET_X}px`;
+                pointEl.style.top = `${y}px`;
+                pointEl.style.transform = "translateY(-50%)";
+
+                // Fade logic
+                if (progress >= dotProgress - 0.05) {
+                    pointEl.classList.remove("opacity-0");
+                    pointEl.classList.add("opacity-100");
+                } else {
+                    pointEl.classList.add("opacity-0");
+                    pointEl.classList.remove("opacity-100");
+                }
+            });
         }
 
         function tick() {
-            updateCarPosition();
+            updateTimeline();
             requestAnimationFrame(tick);
         }
         tick();
-        window.addEventListener("resize", updateCarPosition);
+        window.addEventListener("resize", updateTimeline);
     });
 </script>
-
 <section class="py-32 container text-center">
     <h2 class="text-2xl md:text-[44px] mb-6 font-light text-black">
-        Panca Krida
+        <?php echo get_field('panca_krida_title') ?: 'Panca Krida'; ?>
     </h2>
     <h5 class="mb-11 text-xl text-black">
-        The Power to Success
+        <?php echo get_field('panca_krida_subtitle') ?: 'The Power to Success'; ?>
     </h5>
     <p class="body mx-auto md:max-w-[859px] mb-11">
-        JHL Auto berpegang pada nilai-nilai Panca Krida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras
-        dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang
-        inovatif dan terpercaya.
+        <?php echo get_field('panca_krida_desc') ?: 'JHL Auto berpegang pada nilai-nilai Panca Krida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang inovatif dan terpercaya.'; ?>
     </p>
     <div class="grid md:grid-cols-3 gap-6 mb-6">
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
-            <h3 class="mb-2 font-light text-[27px]">Kesempatan</h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">Chance</p>
+            <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_1_title') ?: 'Kesempatan'; ?></h3>
+            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+                <?php echo get_field('krida_1_sub') ?: 'Chance'; ?>
+            </p>
             <p class="max-w-[248px] leading-6 text-xs mx-auto">
-                Memanfaatkan setiap peluang dengan bijaksana dan bertanggung
-                jawab.
+                <?php echo get_field('krida_1_desc') ?: 'Memanfaatkan setiap peluang dengan bijaksana dan bertanggung jawab.'; ?>
             </p>
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
-            <h3 class="mb-2 font-light text-[27px]">Kerja Keras</h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">Hard Work</p>
+            <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_2_title') ?: 'Kerja Keras'; ?></h3>
+            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+                <?php echo get_field('krida_2_sub') ?: 'Hard Work'; ?>
+            </p>
             <p class="max-w-[248px] leading-6 text-xs mx-auto">
-                Dedikasi penuh dalam setiap langkah dan upaya tanpa kenal lelah
+                <?php echo get_field('krida_2_desc') ?: 'Dedikasi penuh dalam setiap langkah dan upaya tanpa kenal lelah'; ?>
             </p>
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
-            <h3 class="mb-2 font-light text-[27px]">Kerja Cerdas</h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">Smart Work</p>
+            <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_3_title') ?: 'Kerja Cerdas'; ?></h3>
+            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+                <?php echo get_field('krida_3_sub') ?: 'Smart Work'; ?>
+            </p>
             <p class="max-w-[248px] leading-6 text-xs mx-auto">
-                Inovasi dan strategi tepat untuk mencapai hasil maksimal
+                <?php echo get_field('krida_3_desc') ?: 'Inovasi dan strategi tepat untuk mencapai hasil maksimal'; ?>
             </p>
         </div>
     </div>
     <div class="flex justify-center items-center space-y-6 md:space-y-0 md:space-x-6 w-full flex-wrap mx-auto">
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
-            <h3 class="mb-2 font-light text-[27px]">Kerja Tuntas</h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">Complete Work</p>
+            <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_4_title') ?: 'Kerja Tuntas'; ?></h3>
+            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+                <?php echo get_field('krida_4_sub') ?: 'Complete Work'; ?>
+            </p>
             <p class="max-w-[248px] leading-6 text-xs mx-auto">
-                Menyelesaikan setiap tugas dengan sempurna dan berkualitas
+                <?php echo get_field('krida_4_desc') ?: 'Menyelesaikan setiap tugas dengan sempurna dan berkualitas'; ?>
             </p>
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
-            <h3 class="mb-2 font-light text-[27px]">Loyalitas</h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">Loyalty</p>
+            <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_5_title') ?: 'Loyalitas'; ?></h3>
+            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+                <?php echo get_field('krida_5_sub') ?: 'Loyalty'; ?>
+            </p>
             <p class="max-w-[248px] leading-6 text-xs mx-auto">
-                Komitmen jangka panjang kepada mitra, pelanggan, dan tim
+                <?php echo get_field('krida_5_desc') ?: 'Komitmen jangka panjang kepada mitra, pelanggan, dan tim'; ?>
             </p>
         </div>
     </div>
@@ -156,174 +197,135 @@
 
 <section class="h-screen w-full flex space-x-16 bg-[#404040] relative ">
     <div class="absolute h-full w-[426px] 2xl:w-[580px] left-0">
-        <img class="w-full h-full object-cover"
-            src="<?php echo get_template_directory_uri() ?>/images/story-image-1.png" alt="">
+        <?php
+        $vm_img = get_field('vm_side_image');
+        $vm_img_url = $vm_img ? $vm_img['url'] : get_template_directory_uri() . '/images/story-image-1.png';
+        ?>
+        <img class="w-full h-full object-cover" src="<?php echo esc_url($vm_img_url); ?>" alt="">
     </div>
     <div class=" flex flex-col justify-center w-full container">
         <div class="flex space-x-6 mb-20 justify-end">
             <div class="bg-jhl-foreground p-11 rounded-lg lg:max-w-[380px] xxl:max-w-[403px] w-full">
-                <h3 class="mb-8 font-light text-[27px]">
-                    Visi
-                </h3>
-                <p class="body max-w-[254px]">
-                    Menjadi group dealer otomotif terdepan di Indonesia dalam inovasi, kualitas, dan layanan
-                    pelanggan
-                </p>
+                <h3 class="mb-8 font-light text-[27px]">Visi</h3>
+                <div class="body max-w-[254px]">
+                    <?php echo get_field('visi_text') ?: 'Menjadi group dealer otomotif terdepan di Indonesia dalam inovasi, kualitas, dan layanan pelanggan'; ?>
+                </div>
             </div>
             <div class="bg-jhl-foreground p-11 rounded-lg lg:max-w-[380px] xxl:max-w-[403px] w-full">
-                <h3 class="mb-8 font-light text-[27px]">
-                    Misi
-                </h3>
-                <p class="body max-w-[254px]">
-                    <ul class="list-disc body pl-4">
-                        <li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.
-                        </li>
-                        <li>
-                            Mendorong pengembangan organisasi yang berkelanjutan.
-                        </li>
-                        <li>
-                            Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik
-                        </li>
-                    </ul>
-                </p>
+                <h3 class="mb-8 font-light text-[27px]">Misi</h3>
+                <div class="body max-w-[254px]">
+                    <?php echo get_field('misi_text') ?: '<ul class="list-disc body pl-4"><li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.</li><li>Mendorong pengembangan organisasi yang berkelanjutan.</li><li>Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik</li></ul>'; ?>
+                </div>
             </div>
         </div>
 
         <div class="flex items-center justify-center md:ml-[420px] space-x-20">
-            <div>
-                <img class="w-20 h-20 object-contain mb-7"
-                    src="<?php echo get_template_directory_uri() ?>/images/Warranty.png" alt="">
-                <span class="text-white tracking-wide max-w-[95px] block text-center">Integritas</span>
-            </div>
-            <div>
-                <img class="w-20 h-20 object-contain mb-7"
-                    src="<?php echo get_template_directory_uri() ?>/images/Fist.png" alt="">
-                <span class="text-white tracking-wide max-w-[95px] block text-center">Semangat</span>
-            </div>
-            <div>
-                <img class="w-20 h-20 object-contain mb-7"
-                    src="<?php echo get_template_directory_uri() ?>/images/Heart.png" alt="">
-                <span class="text-white tracking-wide max-w-[95px] block text-center">Kepuasan
-                    Pelanggan </span>
-            </div>
-            <div>
-                <img class="w-20 h-20 object-contain mb-7"
-                    src="<?php echo get_template_directory_uri() ?>/images/Crowd.png" alt="">
-                <span class="text-white tracking-wide max-w-[95px] block text-center">
-                    Kerja Sama tim
-                </span>
-            </div>
+            <?php for ($i = 1; $i <= 4; $i++):
+                $icon = get_field('culture_icon_' . $i);
+                $label = get_field('culture_label_' . $i);
+                $def_labels = ['', 'Integritas', 'Semangat', 'Kepuasan Pelanggan', 'Kerja Sama tim'];
+                $def_imgs = ['', 'Warranty.png', 'Fist.png', 'Heart.png', 'Crowd.png'];
+                ?>
+                <div>
+                    <img class="w-20 h-20 object-contain mb-7"
+                        src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/images/' . $def_imgs[$i]; ?>"
+                        alt="">
+                    <span class="text-white tracking-wide max-w-[95px] block text-center">
+                        <?php echo $label ?: $def_labels[$i]; ?>
+                    </span>
+                </div>
+            <?php endfor; ?>
         </div>
     </div>
 </section>
 
 <section class="container py-32 grid md:grid-cols-4">
-    <div>
-        <h2 class="text-[74px] font-extralight">
-            14
-        </h2>
-        <h5 class="text-jhl-gray-1 font-medium ">
-            Tahun <br />
-            Beroperasi
-        </h5>
-    </div>
-    <div>
-        <h2 class="text-[74px] font-extralight">
-            4
-        </h2>
-        <h5 class="text-jhl-gray-1 font-medium">
-            Dealership <br />
-            di Indonesia
-        </h5>
-    </div>
-    <div>
-        <h2 class="text-[74px] font-extralight">
-            80+
-        </h2>
-        <h5 class="text-jhl-gray-1 font-medium">
-            Total Karyawan
-        </h5>
-    </div>
-    <div>
-        <h2 class="text-[74px] font-extralight">
-            1000+
-        </h2>
-        <h5 class="text-jhl-gray-1 font-medium">
-            Unit <br />
-            Mobil Terjual
-        </h5>
-    </div>
+    <?php
+    $stats = [
+        ['field' => 'stat_1', 'def_num' => '14', 'def_label' => 'Tahun <br /> Beroperasi'],
+        ['field' => 'stat_2', 'def_num' => '4', 'def_label' => 'Dealership <br /> di Indonesia'],
+        ['field' => 'stat_3', 'def_num' => '80+', 'def_label' => 'Total Karyawan'],
+        ['field' => 'stat_4', 'def_num' => '1000+', 'def_label' => 'Unit <br /> Mobil Terjual'],
+    ];
+    foreach ($stats as $s):
+        ?>
+        <div>
+            <h2 class="text-[74px] font-extralight"><?php echo get_field($s['field'] . '_num') ?: $s['def_num']; ?></h2>
+            <h5 class="text-jhl-gray-1 font-medium"><?php echo get_field($s['field'] . '_label') ?: $s['def_label']; ?></h5>
+        </div>
+    <?php endforeach; ?>
 </section>
 
 <section class="py-[110px] bg-jhl-foreground/30">
     <div class="container">
         <div class="flex mb-28">
             <div class="bg-jhl-gray-3/20 p-16 md:w-[60%]">
-                <h3 class="mb-3">Johnnathan Salim</h3>
-                <h5 class="mb-11">Direktur Utama</h5>
-                <p class="body md:max-w-[494px]">
-                    Sebagai Direktur Utama yang visioner, Johnnathan Salim memimpin JHL Auto dengan komitmen terhadap
-                    inovasi berkelanjutan dan pengembangan industri otomotif di Indonesia. Berbekal lebih dari sepuluh
-                    tahun pengalaman, beliau berhasil memposisikan JHL Auto sebagai perusahaan yang tangguh dan adaptif,
-                    memperluas jaringan distribusi, meningkatkan standar pelayanan, serta membangun kemitraan strategis
-                    untuk menghadirkan kendaraan premium ke Indonesia. Dedikasi ini memastikan JHL Auto tetap berada di
-                    garis terdepan dalam menyediakan solusi otomotif berkualitas tinggi.
-                </p>
+                <h3 class="mb-3"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?></h3>
+                <h5 class="mb-11"><?php echo get_field('director_title') ?: 'Direktur Utama'; ?></h5>
+                <div class="body md:max-w-[494px]">
+                    <?php echo get_field('director_desc') ?: 'Sebagai Direktur Utama yang visioner, Johnnathan Salim memimpin JHL Auto dengan 
+                    komitmen terhadap inovasi berkelanjutan dan pengembangan industri otomotif di Indonesia. Berbekal lebih dari sepuluh tahun pengalaman,
+                     beliau berhasil memposisikan JHL Auto sebagai perusahaan yang tangguh dan adaptif, memperluas jaringan distribusi, meningkatkan standar 
+                     pelayanan, serta membangun kemitraan strategis untuk menghadirkan kendaraan premium ke Indonesia. Dedikasi ini memastikan JHL Auto tetap 
+                     berada di garis terdepan dalam menyediakan solusi otomotif berkualitas tinggi.'; ?>
+                </div>
             </div>
             <div class="bg-white md:w-[40%] pt-10">
-                <img class="w-full h-full  max-h-[438px] object-contain"
-                    src="<?php echo get_template_directory_uri() ?>/images/direktur.png" alt="">
+                <?php
+                $dir_img = get_field('director_image');
+                $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur.png';
+                ?>
+                <img class="w-full h-full  max-h-[438px] object-contain" src="<?php echo esc_url($dir_img_url); ?>"
+                    alt="">
             </div>
         </div>
         <div>
-            <h2 class="mb-11">
-                Sosok-Sosok di Balik JHL Auto
-            </h2>
+            <h2 class="mb-11"><?php echo get_field('team_section_title') ?: 'Sosok-Sosok di Balik JHL Auto'; ?></h2>
             <div class="flex justify-between items-end mb-8">
-                <p class="body text-jhl-gray-1 md:max-w-[579px]">
-                    Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang
-                    kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama
-                    mewujudkan visi perusahaan.
-                </p>
+                <div class="body text-jhl-gray-1 md:max-w-[579px]">
+                    <?php echo get_field('team_section_desc') ?: 'Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama mewujudkan visi perusahaan.'; ?>
+                </div>
                 <div id="team-arrows" class="flex gap-2"></div>
             </div>
 
             <?php
             $args = array(
-                'post_type'      => 'team',
-                'posts_per_page' => -1, // Show all team members
-                'orderby'        => 'menu_order',
-                'order'          => 'ASC',
+                'post_type' => 'team',
+                'posts_per_page' => -1,
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
             );
 
             $team_query = new WP_Query($args);
 
-            if ($team_query->have_posts()) : ?>
-            <div class="teams -mx-2">
-                <?php while ($team_query->have_posts()) : $team_query->the_post(); 
-                $position = get_field('position');
-                $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-            ?>
-                <div class="px-2 outline-none">
-                    <div class="relative overflow-hidden rounded-lg">
-                        <?php if ($thumbnail) : ?>
-                        <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
-                            class="w-full h-full object-cover transition-transform duration-500">
-                        <?php endif; ?>
+            if ($team_query->have_posts()): ?>
+                <div class="teams -mx-2">
+                    <?php while ($team_query->have_posts()):
+                        $team_query->the_post();
+                        $position = get_field('position');
+                        $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                        ?>
+                        <div class="px-2 outline-none text-center ">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <?php if ($thumbnail): ?>
+                                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
+                                        class="w-full object-cover transition-transform duration-500 min-h-[365px]">
+                                <?php endif; ?>
 
-                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
-                            <h5 class="text-white"><?php the_title(); ?></h5>
-                            <?php if ($position) : ?>
-                            <p class="body text-white"><?php echo esc_html($position); ?></p>
-                            <?php endif; ?>
+                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
+                                    <h5 class="!text-white"><?php the_title(); ?></h5>
+                                    <?php if ($position): ?>
+                                        <p class="body text-white"><?php echo esc_html($position); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    <?php endwhile;
+                    wp_reset_postdata(); ?>
                 </div>
-                <?php endwhile; wp_reset_postdata(); ?>
-            </div>
             <?php endif; ?>
         </div>
     </div>
 </section>
 
-<?php get_footer();
+<?php get_footer(); ?>

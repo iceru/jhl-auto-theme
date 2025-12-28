@@ -88,4 +88,40 @@ function filter_news_func()
 
     wp_die(); // Always use wp_die() in AJAX
 }
+
+add_filter('wpcf7_form_tag', 'dynamic_dealer_dropdown_options', 10, 2);
+
+function dynamic_dealer_dropdown_options($tag, $unused)
+{
+    // Check if this is the field we want to target
+    if ($tag['name'] != 'dealer-list') {
+        return $tag;
+    }
+
+    $args = array(
+        'post_type' => 'dealers',
+        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+    );
+
+    $dealers = get_posts($args);
+
+    if (!$dealers) {
+        return $tag;
+    }
+
+    // Start with a default empty option
+    $tag['raw_values'][] = '';
+    $tag['values'][] = '';
+    $tag['labels'][] = '--- Pilih Dealer ---';
+
+    foreach ($dealers as $dealer) {
+        $tag['raw_values'][] = $dealer->post_title;
+        $tag['values'][] = $dealer->post_title;
+        $tag['labels'][] = $dealer->post_title;
+    }
+
+    return $tag;
+}
 tailpress();
