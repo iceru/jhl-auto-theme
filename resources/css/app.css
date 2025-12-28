@@ -83,6 +83,10 @@ header {
   overflow: visible !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 
 #car {
   width: 120px;

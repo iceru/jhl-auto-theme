@@ -15,15 +15,18 @@
         <h2 class="text-2xl md:text-[44px] mb-11 font-light">
             <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
         </h2>
-        <div class="body md:mb-[73px]">
+        <div class="body mb-14 md:mb-[73px]">
             <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
         </div>
         <?php
         $about_link = get_field('about_link_url') ?: '';
         ?>
-        <a href="<?php echo esc_url($about_link); ?>"
-            class="text-xs text-jhl-gray-2 font-semibold uppercase tracking-wide">
-            <?php echo get_field('about_link_text') ?: 'Pelajari'; ?>
+        <a href="/our-story"
+            class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline">
+            <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+            <span>
+                Pelajari
+            </span>
         </a>
     </div>
     <div>
@@ -41,8 +44,8 @@
         <h2 class="text-2xl md:text-[44px] mb-6 font-light">
             <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
         </h2>
-        <p class="text-jhl-gray-1 body">
-            <?php echo get_field('promo_subtitle') ?: 'Nikmati penawaran terbaik kami hanya untuk Anda. <br /> Manfaatkan promonya dan segera dapatkan kendaraan baru yang Anda impikan!'; ?>
+        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-none">
+            <?php echo get_field('promo_subtitle') ?: 'Nikmati penawaran terbaik kami hanya untuk Anda. <br class="hidden md:block" /> Manfaatkan promonya dan segera dapatkan kendaraan baru yang Anda impikan!'; ?>
         </p>
     </div>
 
@@ -80,7 +83,7 @@
                     </a>
                 </div>
 
-        <?php endwhile;
+            <?php endwhile;
             wp_reset_postdata();
         endif; ?>
     </div>
@@ -126,7 +129,7 @@
                         </div>
                     </div>
 
-            <?php endwhile;
+                <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
@@ -146,7 +149,7 @@
 </style>
 
 <section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground">
-    <div class="container flex flex-wrap justify-between items-center">
+    <div class="container flex flex-wrap md:flex-nowrap justify-between items-center">
         <div class="mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 <?php echo get_field('awards_title') ?: 'Penghargaan Kami'; ?>
@@ -156,7 +159,8 @@
                 Berikut deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.'; ?>
             </p>
         </div>
-        <div class="awards-container grid grid-cols-2 gap-11 md:flex items-start space-x-14">
+        <div
+            class="awards-container grid w-full md:w-fit grid-cols-2 gap-11 md:flex items-start md:space-x-14 md:gap-0">
             <?php
             $args = array(
                 'post_type' => 'awards',
@@ -171,10 +175,11 @@
                 while ($awards_query->have_posts()):
                     $awards_query->the_post();
                     $is_first = ($count === 0);
-            ?>
+                    ?>
 
                     <div class="award-item text-center group cursor-pointer <?php echo $is_first ? 'active' : ''; ?>">
-                        <div class="award-image-wrapper mb-4 <?php echo $is_first ? 'opacity-100' : 'opacity-40'; ?>">
+                        <div
+                            class="award-image-wrapper flex justify-center mb-4 transition <?php echo $is_first ? 'opacity-100' : 'opacity-40'; ?>">
                             <img class="w-auto h-[130px] object-contain"
                                 src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
                         </div>
@@ -184,7 +189,7 @@
                         </p>
                     </div>
 
-                <?php $count++;
+                    <?php $count++;
                 endwhile;
                 wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -193,8 +198,8 @@
 </section>
 
 <script>
-    jQuery(document).ready(function($) {
-        $('.award-item').on('click', function() {
+    jQuery(document).ready(function ($) {
+        $('.award-item').on('click', function () {
             $('.award-image-wrapper').removeClass('opacity-100').addClass('opacity-40');
             $('.award-title').addClass('hidden').removeClass('block');
 
@@ -253,7 +258,7 @@
                         </div>
                     </div>
 
-            <?php endwhile;
+                <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
@@ -269,9 +274,13 @@
         class="hidden md:block top-0 left-0 w-full h-full object-cover absolute">
     <div class="container flex flex-col justify-center h-full p-4 md:p-0">
         <div
-            class="bg-jhl-background/20 backdrop-blur-2xl p-7 text-white w-full md:w-[486px] rounded-xl flex space-x-4 relative z-10">
-            <div>
+            class="md:bg-jhl-background/20 md:backdrop-blur-2xl p-7 text-white w-full md:w-[486px] rounded-xl flex space-x-4 relative z-10">
 
+            <div class="md:hidden absolute z-0 w-full h-full left-0 top-0">
+                <img src="<?php echo get_template_directory_uri() ?>/images/mobile-loyalty.png" alt=""
+                    class="w-full h-full object-cover rounded-lg">
+            </div>
+            <div class="relative z-10">
                 <div class="flex justify-between">
                     <div>
                         <p class="mb-5 text-[10px] tracking-wider uppercase">

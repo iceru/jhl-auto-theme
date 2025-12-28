@@ -15,8 +15,8 @@
 
 <footer class="bg-jhl-black text-white py-11 md:pt-16 md:pb-8" role="contentinfo">
     <div class="container">
-        <div class="flex flex-wrap justify-between space-y-24 md:space-y-0">
-            <div class="flex flex-wrap items-center" id="logo">
+        <div class="flex flex-wrap md:flex-nowrap justify-between space-y-24 md:space-y-0">
+            <div class="flex flex-wrap md:flex-nowrap items-center" id="logo">
                 <div class="pr-10 mr-10 border-r border-jhl-gray-2">
                     <img src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="" class="mb-5">
                     <p class="text-xs text-center">
@@ -33,8 +33,8 @@
                     </p>
                 </div>
             </div>
-            <div class="flex flex-wrap space-x-16 " id="footer-nav">
-                <div class="w-[48%] md:w-fit">
+            <div class="flex flex-wrap md:flex-nowrap md:space-x-16 w-full md:w-fit" id="footer-nav">
+                <div class="w-[48%] md:w-fit mb-20 md:mb-0">
                     <p class="font-medium text-[10px] text-jhl-gray-1 uppercase leading-[27px] tracking-widest mb-6">
                         NAVIGASI
                     </p>
@@ -56,7 +56,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="w-[48%] md:w-fit">
+                <div class="w-[48%] md:w-fit order-3 md:order-2">
                     <p class="font-medium text-[10px] text-jhl-gray-1 uppercase leading-[27px] tracking-widest mb-6">
                         Brands
                     </p>
@@ -73,7 +73,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="w-[48%] md:w-fit">
+                <div class="w-[48%] md:w-fit order-2 md:order-3">
                     <p class="font-medium text-[10px] text-jhl-gray-1 uppercase leading-[27px] tracking-widest mb-6">
                         Updates
                     </p>
