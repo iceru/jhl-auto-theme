@@ -56,17 +56,73 @@
             <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
             <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
             <div class=" max-w-[300px]">
-                <h3>2012</h3>
-                <h4 class="font-bold text-sm my-2">Authorised Jeep Dealer</h4>
-                <p class="body">Dealer Otomotif pertama JHL Auto, dan memperoleh penghargaan MURI untuk
-                    konsep Dealer "Amazon Jungle".</p>
+                <h3>2015</h3>
+                <h4 class="font-bold text-sm my-2">Garansindo Cup Jeep Agility</h4>
+                <p class="body">Menyelenggarakan event offroad skala nasional yang memperkuat komunitas Jeep Indonesia</p>
+            </div>
+        </div>
+
+
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.2">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2017</h3>
+                <h4 class="font-bold text-sm my-2">Best Jeep Dealer</h4>
+                <p class="body">Meraih penghargaan "Best Jeep Dealer Indonesia" atas keunggulan layanan dan penjualan</p>
+            </div>
+        </div>
+
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.2">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2019</h3>
+                <h4 class="font-bold text-sm my-2">Best Seller at IIMS</h4>
+                <p class="body">Berhasil menjual 60 unit Jeep, dan juga meraih 72 pemesanan selama Event IIMS (Indonesia International Motor Show)</p>
+            </div>
+        </div>
+
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.2">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2021</h3>
+                <h4 class="font-bold text-sm my-2">Best Seller Jeep</h4>
+                <p class="body">
+                    JHL Auto mampu mencatatkan
+                    penjualan sampai 100 unit dalam
+                    satu tahun saat Pandemik
+                </p>
+            </div>
+        </div>
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.2">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2024</h3>
+                <h4 class="font-bold text-sm my-2">Authorized BAIC Dealer</h4>
+                <p class="body">
+                    Berkembang menjadi Authorized BAIC Dealer di Indonesia. Dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar otomotif nasional.
+                </p>
+            </div>
+        </div>
+        <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.2">
+            <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
+            <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+            <div class=" max-w-[300px]">
+                <h3>2025</h3>
+                <h4 class="font-bold text-sm my-2">Best Start of Business</h4>
+                <p class="body">
+                    Pengakuan BAIC Global atas pencapaian JHL Auto sebagai dealer resmi BAIC di Indonesia
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const path = document.querySelector("#road-path");
         const car = document.querySelector("#car");
         const container = document.querySelector("#timeline-container");
@@ -225,7 +281,7 @@
                 $label = get_field('culture_label_' . $i);
                 $def_labels = ['', 'Integritas', 'Semangat', 'Kepuasan Pelanggan', 'Kerja Sama tim'];
                 $def_imgs = ['', 'Warranty.png', 'Fist.png', 'Heart.png', 'Crowd.png'];
-                ?>
+            ?>
                 <div>
                     <img class="w-20 h-20 object-contain mb-7"
                         src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/images/' . $def_imgs[$i]; ?>"
@@ -248,7 +304,7 @@
         ['field' => 'stat_4', 'def_num' => '1000+', 'def_label' => 'Unit <br /> Mobil Terjual'],
     ];
     foreach ($stats as $s):
-        ?>
+    ?>
         <div>
             <h2 class="text-[74px] font-extralight"><?php echo get_field($s['field'] . '_num') ?: $s['def_num']; ?></h2>
             <h5 class="text-jhl-gray-1 font-medium"><?php echo get_field($s['field'] . '_label') ?: $s['def_label']; ?></h5>
@@ -304,7 +360,7 @@
                         $team_query->the_post();
                         $position = get_field('position');
                         $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                        ?>
+                    ?>
                         <div class="px-2 outline-none text-center ">
                             <div class="relative overflow-hidden rounded-lg">
                                 <?php if ($thumbnail): ?>
