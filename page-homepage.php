@@ -1,14 +1,16 @@
 <?php get_header() ?>
 
-<section>
-    <div>
+<section class="relative w-full h-screen">
+    <div class="absolute inset-0">
         <?php
-        // Get the file URL directly from the field
-        $hero_video = get_field('hero_video_file');
-        ?>
-        <?php if ($hero_video): ?>
-            <video src="<?php echo esc_url($hero_video); ?>" autoplay muted loop playsinline
-                class="w-full h-full object-cover"></video>
+
+        $hero_video_url = get_field('hero_video_file');
+        if ($hero_video_url):
+            ?>
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         <?php endif; ?>
     </div>
 </section>
@@ -42,8 +44,8 @@
     </div>
 </section>
 
-<section class="container py-20 md:pt-32 md:pb-20">
-    <div class="md:text-center mb-12">
+<section class="container px-0 md:px-4 py-20 md:pt-32 md:pb-20">
+    <div class="md:text-center mb-12 px-4 md:px-0">
         <h2 class="text-2xl md:text-[44px] mb-6 font-light">
             <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
         </h2>
@@ -52,13 +54,13 @@
         </p>
     </div>
 
-    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6">
+    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6 pl-4 md:pl-0">
         <?php
         $args = array(
             'post_type' => 'promotion',
             'posts_per_page' => 4,
             'orderby' => 'date',
-            'order' => 'DESC'
+            'order' => 'ASC'
         );
         $promo_query = new WP_Query($args);
 
@@ -93,8 +95,8 @@
 </section>
 
 <section class="py-20 md:pt-32 md:pb-20 bg-black/80 text-white">
-    <div class="container">
-        <div class="md:text-center mb-12">
+    <div class="container px-0 md:px-4">
+        <div class="md:text-center mb-12 px-4 md:px-0">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 <?php echo get_field('branches_title') ?: 'Cabang Kami'; ?>
             </h2>
@@ -103,7 +105,8 @@
             </p>
         </div>
 
-        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6">
+        <div
+            class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6 pl-4 md:pl-0">
             <?php
             $args = array(
                 'post_type' => 'dealer',
@@ -307,10 +310,10 @@
                 </p>
                 <p><?php echo get_field('loyalty_cta_text') ?: 'Download Now'; ?></p>
                 <div class="flex space-x-4 items-center">
-                    <a href="<?php echo get_field('app_store_url') ?: '#'; ?>">
+                    <a href="<?php echo get_field('app_store_url') ?: '#'; ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri() ?>/images/app-store.png" alt="App Store">
                     </a>
-                    <a href="<?php echo get_field('play_store_url') ?: '#'; ?>">
+                    <a href="<?php echo get_field('play_store_url') ?: '#'; ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri() ?>/images/google-play.png" alt="Google Play">
                     </a>
                 </div>

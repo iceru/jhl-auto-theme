@@ -3,7 +3,7 @@
     padding-inline: 0;
 
     @media (max-width: theme('screens.sm')) {
-        padding-inline: 1.5rem;
+        padding-inline: 1rem;
     }
 }
 

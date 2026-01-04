@@ -145,11 +145,14 @@
 
         <aside id="main-sidebar"
             class="fixed inset-0 z-[60] bg-jhl-gray-1 transform -translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex flex-col justify-between items-center h-full pt-[22px] pb-36 px-4">
+            <div class="flex flex-col justify-between items-center h-full pt-[22px] pb-24 px-4">
 
-                <div class="flex justify-between items-center w-full px-4" id="sidebar-header">
+                <div class="flex justify-between items-center w-full" id="sidebar-header">
                     <div id="back-container" class="invisible opacity-0 transition-opacity duration-200 cursor-pointer">
-                        <div class="back-to-main text-white text-sm uppercase tracking-widest font-medium">← Back</div>
+                        <div class="back-to-main text-white text-sm uppercase tracking-widest font-medium">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/chevron-left.png" class="h-5"
+                                alt="">
+                        </div>
                     </div>
                     <div id="close-sidebar"
                         class="text-white text-sm uppercase tracking-widest font-medium cursor-pointer">✕</div>
@@ -191,8 +194,8 @@
                 <div>
                     <a href="javascript:void(0)" id="open-contact"
                         class="text-[13px] font-medium flex items-center !no-underline space-x-1 text-white">
-                        <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png"
-                            class="size-3 invert" alt="">
+                        <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3"
+                            alt="">
                         <span>Contact</span>
                     </a>
                 </div>
@@ -265,7 +268,7 @@
             </div>
         </div>
 
-        <div class="fixed bottom-6 right-6 z-[999] flex flex-col items-end space-y-4">
+        <div class="fixed bottom-6 right-6 z-[50] flex flex-col items-end space-y-4">
             <button id="social-toggle"
                 class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center transition-transform duration-300">
                 <svg id="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
