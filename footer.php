@@ -62,7 +62,7 @@
                     </p>
                     <ul class="text-white space-y-3">
                         <li>
-                            <a href="/our-story" class="text-xs !no-underline">
+                            <a href="https://baic.codeomnia.com" class="text-xs !no-underline">
                                 BAIC
                             </a>
                         </li>

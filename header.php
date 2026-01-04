@@ -92,7 +92,7 @@
                                         </div>
 
                                         <div class="relative z-10">
-                                            <a href="#"
+                                            <a href="https://baic.codeomnia.com"
                                                 class="text-xs uppercase flex justify-between items-center !no-underline mb-5 pb-5 border-b border-white/10">
                                                 <span>BAIC</span>
                                                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png"
@@ -181,7 +181,8 @@
 
                     <ul id="submenu-brands"
                         class="hidden absolute inset-0 flex flex-col space-y-8 justify-center items-center px-10 text-center transition-all duration-300">
-                        <li><a href="#" class="text-white uppercase font-medium tracking-widest">BAIC</a></li>
+                        <li><a href="https://baic.codeomnia.com"
+                                class="text-white uppercase font-medium tracking-widest">BAIC</a></li>
                         <li><a href="/service-center" class="text-white uppercase font-medium tracking-widest">Service
                                 Center</a></li>
                     </ul>
