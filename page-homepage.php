@@ -44,8 +44,8 @@
     </div>
 </section>
 
-<section class="container px-0 md:px-4 py-20 md:pt-32 md:pb-20">
-    <div class="md:text-center mb-12 px-4 md:px-0">
+<section class="container pr-0 md:pr-4 py-20 md:pt-32 md:pb-20">
+    <div class="md:text-center mb-12 pr-4 md:pr-0">
         <h2 class="text-2xl md:text-[44px] mb-6 font-light">
             <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
         </h2>
@@ -54,7 +54,7 @@
         </p>
     </div>
 
-    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6 pl-4 md:pl-0">
+    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6">
         <?php
         $args = array(
             'post_type' => 'promotion',
@@ -95,8 +95,8 @@
 </section>
 
 <section class="py-20 md:pt-32 md:pb-20 bg-black/80 text-white">
-    <div class="container px-0 md:px-4">
-        <div class="md:text-center mb-12 px-4 md:px-0">
+    <div class="container pr-0 md:pr-4">
+        <div class="md:text-center mb-12 pr-4 md:pr-0">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 <?php echo get_field('branches_title') ?: 'Cabang Kami'; ?>
             </h2>
@@ -105,8 +105,7 @@
             </p>
         </div>
 
-        <div
-            class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6 pl-4 md:pl-0">
+        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6">
             <?php
             $args = array(
                 'post_type' => 'dealer',
