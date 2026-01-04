@@ -3,10 +3,13 @@
 <section>
     <div>
         <?php
-        $hero_video = get_field('hero_video_url');
+        // Get the file URL directly from the field
+        $hero_video = get_field('hero_video_file');
         ?>
-        <video src="<?php echo esc_url($hero_video); ?>" autoplay muted loop playsinline
-            class="w-full h-full object-cover"></video>
+        <?php if ($hero_video): ?>
+            <video src="<?php echo esc_url($hero_video); ?>" autoplay muted loop playsinline
+                class="w-full h-full object-cover"></video>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -159,8 +162,7 @@
                 Berikut deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.'; ?>
             </p>
         </div>
-        <div
-            class="awards-container grid w-full md:w-fit grid-cols-2 gap-11 md:flex items-start md:space-x-14 md:gap-0">
+        <div class="awards-container grid w-full md:w-fit grid-cols-2 gap-6 md:flex items-start md:space-x-14 md:gap-0">
             <?php
             $args = array(
                 'post_type' => 'awards',

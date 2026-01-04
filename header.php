@@ -265,7 +265,6 @@
         </div>
 
         <div class="fixed bottom-6 right-6 z-[999] flex flex-col items-end space-y-4">
-
             <button id="social-toggle"
                 class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center transition-transform duration-300">
                 <svg id="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
