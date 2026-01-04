@@ -121,7 +121,7 @@
                 </div>
                 <div>
                     <a href="javascript:void(0)" id="open-contact"
-                        class="text-[13px] font-medium flex items-center !no-underline space-x-1">
+                        class="text-[13px] font-medium flex items-center !no-underline space-x-2">
                         <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3"
                             alt="">
                         <span>Contact</span>

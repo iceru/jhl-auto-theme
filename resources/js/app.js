@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
     let mainNavigation = document.getElementById('primary-navigation')
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
 
-    if(mainNavigation && mainNavigationToggle) {
+    if (mainNavigation && mainNavigationToggle) {
         mainNavigationToggle.addEventListener('click', function (e) {
             e.preventDefault()
             mainNavigation.classList.toggle('hidden')
@@ -11,10 +11,10 @@ window.addEventListener('load', function () {
 })
 
 
-$(document).ready(function($) {
+$(document).ready(function ($) {
     $('.teams').slick({
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 4.5,
         slidesToScroll: 1,
@@ -37,7 +37,7 @@ $(document).ready(function($) {
             }
         ]
     });
-    
+
     $('#services-slider').slick({
         dots: false,
         infinite: false,

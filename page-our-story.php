@@ -44,8 +44,8 @@
             $car_icon = get_field('timeline_car_icon');
             $car_icon_url = $car_icon ? $car_icon['url'] : get_template_directory_uri() . '/images/car.png';
             ?>
-            <img src="<?php echo esc_url($car_icon_url); ?>" id="car-img" style="width: 44px; height: 99px;"
-                class="object-contain rotate-180" alt="car">
+            <img src="<?php echo esc_url($car_icon_url); ?>" id="car-img"
+                class="object-contain rotate-180 w-[33px] md:w-[44px] h-[99px]" alt="car">
         </div>
 
         <div id="story-layer" class="absolute inset-0 pointer-events-none">
