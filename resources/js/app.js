@@ -44,9 +44,7 @@ $(document).ready(function ($) {
         speed: 500,
         slidesToShow: 3.5, // The magic number for 3 and a half items
         slidesToScroll: 1,
-        appendArrows: $('#service-arrows'),
-        prevArrow: '<button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-500 text-white hover:bg-gray-700 transition-all"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></button>',
-        nextArrow: '<button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-500 text-white hover:bg-gray-700 transition-all"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></button>',
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1024,

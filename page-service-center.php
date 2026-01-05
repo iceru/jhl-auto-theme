@@ -2,7 +2,7 @@
 
 <section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px]">
     <div>
-        <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
+        <img class="absolute top-0 left-0 w-full h-full object-cover object-[30%_center] md:object-center"
             src="<?php echo get_template_directory_uri() ?>/images/service-hero.png" alt="">
     </div>
     <div class="absolute left-0 bottom-0 w-full h-[80%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
@@ -61,7 +61,7 @@
 <section class="py-20 bg-beijing-black">
     <div class="container text-white">
         <div class="text-[28px] leading-[30px] mb-12">PROMOTIONS</div>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-[14px]">
+        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-5 gap-[14px]">
             <?php
             $args = array(
                 'post_type' => 'promotion',
@@ -75,18 +75,19 @@
                 while ($promo_query->have_posts()):
                     $promo_query->the_post(); ?>
 
-                    <div>
-                        <?php if (has_post_thumbnail()): ?>
-                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover mb-8"
-                                alt="<?php the_title(); ?>">
-                        <?php endif; ?>
+                    <div class="flex-none w-[75%] snap-start md:w-full">
+                        <div class="mb-8">
+                            <?php if (has_post_thumbnail()): ?>
+                                <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
+                            <?php endif; ?>
+                        </div>
 
-                        <h5 class="mb-8 !text-white line-clamp-2 overflow-ellipsis">
+                        <h5 class="leading-[22px] font-medium mb-6 !text-white">
                             <?php the_title(); ?>
                         </h5>
 
                         <a href="<?php the_permalink(); ?>"
-                            class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold uppercase tracking-wide !no-underline">
+                            class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                             <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                             <span>
                                 Learn More
