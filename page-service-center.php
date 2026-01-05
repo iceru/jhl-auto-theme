@@ -31,27 +31,28 @@
             'posts_per_page' => -1,
         ]);
 
-        if ($service_query->have_posts()) :
-            while ($service_query->have_posts()) : $service_query->the_post(); ?>
+        if ($service_query->have_posts()):
+            while ($service_query->have_posts()):
+                $service_query->the_post(); ?>
 
                 <div class="px-3 outline-none">
                     <div class="flex flex-col h-full">
-                        <div class="rounded-lg overflow-hidden aspect-video mb-4">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('large', ['class' => 'w-full h-[426px] rounded object-cover']); ?>
-                            <?php else : ?>
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <?php if (has_post_thumbnail()): ?>
+                                <?php the_post_thumbnail('large', ['class' => 'w-[384px] h-[426px] rounded object-cover']); ?>
+                            <?php else: ?>
                                 <div class="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
                             <?php endif; ?>
                         </div>
 
-                        <h4 class="text-xl font-bold mb-2"><?php the_title(); ?></h4>
+                        <h4 class="text-xl mb-2"><?php the_title(); ?></h4>
                         <p class="body text-jhl-gray-1 text-sm">
                             <?php echo get_the_excerpt(); ?>
                         </p>
                     </div>
                 </div>
 
-        <?php endwhile;
+            <?php endwhile;
             wp_reset_postdata();
         endif; ?>
     </div>
@@ -63,18 +64,19 @@
         <div class="grid grid-cols-2 md:grid-cols-5 gap-[14px]">
             <?php
             $args = array(
-                'post_type'      => 'promotions',
+                'post_type' => 'promotion',
                 'posts_per_page' => 5,
-                'orderby'        => 'date',
-                'order'          => 'DESC'
+                'orderby' => 'date',
+                'order' => 'DESC'
             );
             $promo_query = new WP_Query($args);
 
-            if ($promo_query->have_posts()) :
-                while ($promo_query->have_posts()) : $promo_query->the_post(); ?>
+            if ($promo_query->have_posts()):
+                while ($promo_query->have_posts()):
+                    $promo_query->the_post(); ?>
 
                     <div>
-                        <?php if (has_post_thumbnail()) : ?>
+                        <?php if (has_post_thumbnail()): ?>
                             <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover mb-8"
                                 alt="<?php the_title(); ?>">
                         <?php endif; ?>
@@ -92,7 +94,7 @@
                         </a>
                     </div>
 
-            <?php endwhile;
+                <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
