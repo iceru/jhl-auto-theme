@@ -15,33 +15,36 @@
     </div>
 </section>
 
-<section class="grid md:grid-cols-2 md:h-screen bg-jhl-foreground/30">
-    <div class="flex flex-col justify-center px-4 md:px-20 py-20 md:py-0">
-        <h2 class="text-2xl md:text-[44px] mb-11 font-light">
-            <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
-        </h2>
-        <div class="body mb-14 md:mb-[73px]">
-            <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
+<section class="bg-jhl-foreground/30">
+    <div class="container grid md:grid-cols-2 md:h-screen">
+        <div class="flex flex-col justify-center px-4 md:px-20 py-20 md:py-0">
+            <h2 class="text-2xl md:text-[44px] mb-11 font-light">
+                <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
+            </h2>
+            <div class="body mb-14 md:mb-[73px]">
+                    <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
+                </div>
+                <?php
+                $about_link = get_field('about_link_url') ?: '';
+                ?>
+                <a href="/our-story"
+                    class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                    <span>
+                        Pelajari
+                    </span>
+                </a>
         </div>
-        <?php
-        $about_link = get_field('about_link_url') ?: '';
-        ?>
-        <a href="/our-story"
-            class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline">
-            <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
-            <span>
-                Pelajari
-            </span>
-        </a>
+        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full">
+            <?php
+            $about_img = get_field('about_image');
+            $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
+            ?>
+            <img src="<?php echo esc_url($about_img_url); ?>" alt="Sekilas Tentang Kami"
+                class=" top-0 left-0 w-full h-full object-cover">
+        </div>
     </div>
-    <div>
-        <?php
-        $about_img = get_field('about_image');
-        $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
-        ?>
-        <img src="<?php echo esc_url($about_img_url); ?>" alt="Sekilas Tentang Kami"
-            class=" top-0 left-0 w-full h-full object-cover">
-    </div>
+    
 </section>
 
 <section class="container pr-0 md:pr-4 py-20 md:pt-32 md:pb-20">
@@ -269,7 +272,7 @@
     </div>
 </section>
 
-<section class="relative md:h-[70vh] w-full py-16">
+<section class="relative md:min-h-[70vh] w-full py-16">
     <?php
     $loyalty_bg = get_field('loyalty_bg');
     $loyalty_bg_url = $loyalty_bg ? $loyalty_bg['url'] : get_template_directory_uri() . '/images/header-home-1.png';
