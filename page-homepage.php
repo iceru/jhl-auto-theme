@@ -16,8 +16,8 @@
 </section>
 
 <section class="bg-jhl-foreground/30 relative md:h-screen">
-    <div class="container grid md:grid-cols-2">
-        <div class="flex flex-col justify-center px-4 md:px-20 py-20 md:py-0">
+    <div class="container grid md:grid-cols-2 md:h-screen">
+        <div class="flex flex-col justify-center px-4 md:pr-20 py-20 md:py-0">
             <h2 class="text-2xl md:text-[44px] mb-11 font-light">
                 <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
             </h2>
@@ -35,7 +35,7 @@
                     </span>
                 </a>
         </div>
-        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full">
+        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-8 md:mx-0">
             <?php
             $about_img = get_field('about_image');
             $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
