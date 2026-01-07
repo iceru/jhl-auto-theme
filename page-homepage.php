@@ -15,8 +15,8 @@
     </div>
 </section>
 
-<section class="bg-jhl-foreground/30">
-    <div class="container grid md:grid-cols-2 md:h-screen">
+<section class="bg-jhl-foreground/30 relative md:h-screen">
+    <div class="container grid md:grid-cols-2">
         <div class="flex flex-col justify-center px-4 md:px-20 py-20 md:py-0">
             <h2 class="text-2xl md:text-[44px] mb-11 font-light">
                 <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
