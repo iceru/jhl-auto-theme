@@ -22,18 +22,18 @@
                 <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
             </h2>
             <div class="body mb-14 md:mb-[73px]">
-                    <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
-                </div>
-                <?php
-                $about_link = get_field('about_link_url') ?: '';
-                ?>
-                <a href="/our-story"
-                    class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
-                    <span>
-                        Pelajari
-                    </span>
-                </a>
+                <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
+            </div>
+            <?php
+            $about_link = get_field('about_link_url') ?: '';
+            ?>
+            <a href="/our-story"
+                class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline">
+                <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                <span>
+                    Pelajari
+                </span>
+            </a>
         </div>
         <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-4 md:mx-0">
             <?php
@@ -44,7 +44,7 @@
                 class=" top-0 left-0 w-full h-full object-cover">
         </div>
     </div>
-    
+
 </section>
 
 <section class="container pr-0 md:pr-4 py-20 md:pt-32 md:pb-20">
@@ -143,19 +143,6 @@
         </div>
     </div>
 </section>
-
-<style>
-    /* Add this to your CSS file to hide the scrollbars while keeping functionality */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-</style>
-
 <section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground">
     <div class="container flex flex-wrap md:flex-nowrap justify-between items-center">
         <div class="mb-12">
@@ -235,7 +222,7 @@
             </a>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="flex overflow-x-auto -mr-4 md:mr-0 snap-x snap-mandatory md:grid md:grid-cols-3 gap-4 no-scrollbar">
             <?php
             $args = array('post_type' => 'post', 'posts_per_page' => 3);
             $news_query = new WP_Query($args);
@@ -244,11 +231,11 @@
                 while ($news_query->have_posts()):
                     $news_query->the_post(); ?>
 
-                    <div class="bg-[#060606]/20 backdrop-blur-xl text-white rounded-lg">
+                    <div class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
                         <div class="mb-4">
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="rounded-lg w-full">
                         </div>
-                        <div class="py-6 px-8">
+                        <div class="py-4 md:py-6 px-6 md:px-8">
                             <small class="text-[10px] uppercase tracking-wide block mb-3">
                                 <?php echo get_the_date('d F Y'); ?>
                             </small>
@@ -271,6 +258,19 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* Add this to your CSS file to hide the scrollbars while keeping functionality */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
 
 <section class="relative md:min-h-[70vh] w-full py-16">
     <?php
