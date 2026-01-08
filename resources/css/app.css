@@ -125,3 +125,28 @@ p.body {
   font-weight: 500;
   line-height: 24px;
 }
+
+.slider-full-right {
+  /* Default (Mobile/Small) */
+  margin-left: 1rem;
+
+  /* Match 1200px container */
+  @media (min-width: 1200px) {
+    margin-left: calc((100vw - 1200px) / 2);
+  }
+
+  /* Match 1440px container */
+  @media (min-width: 1440px) {
+    margin-left: calc((100vw - 1320px) / 2);
+  }
+
+  /* Match 1920px container */
+  @media (min-width: 1920px) {
+    margin-left: calc((100vw - 1800px) / 2);
+  }
+
+  /* Match 2560px container */
+  @media (min-width: 2560px) {
+    margin-left: calc((100vw - 2400px) / 2);
+  }
+}

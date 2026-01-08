@@ -374,18 +374,14 @@
     <?php endforeach; ?>
 </section>
 
-<section class="py-[110px] bg-jhl-foreground/30">
+<section class="py-[110px] bg-jhl-foreground/30 overflow-x-hidden">
     <div class="container">
         <div class="flex flex-col md:flex-row mb-28">
             <div class="bg-jhl-gray-3/20 order-2 md:order-1 px-9 py-16 md:p-16 md:w-[60%]">
                 <h3 class="mb-3"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?></h3>
                 <h5 class="mb-11"><?php echo get_field('director_title') ?: 'Direktur Utama'; ?></h5>
                 <div class="body md:max-w-[494px]">
-                    <?php echo get_field('director_desc') ?: 'Sebagai Direktur Utama yang visioner, Johnnathan Salim memimpin JHL Auto dengan 
-                    komitmen terhadap inovasi berkelanjutan dan pengembangan industri otomotif di Indonesia. Berbekal lebih dari sepuluh tahun pengalaman,
-                     beliau berhasil memposisikan JHL Auto sebagai perusahaan yang tangguh dan adaptif, memperluas jaringan distribusi, meningkatkan standar 
-                     pelayanan, serta membangun kemitraan strategis untuk menghadirkan kendaraan premium ke Indonesia. Dedikasi ini memastikan JHL Auto tetap 
-                     berada di garis terdepan dalam menyediakan solusi otomotif berkualitas tinggi.'; ?>
+                    <?php echo get_field('director_desc') ?: 'Sebagai Direktur Utama...'; ?>
                 </div>
             </div>
             <div class="bg-white md:w-[40%] pt-10 order-1 md:order-2">
@@ -393,10 +389,10 @@
                 $dir_img = get_field('director_image');
                 $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur.png';
                 ?>
-                <img class="w-full h-full  max-h-[438px] object-contain" src="<?php echo esc_url($dir_img_url); ?>"
-                    alt="">
+                <img class="w-full h-full max-h-[438px] object-contain" src="<?php echo esc_url($dir_img_url); ?>" alt="">
             </div>
         </div>
+
         <div>
             <h2 class="mb-11"><?php echo get_field('team_section_title') ?: 'Sosok-Sosok di Balik JHL Auto'; ?></h2>
             <div class="flex justify-between items-end mb-8">
@@ -405,45 +401,46 @@
                 </div>
                 <div id="team-arrows" class="flex gap-2"></div>
             </div>
-
-            <?php
-            $args = array(
-                'post_type' => 'team',
-                'posts_per_page' => -1,
-                'orderby' => 'menu_order',
-                'order' => 'ASC',
-            );
-
-            $team_query = new WP_Query($args);
-
-            if ($team_query->have_posts()): ?>
-                <div class="teams -mx-2">
-                    <?php while ($team_query->have_posts()):
-                        $team_query->the_post();
-                        $position = get_field('position');
-                        $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                        ?>
-                        <div class="px-2 outline-none text-center ">
-                            <div class="relative overflow-hidden rounded-lg">
-                                <?php if ($thumbnail): ?>
-                                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
-                                        class="w-full object-cover transition-transform duration-500 min-h-[365px]">
-                                <?php endif; ?>
-
-                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
-                                    <h5 class="!text-white"><?php the_title(); ?></h5>
-                                    <?php if ($position): ?>
-                                        <p class="body text-white"><?php echo esc_html($position); ?></p>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endwhile;
-                    wp_reset_postdata(); ?>
-                </div>
-            <?php endif; ?>
         </div>
     </div>
-</section>
 
+    <div class="slider-full-right pl-4">
+        <?php
+        $args = array(
+            'post_type' => 'team',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+        );
+
+        $team_query = new WP_Query($args);
+
+        if ($team_query->have_posts()): ?>
+            <div class="teams -mx-2">
+                <?php while ($team_query->have_posts()):
+                    $team_query->the_post();
+                    $position = get_field('position');
+                    $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                    ?>
+                    <div class="px-2 outline-none text-center ">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <?php if ($thumbnail): ?>
+                                <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
+                                    class="w-full object-cover transition-transform duration-500 min-h-[365px]">
+                            <?php endif; ?>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
+                                <h5 class="!text-white"><?php the_title(); ?></h5>
+                                <?php if ($position): ?>
+                                    <p class="body text-white"><?php echo esc_html($position); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile;
+                wp_reset_postdata(); ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
 <?php get_footer(); ?>
