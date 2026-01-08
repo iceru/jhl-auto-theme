@@ -23,7 +23,7 @@
 </section>
 <section class="bg-jhl-foreground py-16">
     <div id="timeline-container" class="relative w-full max-w-4xl md:left-[9%] mx-auto mb-24 h-[949.5px] md:h-[1899px]">
-        <div class="absolute mx-auto h-auto md:h-[1689px] -left-16 w-[350px] md:w-[953px] mt-[110px]">
+        <div class="absolute mx-auto h-auto md:h-[1689px] -left-27 w-[350px] md:w-[953px] mt-[110px]">
             <?php
             $jhl_bg = get_field('jhl_bg_image');
             $jhl_bg_url = $jhl_bg ? $jhl_bg['url'] : get_template_directory_uri() . '/images/jhl-bg.png';

@@ -17,7 +17,7 @@
 
 <section class="bg-jhl-foreground/30 relative md:h-screen">
     <div class="container grid md:grid-cols-2 md:h-screen">
-        <div class="flex flex-col justify-center px-4 md:pr-20 py-20 md:py-0">
+        <div class="flex flex-col justify-center md:pr-20 py-20 md:py-0">
             <h2 class="text-2xl md:text-[44px] mb-11 font-light">
                 <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
             </h2>
@@ -35,7 +35,7 @@
                     </span>
                 </a>
         </div>
-        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-8 md:mx-0">
+        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-4 md:mx-0">
             <?php
             $about_img = get_field('about_image');
             $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
@@ -218,7 +218,7 @@
 
 <section class="py-20 md:pt-32 md:pb-20 bg-jhl-gray-3">
     <div class="container">
-        <div class="text-center mb-12">
+        <div class="md:text-center mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light">
                 <?php echo get_field('news_title') ?: 'Berita Terbaru'; ?>
             </h2>
@@ -226,7 +226,7 @@
                 <?php echo get_field('news_subtitle') ?: 'Jadilah yang pertama tahu mengenai JHL Auto. Peluncuran model kendaraan terkini, aktivitas dealer resmi, hingga layanan dan inovasi, semua ada di sini.'; ?>
             </p>
             <a href="/news"
-                class="text-xs flex items-center justify-center space-x-2 text-jhl-black font-semibold tracking-wide !no-underline uppercase">
+                class="text-xs flex items-center md:justify-center space-x-2 text-jhl-black font-semibold tracking-wide !no-underline uppercase">
                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" class="brightness-20"
                     alt="">
                 <span>
