@@ -375,7 +375,7 @@
     <div class="grid md:grid-cols-3 gap-6 mb-6">
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_1_title') ?: 'Kesempatan'; ?></h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+            <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_1_sub') ?: 'Opportunity'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
@@ -384,7 +384,7 @@
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_2_title') ?: 'Kerja Keras'; ?></h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+            <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_2_sub') ?: 'Work Hard'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
@@ -393,7 +393,7 @@
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_3_title') ?: 'Kerja Cerdas'; ?></h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+            <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_3_sub') ?: 'Smart Work'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
@@ -404,7 +404,7 @@
     <div class="flex justify-center items-center space-y-6 md:space-y-0 md:space-x-6 w-full flex-wrap mx-auto">
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_4_title') ?: 'Kerja Tuntas'; ?></h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+            <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_4_sub') ?: 'Complete Work'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
@@ -413,7 +413,7 @@
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_5_title') ?: 'Loyalitas'; ?></h3>
-            <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
+            <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_5_sub') ?: 'Loyalty'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
