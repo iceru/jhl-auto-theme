@@ -60,4 +60,23 @@ $(document).ready(function ($) {
             }
         ]
     });
+
+    $('.vacancy-trigger').on('click', function () {
+        if ($(this).hasClass('is-active')) return;
+
+        const target = $(this).data('target');
+
+        // 1. Manage Active Class logic for Triggers
+        $('.vacancy-trigger')
+            .removeClass('is-active opacity-100')
+            .addClass('opacity-40 hover:opacity-70');
+
+        $(this)
+            .addClass('is-active opacity-100')
+            .removeClass('opacity-40 hover:opacity-70');
+
+        // 2. Manage Content Visibility
+        $('.vacancy-content').hide();
+        $('#' + target).stop(true, true).fadeIn(400);
+    });
 });

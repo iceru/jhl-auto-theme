@@ -173,18 +173,18 @@
             <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
                 <div class="md:col-span-3 flex flex-col gap-4 p-6 border border-white rounded-lg">
-                    <h5 class="font-bold uppercase mb-10">Roles</h5>
+                    <h5 class="font-bold uppercase mb-2 !text-white">Roles</h5>
                     <?php foreach ($vacancies as $index => $vacancy):
-                        $active_class = ($index === 0) ? 'opacity-100 border-white bg-white/10 is-active' : 'opacity-40 border-white/20 hover:opacity-70';
+                        $active_class = ($index === 0) ? 'opacity-100 is-active' : 'opacity-40 hover:opacity-70';
                         ?>
                         <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
-                            class="vacancy-trigger text-left border transition-all duration-300 group <?php echo $active_class; ?>">
-                            <h5><?php echo get_the_title($vacancy->ID); ?></h5>
+                            class="vacancy-trigger text-left transition-all duration-300 group <?php echo $active_class; ?>">
+                            <h5 class="!text-white"><?php echo get_the_title($vacancy->ID); ?></h5>
                         </button>
                     <?php endforeach; ?>
                 </div>
 
-                <div class="md:col-span-9 bg-white/5 rounded-lg p-8 border border-white/10 relative min-h-[400px]">
+                <div class="md:col-span-9  rounded-lg relative min-h-[400px] vacancy-text">
                     <?php foreach ($vacancies as $index => $vacancy):
                         // Show first item by default, hide others
                         $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
@@ -192,12 +192,12 @@
                         <div id="vacancy-<?php echo $vacancy->ID; ?>" class="vacancy-content"
                             style="<?php echo $display_style; ?>">
 
-                            <div class="prose prose-invert max-w-none prose-p:text-gray-300">
+                            <div class="body">
                                 <?php echo apply_filters('the_content', $vacancy->post_content); ?>
                             </div>
 
                             <a href="<?php echo get_permalink($vacancy->ID); ?>"
-                                class="inline-block mt-8 px-8 py-3 bg-white text-jhl-gray-2 font-bold rounded-full hover:bg-gray-200 transition-colors">
+                                class="inline-block mt-14 px-4 py-2 bg-jhl-black text-white font-bold rounded-sm hover:bg-gray-200 transition-colors">
                                 Apply Now
                             </a>
                         </div>

@@ -22,20 +22,28 @@
     </div>
 </section>
 <section class="bg-jhl-foreground py-16">
-    <div id="timeline-container" class="relative w-full max-w-4xl md:left-[9%] mx-auto mb-24 h-[949.5px] md:h-[1899px]">
-        <div class="absolute mx-auto h-auto md:h-[1689px] -left-27 w-[350px] md:w-[953px] mt-[110px]">
+    <div id="timeline-container" class="relative w-full max-w-4xl md:left-[9%] mx-auto mb-24 h-[2401px] md:h-[1899px]">
+        <div class="absolute mx-auto hidden md:block h-[1689px] -left-27 w-[953px] mt-[110px]">
             <?php
             $jhl_bg = get_field('jhl_bg_image');
             $jhl_bg_url = $jhl_bg ? $jhl_bg['url'] : get_template_directory_uri() . '/images/jhl-bg.png';
             ?>
             <img class="w-full h-full" src="<?php echo esc_url($jhl_bg_url); ?>" alt="">
         </div>
-        <svg class="absolute top-0 right-12 h-full pointer-events-none md:scale-100 w-[290px] md:w-[580px]"
+        <svg class="absolute hidden md:block top-0 right-12 h-full pointer-events-none md:scale-100 w-[290px] md:w-[580px]"
             viewBox="0 0 583 1899" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="road-path"
                 d="M2.5 2.5V349.437H515.079L553.59 558.084H256.01V617.12H565.493L579.496 827.385H173.388V1075.66H579.496C579.73 1129.3 568.294 1278.65 568.294 1278.65H256.711V1341.72H558.491L526.282 1546.33H2.5V1896.5"
                 stroke="#808285" stroke-width="5" stroke-linecap="round" opacity="0.7" />
         </svg>
+
+        <svg class="absolute block md:hidden left-20" width="93" height="2401" viewBox="0 0 93 2401" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.7" id="road-path-mobile"
+                d="M1.50009 1.5V194.612H80.5634L86.5035 227H1.5V1007.9H88.3395L90.4995 1040.54H27.8589V1079.08H90.4995C90.5355 1087.41 88.7715 1110.59 88.7715 1110.59H1.608L1.60791 1728H87.2594L82.2914 1759.76H1.5V2399"
+                stroke="#808285" stroke-width="3" stroke-linecap="round" />
+        </svg>
+
 
         <div id="car"
             class="fixed top-0 left-0 w-16 h-16 md:w-[120px] md:h-[120px] z-50 pointer-events-none flex items-center justify-center"
@@ -48,7 +56,8 @@
                 class="object-contain rotate-180 w-[33px] md:w-[44px] h-[99px]" alt="car">
         </div>
 
-        <div id="story-layer" class="absolute inset-0 pointer-events-none">
+        <!-- Desktop Story Layer -->
+        <div id="story-layer-desktop" class="absolute inset-0 pointer-events-none hidden md:block">
             <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.04">
                 <div
                     class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
@@ -57,9 +66,8 @@
                 <div class=" max-w-[300px]">
                     <h3>2012</h3>
                     <h4 class="font-bold text-sm my-2">Authorised Jeep Dealer</h4>
-                    <p class="body hidden md:block">Dealer Otomotif pertama JHL Auto, dan memperoleh
-                        penghargaan MURI untuk
-                        konsep Dealer "Amazon Jungle".</p>
+                    <p class="body">Dealer Otomotif pertama JHL Auto, dan memperoleh penghargaan MURI
+                        untuk konsep Dealer "Amazon Jungle".</p>
                 </div>
             </div>
 
@@ -68,16 +76,13 @@
                 <div
                     class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
-
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
                     <div class="w-60 md:w-[720px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[316px] mr-4 text-right -mt-2">
                         <h3>2015</h3>
                         <h4 class="font-bold text-sm my-1">Garansindo Cup Jeep Agility</h4>
-                        <p class="body hidden md:block">Menyelenggarakan event offroad skala nasional yang memperkuat
-                            komunitas
-                            Jeep
-                            Indonesia</p>
+                        <p class="body">Menyelenggarakan event offroad skala nasional yang memperkuat
+                            komunitas Jeep Indonesia</p>
                     </div>
                 </div>
             </div>
@@ -87,15 +92,13 @@
                 <div
                     class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
-
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
                     <div class="w-60 md:w-[600px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[243px] mr-4 text-right -mt-2">
                         <h3>2017</h3>
                         <h4 class="font-bold text-sm my-1">Best Jeep Dealer</h4>
-                        <p class="body hidden md:block">Meraih penghargaan "Best Jeep Dealer Indonesia" atas
-                            keunggulan layanan dan
-                            penjualan</p>
+                        <p class="body">Meraih penghargaan "Best Jeep Dealer Indonesia" atas keunggulan
+                            layanan dan penjualan</p>
                     </div>
                 </div>
             </div>
@@ -105,36 +108,29 @@
                 <div
                     class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
-
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
                     <div class="w-10 md:w-[300px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[291px] mr-4 text-right -mt-2">
                         <h3>2019</h3>
                         <h4 class="font-bold text-sm my-1">Best Seller at IIMS</h4>
-                        <p class="body hidden md:block">Berhasil menjual 60 unit Jeep, dan juga meraih 72 pemesanan
-                            selama
-                            Event IIMS
-                            (Indonesia
-                            International Motor Show)</p>
+                        <p class="body">Berhasil menjual 60 unit Jeep, dan juga meraih 72 pemesanan
+                            selama Event IIMS (Indonesia International Motor Show)</p>
                     </div>
                 </div>
             </div>
-
 
             <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
                 data-path-progress="0.715">
                 <div
                     class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
-
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
                     <div class="w-20 md:w-[200px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[264px] mr-4 text-right -mt-2">
                         <h3>2021</h3>
                         <h4 class="font-bold text-sm my-1">Best Seller Jeep</h4>
-                        <p class="body hidden md:block"> JHL Auto mampu mencatatkan
-                            penjualan sampai 100 unit dalam
-                            satu tahun saat Pandemik</p>
+                        <p class="body">JHL Auto mampu mencatatkan penjualan sampai 100 unit dalam satu
+                            tahun saat Pandemik</p>
                     </div>
                 </div>
             </div>
@@ -144,16 +140,14 @@
                 <div
                     class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
-
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
                     <div class="w-24 md:w-[820px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[317px] mr-4 text-right -mt-2">
                         <h3>2024</h3>
                         <h4 class="font-bold text-sm my-1">Authorized BAIC Dealer</h4>
-                        <p class="body hidden md:block"> Berkembang menjadi Authorized BAIC Dealer di Indonesia. Dengan
-                            komitmen
-                            menghadirkan solusi
-                            mobilitas yang unggul, relevan, dan terpercaya bagi pasar otomotif nasional.</p>
+                        <p class="body">Berkembang menjadi Authorized BAIC Dealer di Indonesia. Dengan
+                            komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar
+                            otomotif nasional.</p>
                     </div>
                 </div>
             </div>
@@ -164,9 +158,97 @@
                 <div class=" max-w-[300px]">
                     <h3>2025</h3>
                     <h4 class="font-bold text-sm my-2">Best Start of Business</h4>
-                    <p class="body hidden md:block">
-                        Pengakuan BAIC Global atas pencapaian JHL Auto sebagai dealer resmi BAIC di Indonesia
-                    </p>
+                    <p class="body">Pengakuan BAIC Global atas pencapaian JHL Auto sebagai dealer resmi
+                        BAIC di Indonesia</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Story Layer -->
+        <div id="story-layer-mobile" class="absolute inset-0 pointer-events-none block md:hidden">
+            <div class="story-point  flex opacity-0 transition-opacity duration-500" data-path-progress="0.08">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2012</h3>
+                    <h4 class="font-bold text-xs my-1">Authorised Jeep Dealer</h4>
+                    <p class="body text-[10px] leading-relaxed">Dealer Otomotif pertama JHL Auto, dan memperoleh
+                        penghargaan MURI untuk konsep Dealer "Amazon Jungle".</p>
+                </div>
+            </div>
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.15">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2015</h3>
+                    <h4 class="font-bold text-xs my-1">Garansindo Cup Jeep Agility</h4>
+                    <p class="body text-[10px] leading-relaxed">Menyelenggarakan event offroad skala nasional yang
+                        memperkuat komunitas Jeep Indonesia</p>
+                </div>
+            </div>
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.45">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2017</h3>
+                    <h4 class="font-bold text-xs my-1">Best Jeep Dealer</h4>
+                    <p class="body text-[10px] leading-relaxed">Meraih penghargaan "Best Jeep Dealer Indonesia" atas
+                        keunggulan layanan dan penjualan</p>
+                </div>
+            </div>
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.55">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2019</h3>
+                    <h4 class="font-bold text-xs my-1">Best Seller at IIMS</h4>
+                    <p class="body text-[10px] leading-relaxed">Berhasil menjual 60 unit Jeep, dan juga meraih 72
+                        pemesanan selama Event IIMS (Indonesia International Motor Show)</p>
+                </div>
+            </div>
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.65">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2021</h3>
+                    <h4 class="font-bold text-xs my-1">Best Seller Jeep</h4>
+                    <p class="body text-[10px] leading-relaxed">JHL Auto mampu mencatatkan penjualan sampai 100 unit
+                        dalam satu tahun saat Pandemik</p>
+                </div>
+            </div>
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.7">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2024</h3>
+                    <h4 class="font-bold text-xs my-1">Authorized BAIC Dealer</h4>
+                    <p class="body text-[10px] leading-relaxed">Berkembang menjadi Authorized BAIC Dealer di Indonesia.
+                        Dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar
+                        otomotif nasional.</p>
+                </div>
+            </div>
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.95">
+                <div
+                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                </div>
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div class="max-w-[200px]">
+                    <h3 class="text-lg">2025</h3>
+                    <h4 class="font-bold text-xs my-1">Best Start of Business</h4>
+                    <p class="body text-[10px] leading-relaxed">Pengakuan BAIC Global atas pencapaian JHL Auto sebagai
+                        dealer resmi BAIC di Indonesia</p>
                 </div>
             </div>
         </div>
@@ -178,14 +260,33 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const path = document.querySelector("#road-path");
+        const pathDesktop = document.querySelector("#road-path");
+        const pathMobile = document.querySelector("#road-path-mobile");
         const car = document.querySelector("#car");
         const container = document.querySelector("#timeline-container");
-        const storyPoints = document.querySelectorAll(".story-point");
-        const svgElement = path.ownerSVGElement;
-        const pathLength = path.getTotalLength();
+
+        // Variables to hold current active state
+        let path, svgElement, pathLength, storyPoints;
+
+        function initTimelineState() {
+            const isMobile = window.innerWidth < 768;
+            if (isMobile) {
+                path = pathMobile;
+                storyPoints = document.querySelectorAll("#story-layer-mobile .story-point");
+            } else {
+                path = pathDesktop;
+                storyPoints = document.querySelectorAll("#story-layer-desktop .story-point");
+            }
+
+            if (path) {
+                svgElement = path.ownerSVGElement;
+                pathLength = path.getTotalLength();
+            }
+        }
 
         function updateTimeline() {
+            if (!path || !svgElement || !storyPoints) return;
+
             const rect = container.getBoundingClientRect();
             const svgRect = svgElement.getBoundingClientRect();
             const viewHeight = window.innerHeight;
@@ -217,17 +318,22 @@
                 const y = svgRect.top + (pathPoint.y * scaleY);
 
                 const isLeft = pointEl.classList.contains('is-left');
-                const dotSize = 20;
+                const isMobile = window.innerWidth < 768;
+
+                // Dot size adjustment
+                const dotSize = isMobile ? 16 : 20;
                 const dotRadius = dotSize / 2;
 
                 pointEl.style.position = "fixed";
                 pointEl.style.top = `${y}px`;
 
-                if (isLeft) {
+                if (isLeft && !isMobile) {
                     pointEl.style.left = `${x - dotRadius + 20}px`;
                     pointEl.style.transform = "translate(-100%, -50%)";
                 } else {
-                    pointEl.style.left = `${x + dotRadius - 20}px`;
+                    // Always right on mobile or if not explicitly left on desktop
+                    const offset = isMobile ? 15 : 20;
+                    pointEl.style.left = `${x + dotRadius - offset}px`;
                     pointEl.style.transform = "translate(0, -50%)";
                 }
 
@@ -241,12 +347,19 @@
             });
         }
 
+        // Initialize state
+        initTimelineState();
+
         function tick() {
             updateTimeline();
             requestAnimationFrame(tick);
         }
         tick();
-        window.addEventListener("resize", updateTimeline);
+
+        window.addEventListener("resize", function () {
+            initTimelineState();
+            updateTimeline();
+        });
     });
 </script>
 <section class="py-32 container md:text-center">
@@ -263,29 +376,29 @@
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_1_title') ?: 'Kesempatan'; ?></h3>
             <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
-                <?php echo get_field('krida_1_sub') ?: 'Chance'; ?>
+                <?php echo get_field('krida_1_sub') ?: 'Opportunity'; ?>
             </p>
-            <p class="max-w-[248px] leading-6 text-xs mx-auto">
+            <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_1_desc') ?: 'Memanfaatkan setiap peluang dengan bijaksana dan bertanggung jawab.'; ?>
-            </p>
+            </p> -->
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_2_title') ?: 'Kerja Keras'; ?></h3>
             <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
-                <?php echo get_field('krida_2_sub') ?: 'Hard Work'; ?>
+                <?php echo get_field('krida_2_sub') ?: 'Work Hard'; ?>
             </p>
-            <p class="max-w-[248px] leading-6 text-xs mx-auto">
+            <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_2_desc') ?: 'Dedikasi penuh dalam setiap langkah dan upaya tanpa kenal lelah'; ?>
-            </p>
+            </p> -->
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_3_title') ?: 'Kerja Cerdas'; ?></h3>
             <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_3_sub') ?: 'Smart Work'; ?>
             </p>
-            <p class="max-w-[248px] leading-6 text-xs mx-auto">
+            <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_3_desc') ?: 'Inovasi dan strategi tepat untuk mencapai hasil maksimal'; ?>
-            </p>
+            </p> -->
         </div>
     </div>
     <div class="flex justify-center items-center space-y-6 md:space-y-0 md:space-x-6 w-full flex-wrap mx-auto">
@@ -294,18 +407,18 @@
             <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_4_sub') ?: 'Complete Work'; ?>
             </p>
-            <p class="max-w-[248px] leading-6 text-xs mx-auto">
+            <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_4_desc') ?: 'Menyelesaikan setiap tugas dengan sempurna dan berkualitas'; ?>
-            </p>
+            </p> -->
         </div>
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_5_title') ?: 'Loyalitas'; ?></h3>
             <p class="mb-8 font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_5_sub') ?: 'Loyalty'; ?>
             </p>
-            <p class="max-w-[248px] leading-6 text-xs mx-auto">
+            <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_5_desc') ?: 'Komitmen jangka panjang kepada mitra, pelanggan, dan tim'; ?>
-            </p>
+            </p> -->
         </div>
     </div>
 </section>
