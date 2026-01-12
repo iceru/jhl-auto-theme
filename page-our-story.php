@@ -37,7 +37,7 @@
                 stroke="#808285" stroke-width="5" stroke-linecap="round" opacity="0.7" />
         </svg>
 
-        <svg class="absolute block md:hidden left-20" width="93" height="2401" viewBox="0 0 93 2401" fill="none"
+        <svg class="absolute block md:hidden left-24" width="93" height="2401" viewBox="0 0 93 2401" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.7" id="road-path-mobile"
                 d="M1.50009 1.5V194.612H80.5634L86.5035 227H1.5V1007.9H88.3395L90.4995 1040.54H27.8589V1079.08H90.4995C90.5355 1087.41 88.7715 1110.59 88.7715 1110.59H1.608L1.60791 1728H87.2594L82.2914 1759.76H1.5V2399"
@@ -166,7 +166,7 @@
 
         <!-- Mobile Story Layer -->
         <div id="story-layer-mobile" class="absolute inset-0 pointer-events-none block md:hidden">
-            <div class="story-point  flex opacity-0 transition-opacity duration-500" data-path-progress="0.08">
+            <div class="story-point  flex opacity-0 transition-opacity duration-500" data-path-progress="0.04">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
@@ -178,7 +178,7 @@
                         penghargaan MURI untuk konsep Dealer "Amazon Jungle".</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.15">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.24">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
@@ -190,7 +190,7 @@
                         memperkuat komunitas Jeep Indonesia</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.45">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.35">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
@@ -202,7 +202,7 @@
                         keunggulan layanan dan penjualan</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.55">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.51">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
@@ -214,7 +214,7 @@
                         pemesanan selama Event IIMS (Indonesia International Motor Show)</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.65">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.63">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
@@ -226,7 +226,7 @@
                         dalam satu tahun saat Pandemik</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.7">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.8">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
@@ -239,7 +239,7 @@
                         otomotif nasional.</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.95">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.92">
                 <div
                     class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
