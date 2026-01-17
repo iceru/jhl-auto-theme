@@ -132,7 +132,7 @@
 
         <header
             class="md:hidden w-full absolute left-0 top-0 px-4 py-11 bg-gradient-to-b from-black to-transparent flex justify-between items-center z-50">
-            <div class="space-y-1.5 cursor-pointer" id="sidebar-btn">
+            <div class="space-y-3 cursor-pointer" id="sidebar-btn">
                 <div class="h-[1px] w-8 bg-white"></div>
                 <div class="h-[1px] w-8 bg-white"></div>
             </div>
@@ -271,14 +271,17 @@
         <div class="fixed bottom-6 right-6 z-[50] flex flex-col items-end space-y-4">
             <button id="social-toggle"
                 class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center transition-transform duration-300">
-                <svg id="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <img id="toggle-share" src="<?php echo get_template_directory_uri(); ?>/images/icons/share.png"
+                    class="w-5 h-5" alt="share">
+
+                <svg id="toggle-icon" class="hidden rotate-180" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 15l-6-6-6 6" />
                 </svg>
-                <img id="toggle-share" src="<?php echo get_template_directory_uri(); ?>/images/icons/share.png"
-                    class="w-5 h-5 rotate-180 hidden" alt="share">
             </button>
-            <div id="social-expandable" class="flex flex-col space-y-4 mb-2">
+
+            <div id="social-expandable" class="hidden flex flex-col space-y-4 mb-2">
                 <a href="mailto:<?php echo get_field('contact_email', 'option') ?: 'info@jhlauto.co.id'; ?>"
                     class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center hover:bg-[#808285] transition-colors">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/email.png" class="w-5 h-5"
@@ -336,27 +339,26 @@
                         $('#close-contact').click();
                     }
                 });
-                $('#social-toggle').css('transform', 'rotate(180deg)');
                 $('#social-toggle').on('click', function () {
                     const $btn = $(this);
                     const $container = $('#social-expandable');
                     const $iconArrow = $('#toggle-icon');
                     const $iconShare = $('#toggle-share');
 
-                    // Toggle a state class on the button
+                    // Toggle state class
                     $btn.toggleClass('is-open');
 
-                    // Animation
+                    // Animate the menu
                     $container.slideToggle(300);
 
                     if ($btn.hasClass('is-open')) {
-                        // EXPANDED STATE
+                        // OPEN STATE: Show Arrow (pointing down), Hide Share
+                        $iconShare.hide();
+                        $iconArrow.removeClass('hidden').show();
+                    } else {
+                        // CLOSED STATE: Show Share, Hide Arrow
                         $iconArrow.hide();
                         $iconShare.show();
-                    } else {
-                        // CLOSED STATE
-                        $iconShare.hide();
-                        $iconArrow.show();
                     }
                 });
             });

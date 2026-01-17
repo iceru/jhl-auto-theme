@@ -54,7 +54,7 @@
             </button>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8" id="news-container">
+        <div class="grid md:grid-cols-3 gap-12 md:gap-8" id="news-container">
             <template id="skeleton-card">
                 <div class="space-y-4 animate-pulse">
                     <div class="w-full h-[180px] bg-gray-200 rounded-sm"></div>

@@ -65,19 +65,19 @@ function filter_news_func()
     if ($query->have_posts()):
         while ($query->have_posts()):
             $query->the_post(); ?>
-            <div class="space-y-4 fade-in">
+            <div class="space-y-4 md:space-y-6 fade-in">
                 <div class="overflow-hidden rounded-sm">
                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: 'https://via.placeholder.com/400x180'; ?>"
-                        alt="" class="w-full h-[180px] object-cover hover:scale-105 transition-transform duration-500">
+                        alt="" class="w-full h-[184px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
-                <h5 class="font-bold uppercase leading-tight min-h-[3rem]"><?php the_title(); ?></h5>
+                <h5 class="uppercase leading-tight !text-black md:min-h-[3rem]"><?php the_title(); ?></h5>
                 <p class="text-sm text-gray-600 line-clamp-2">
                     <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                 </p>
                 <a href="<?php the_permalink(); ?>" class="text-xs font-semibold flex items-center space-x-2 group !no-underline">
                     <img class="w-1.5 h-2.5 group-hover:translate-x-0.5 transition-transform"
                         src="<?php echo get_template_directory_uri() ?>/images/c-right-black.png" alt="">
-                    <span>READ MORE</span>
+                    <span>Read More</span>
                 </a>
             </div>
         <?php endwhile;
