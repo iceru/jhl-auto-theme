@@ -536,7 +536,7 @@
         </div>
     </div>
 
-    <div class="slider-full-right pl-4">
+    <!-- <div class="slider-full-right pl-4">
         <?php
         $args = array(
             'post_type' => 'team',
@@ -573,6 +573,6 @@
                 wp_reset_postdata(); ?>
             </div>
         <?php endif; ?>
-    </div>
+    </div> -->
 </section>
 <?php get_footer(); ?>
