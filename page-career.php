@@ -1,77 +1,106 @@
-<?php get_header(); ?>
-<section class="h-[120vh] md:h-screen  w-full relative flex flex-col justify-end pb-[71px]">
+<?php
+get_header();
+
+/**
+ * Helper to fetch ACF field with a hardcoded fallback
+ */
+function get_jhl_field($field_name, $fallback)
+{
+    $value = get_field($field_name);
+    return !empty($value) ? $value : $fallback;
+}
+
+// Assets Path
+$theme_uri = get_template_directory_uri();
+
+// Fallback Variables
+$hero_img = get_jhl_field('hero_image', $theme_uri . '/images/career-hero.png');
+$hero_ttl = get_jhl_field('hero_title', 'Kehidupan di JHL Auto');
+$hero_desc = get_jhl_field('hero_description', 'JHL Auto mengerti bahwa pertumbuhan terjadi karena aksi nyata, kolaborasi, dan semangat bersama untuk terus maju. Kami senantiasa menciptakan ruang bagi setiap orang untuk memimpin, belajar, dan berkarya dengan makna. Di sini, ide dihargai, kontribusi diakui, dan perkembangan adalah milik bersama. Bagi para pembangun, pencipta, atau pemimpin, Anda adalah elemen tak tergantikan dari JHL Auto dalam mencapai tujuan.');
+
+// Gallery Images
+$g1 = get_jhl_field('gallery_img_1', $theme_uri . '/images/event.jpg');
+$g2 = get_jhl_field('gallery_img_2', $theme_uri . '/images/award-photo.jpg');
+$g3 = get_jhl_field('gallery_img_3', $theme_uri . '/images/red-car.png');
+$g4 = get_jhl_field('gallery_img_4', $theme_uri . '/images/blue-car.png');
+$g5 = get_jhl_field('gallery_img_5', $theme_uri . '/images/opening.png');
+$g6 = get_jhl_field('gallery_img_6', $theme_uri . '/images/baic-front.png');
+$g7 = get_jhl_field('gallery_img_7', $theme_uri . '/images/start.png');
+$g8 = get_jhl_field('gallery_img_8', $theme_uri . '/images/podium.png');
+$g9 = get_jhl_field('gallery_img_9', $theme_uri . '/images/start.png');
+$g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
+?>
+
+<section class="h-[170vh] md:h-[120vh] w-full relative flex flex-col justify-end pb-[123px] bg-jhl-black">
     <div>
-        <img class="absolute top-0 left-0 w-full h-full object-[75%_25%] object-cover"
-            src="<?php echo get_template_directory_uri() ?>/images/career-hero.png" alt="">
+        <img class="absolute top-0 left-0 w-full h-screen md:h-[90vh] object-[75%_25%] object-cover"
+            src="<?php echo esc_url($hero_img); ?>" alt="">
     </div>
+    <div class="absolute md:hidden left-0 bottom-[40%] w-full h-[30%] bg-gradient-to-t from-jhl-black to-jhl-black/0">
+    </div>
+
+    <div class="absolute left-0 bottom-[20%] w-full h-[30%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
     <div class="absolute left-0 bottom-0 w-full h-[90%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
     <div class="container text-white relative z-10 px-6 text-center">
         <h2 class="mb-12 max-w-[302px] mx-auto md:max-w-none">
-            Kehidupan di JHL Auto
+            <?php echo esc_html($hero_ttl); ?>
         </h2>
-        <h3 class="!text-[23px] md:text-[27px] md:max-w-[995px] mx-auto">
-            JHL Auto mengerti bahwa pertumbuhan terjadi karena aksi nyata, kolaborasi, dan semangat bersama untuk terus
-            maju. Kami senantiasa menciptakan ruang bagi setiap orang untuk memimpin, belajar, dan berkarya dengan
-            makna. Di sini, ide dihargai, kontribusi diakui, dan perkembangan adalah milik bersama. Bagi para pembangun,
-            pencipta, atau pemimpin, Anda adalah elemen tak tergantikan dari JHL Auto dalam mencapai tujuan.
+        <h3 class="!text-[20px] md:!text-[27px] !leading-[27px] md:!leading-[36px] md:max-w-[995px] mx-auto">
+            <?php echo esc_html($hero_desc); ?>
         </h3>
     </div>
 </section>
+
 <section class="bg-jhl-black w-full overflow-hidden pb-16">
     <div class="flex gap-x-3 md:gap-x-6 container mx-auto relative  md:px-6">
         <div class="rounded-2xl overflow-hidden mt-12 w-[40%] absolute -left-[42%]">
             <div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/event.jpg"
-                    class="w-full h-full object-cover rounded-2xl" alt="Event Image">
+                <img src="<?php echo esc_url($g1); ?>" class="w-full h-full object-cover rounded-2xl" alt="Event Image">
             </div>
             <div class="mt-6">
-                <img src="<?php echo get_template_directory_uri() ?>/images/award-photo.jpg"
-                    class="w-full h-full object-cover rounded-2xl" alt="Event Image">
+                <img src="<?php echo esc_url($g2); ?>" class="w-full h-full object-cover rounded-2xl" alt="Event Image">
             </div>
         </div>
 
         <div class="rounded-2xl overflow-hidden absolute -left-[21%] md:left-0 md:static w-[40%] md:w-[30.8%]">
             <div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/red-car.png"
+                <img src="<?php echo esc_url($g3); ?>"
                     class="w-full h-full object-cover rounded-2xl aspect-square md:aspect-auto" alt="Red Car">
             </div>
             <div class="mt-6">
-                <img src="<?php echo get_template_directory_uri() ?>/images/blue-car.png"
+                <img src="<?php echo esc_url($g4); ?>"
                     class="w-full h-full object-cover rounded-2xl aspect-[3/5] md:aspect-auto" alt="Blue Car">
             </div>
         </div>
 
         <div class="rounded-2xl overflow-hidden mx-auto w-[60%] md:w-[30.5%]">
             <div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/opening.png"
-                    class="w-full h-full object-cover rounded-2xl" alt="Opening Banner">
+                <img src="<?php echo esc_url($g5); ?>" class="w-full h-full object-cover rounded-2xl"
+                    alt="Opening Banner">
             </div>
             <div class="mt-3 md:mt-6">
-                <img src="<?php echo get_template_directory_uri() ?>/images/baic-front.png"
-                    class="w-full h-full object-cover rounded-2xl" alt="Podium">
+                <img src="<?php echo esc_url($g6); ?>" class="w-full h-full object-cover rounded-2xl" alt="Podium">
             </div>
         </div>
 
         <div
             class="rounded-2xl overflow-hidden absolute -right-[20%] md:left-0 md:static w-[40%] md:w-[38.7%] mt-4 md:mt-10">
             <div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/start.png"
+                <img src="<?php echo esc_url($g7); ?>"
                     class="w-full h-full object-cover rounded-2xl aspect-square md:aspect-auto" alt="Start Line">
             </div>
             <div class="mt-6">
-                <img src="<?php echo get_template_directory_uri() ?>/images/podium.png"
+                <img src="<?php echo esc_url($g8); ?>"
                     class="w-full h-full object-cover rounded-2xl aspect-[3/4] md:aspect-auto" alt="Podium">
             </div>
         </div>
 
         <div class="rounded-2xl overflow-hidden w-[40%] absolute -right-[42%] mt-20">
             <div>
-                <img src="<?php echo get_template_directory_uri() ?>/images/start.png"
-                    class="w-full h-full object-cover rounded-2xl" alt="Start Line">
+                <img src="<?php echo esc_url($g9); ?>" class="w-full h-full object-cover rounded-2xl" alt="Start Line">
             </div>
             <div class="mt-6">
-                <img src="<?php echo get_template_directory_uri() ?>/images/event-2.jpg"
-                    class="w-full h-full object-cover rounded-2xl" alt="Speaker">
+                <img src="<?php echo esc_url($g10); ?>" class="w-full h-full object-cover rounded-2xl" alt="Speaker">
             </div>
         </div>
     </div>
@@ -80,44 +109,40 @@
 <section class="py-[90px] container">
     <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
         <div class="w-full md:w-[60%]">
-            <h2 class="mb-11">Keuntungan Karyawan</h2>
+            <h2 class="mb-11"><?php echo esc_html(get_jhl_field('benefits_main_title', 'Keuntungan Karyawan')); ?></h2>
             <p class="body">
-                Pengalaman kerja terbaik dimulai dari perhatian terhadap orang-orang di dalamnya. Berikut berbagai
-                manfaat yang
-                kami hadirkan untuk mendukung keseharian, pertumbuhan, dan kualitas hidup para karyawan di JHL Auto.
+                <?php echo esc_html(get_jhl_field('benefits_main_description', 'Pengalaman kerja terbaik dimulai dari perhatian terhadap orang-orang di dalamnya. Berikut berbagai manfaat yang kami hadirkan untuk mendukung keseharian, pertumbuhan, dan kualitas hidup para karyawan di JHL Auto.')); ?>
             </p>
             <div class=" bg-jhl-foreground my-6 rounded-lg flex flex-wrap md:flex-nowrap">
                 <div class="w-full md:w-[60%] p-8">
-                    <h3 class="mb-5">Diskon Karyawan</h3>
+                    <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?></h3>
                     <p class="body md:max-w-[291px]">
-                        Potongan harga eksklusif untuk karyawan di seluruh brand, produk, dan layanan kami.
-                        Pembuktian
-                        bahwa menaikkan gaya hidup tetap bisa dilakukan sambil tetap berhemat.
+                        <?php echo esc_html(get_jhl_field('benefit_1_description', 'Potongan harga eksklusif untuk karyawan di seluruh brand, produk, dan layanan kami. Pembuktian bahwa menaikkan gaya hidup tetap bisa dilakukan sambil tetap berhemat.')); ?>
                     </p>
                 </div>
                 <div class="w-full md:w-[40%] relative">
                     <div
                         class="absolute bg-gradient-to-b md:bg-gradient-to-r from-jhl-foreground to-transparent w-full md:w-[70%] h-[40%] md:h-full z-10 top-0 left-0">
                     </div>
-                    <img src="<?php echo get_template_directory_uri() ?>/images/benefit-1.png"
+                    <img src="<?php echo esc_url(get_jhl_field('benefit_1_image', $theme_uri . '/images/benefit-1.png')); ?>"
                         class="w-full opacity-70 md:opacity-40 h-[254px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
             <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
                 <div class="w-full md:w-[60%] bg-jhl-foreground p-8 rounded-lg">
-                    <h3 class="mb-5">Asupan Harian</h3>
+                    <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_2_title', 'Asupan Harian')); ?></h3>
                     <p class="body md:max-w-[263px]">
-                        Santapan siang yang enak dan gratis setiap hari untuk menjaga energi, fokus, dan performa
-                        terbaik.
+                        <?php echo esc_html(get_jhl_field('benefit_2_description', 'Santapan siang yang enak dan gratis setiap hari untuk menjaga energi, fokus, dan performa terbaik.')); ?>
                     </p>
                 </div>
                 <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg">
-                    <h3 class="p-8 max-w-[188px] md:max-w-none">Belajar & Berkembang</h3>
+                    <h3 class="p-8 max-w-[188px] md:max-w-none">
+                        <?php echo esc_html(get_jhl_field('benefit_3_title', 'Belajar & Berkembang')); ?></h3>
                     <div class="relative w-full">
                         <div
                             class="absolute bg-gradient-to-b from-jhl-foreground to-transparent w-full h-[50%] z-10 top-0 left-0">
                         </div>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/benefit-2.png"
+                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/benefit-2.png')); ?>"
                             class="w-full opacity-40 h-[116px] object-cover rounded-b-lg" alt="Benefit">
                     </div>
                 </div>
@@ -125,26 +150,24 @@
         </div>
         <div class="w-full md:w-[40%]">
             <div class="p-8 bg-jhl-foreground mb-6 rounded-lg">
-                <h3 class="mb-5">Dana Kebersamaan</h3>
+                <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_4_title', 'Dana Kebersamaan')); ?></h3>
                 <p class="body md:max-w-[288px] mb-7">
-                    Tunjangan bulanan untuk aktivitas bonding tim seperti kumpul-kumpul,
-                    aktivitas seru, hingga momen
-                    kebersamaan yang mempererat koneksi antar karyawan.
+                    <?php echo esc_html(get_jhl_field('benefit_4_description', 'Tunjangan bulanan untuk aktivitas bonding tim seperti kumpul-kumpul, aktivitas seru, hingga momen kebersamaan yang mempererat koneksi antar karyawan.')); ?>
                 </p>
             </div>
             <div class=" bg-jhl-foreground mb-6 rounded-lg">
                 <div class="pt-8 px-8">
-                    <h3 class="mb-5">Jalur Pengembangan Diri</h3>
+                    <h3 class="mb-5">
+                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Jalur Pengembangan Diri')); ?></h3>
                     <p class="body md:max-w-[341px] mb-12">
-                        JHL Auto mendukung masa depan para karyawan melalui perencanaan karier yang terstruktur,
-                        mentorship, dan peluang belajar yang disesuaikan dengan tujuan masing-masing karyawan.
+                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'JHL Auto mendukung masa depan para karyawan melalui perencanaan karier yang terstruktur, mentorship, dan peluang belajar yang disesuaikan dengan tujuan masing-masing karyawan.')); ?>
                     </p>
                 </div>
                 <div class="relative w-full">
                     <div
                         class="absolute bg-gradient-to-b from-jhl-foreground to-transparent w-full h-[50%] z-10 top-0 left-0">
                     </div>
-                    <img src="<?php echo get_template_directory_uri() ?>/images/benefit-3.png"
+                    <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-3.png')); ?>"
                         class="w-full opacity-40 h-[200px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
@@ -186,7 +209,6 @@
 
                 <div class="md:col-span-9  rounded-lg relative min-h-[400px] vacancy-text">
                     <?php foreach ($vacancies as $index => $vacancy):
-                        // Show first item by default, hide others
                         $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
                         ?>
                         <div id="vacancy-<?php echo $vacancy->ID; ?>" class="vacancy-content"
@@ -208,4 +230,4 @@
             <?php wp_reset_postdata(); endif; ?>
     </div>
 </section>
-<?php get_footer();
+<?php get_footer(); ?>

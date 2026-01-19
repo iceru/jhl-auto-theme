@@ -12,7 +12,7 @@
                 <div class="text-[10px] font-medium text-jhl-gray-1 mb-6 md:mb-10 uppercase">
                     <?php echo get_the_date('d M Y'); ?>
                 </div>
-                <h2 class="mb-8">
+                <h2 class="mb-8 !text-4xl md:!text-[44px]">
                     <?php the_title(); ?>
                 </h2>
                 <div class="body text-black mb-20">
