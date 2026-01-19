@@ -22,22 +22,35 @@
     </div>
 </section>
 <section class="bg-jhl-foreground py-16">
-    <div id="timeline-container" class="relative w-full max-w-4xl md:left-[9%] mx-auto mb-24 h-[2401px] md:h-[1899px]">
-        <div class="absolute mx-auto hidden md:block h-[1689px] -left-27 w-[953px] mt-[110px]">
+    <div id="timeline-container" class="relative w-full max-w-4xl lg:left-[9%] mx-auto mb-24 h-[2401px] lg:h-[1899px]">
+        <div class="absolute mx-auto hidden lg:block h-[1689px] -left-27 w-[953px] mt-[110px]">
             <?php
             $jhl_bg = get_field('jhl_bg_image');
             $jhl_bg_url = $jhl_bg ? $jhl_bg['url'] : get_template_directory_uri() . '/images/jhl-bg.png';
             ?>
             <img class="w-full h-full" src="<?php echo esc_url($jhl_bg_url); ?>" alt="">
         </div>
-        <svg class="absolute hidden md:block top-0 right-12 h-full pointer-events-none md:scale-100 w-[290px] md:w-[580px]"
+
+        <div class="absolute mx-auto lg:hidden h-[67px] left-[40px] top-[160px]">
+            <img class="w-full h-full" src="<?php echo get_template_directory_uri() . '/images/timeline/j.png' ?>"
+                alt="">
+        </div>
+        <div class="absolute mx-auto lg:hidden h-[101px] left-[20px] top-[1009px]">
+            <img class="w-full h-full" src="<?php echo get_template_directory_uri() . '/images/timeline/h.png' ?>"
+                alt="">
+        </div>
+        <div class="absolute mx-auto lg:hidden h-[68px] left-[40px] top-[1728px]">
+            <img class="w-full h-full" src="<?php echo get_template_directory_uri() . '/images/timeline/l.png' ?>"
+                alt="">
+        </div>
+        <svg class="absolute hidden lg:block top-0 right-12 h-full pointer-events-none lg:scale-100 w-[290px] lg:w-[580px]"
             viewBox="0 0 583 1899" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="road-path"
                 d="M2.5 2.5V349.437H515.079L553.59 558.084H256.01V617.12H565.493L579.496 827.385H173.388V1075.66H579.496C579.73 1129.3 568.294 1278.65 568.294 1278.65H256.711V1341.72H558.491L526.282 1546.33H2.5V1896.5"
                 stroke="#808285" stroke-width="5" stroke-linecap="round" opacity="0.7" />
         </svg>
 
-        <svg class="absolute block md:hidden left-24" width="93" height="2401" viewBox="0 0 93 2401" fill="none"
+        <svg class="absolute block lg:hidden left-[73px]" width="93" height="2401" viewBox="0 0 93 2401" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.7" id="road-path-mobile"
                 d="M1.50009 1.5V194.612H80.5634L86.5035 227H1.5V1007.9H88.3395L90.4995 1040.54H27.8589V1079.08H90.4995C90.5355 1087.41 88.7715 1110.59 88.7715 1110.59H1.608L1.60791 1728H87.2594L82.2914 1759.76H1.5V2399"
@@ -46,21 +59,21 @@
 
 
         <div id="car"
-            class="fixed top-0 left-0 w-16 h-16 md:w-[120px] md:h-[120px] z-50 pointer-events-none flex items-center justify-center"
+            class="fixed top-0 left-0 w-16 h-16 lg:w-[120px] lg:h-[120px] z-50 pointer-events-none flex items-center justify-center"
             style="display: none; will-change: transform;">
             <?php
             $car_icon = get_field('timeline_car_icon');
             $car_icon_url = $car_icon ? $car_icon['url'] : get_template_directory_uri() . '/images/car.png';
             ?>
             <img src="<?php echo esc_url($car_icon_url); ?>" id="car-img"
-                class="object-contain rotate-180 w-[33px] md:w-[44px] h-[99px]" alt="car">
+                class="object-contain rotate-180 w-[33px] lg:w-[44px] h-[99px]" alt="car">
         </div>
 
         <!-- Desktop Story Layer -->
-        <div id="story-layer-desktop" class="absolute inset-0 pointer-events-none hidden md:block">
+        <div id="story-layer-desktop" class="absolute inset-0 pointer-events-none hidden lg:block">
             <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.04">
                 <div
-                    class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-5 h-5 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
                 <div class=" max-w-[300px]">
@@ -74,10 +87,10 @@
             <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
                 data-path-progress="0.21">
                 <div
-                    class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
+                    class="w-5 h-5 rounded-full border-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
-                    <div class="w-60 md:w-[720px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
+                    <div class="w-60 lg:w-[720px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[316px] mr-4 text-right -mt-2">
                         <h3>2015</h3>
                         <h4 class="font-bold text-sm my-1">Garansindo Cup Jeep Agility</h4>
@@ -90,10 +103,10 @@
             <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
                 data-path-progress="0.38">
                 <div
-                    class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
+                    class="w-5 h-5 rounded-full border-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
-                    <div class="w-60 md:w-[600px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
+                    <div class="w-60 lg:w-[600px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[243px] mr-4 text-right -mt-2">
                         <h3>2017</h3>
                         <h4 class="font-bold text-sm my-1">Best Jeep Dealer</h4>
@@ -106,10 +119,10 @@
             <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
                 data-path-progress="0.524">
                 <div
-                    class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
+                    class="w-5 h-5 rounded-full border-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
-                <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
-                    <div class="w-10 md:w-[300px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
+                <div class="absolute right-full flex flex-row-reverse top-0 mr-2 ">
+                    <div class="w-10 lg:w-[300px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[291px] mr-4 text-right -mt-2">
                         <h3>2019</h3>
                         <h4 class="font-bold text-sm my-1">Best Seller at IIMS</h4>
@@ -122,10 +135,10 @@
             <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
                 data-path-progress="0.715">
                 <div
-                    class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
+                    class="w-5 h-5 rounded-full border-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
-                    <div class="w-20 md:w-[200px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
+                    <div class="w-20 lg:w-[200px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[264px] mr-4 text-right -mt-2">
                         <h3>2021</h3>
                         <h4 class="font-bold text-sm my-1">Best Seller Jeep</h4>
@@ -138,10 +151,10 @@
             <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
                 data-path-progress="0.817">
                 <div
-                    class="w-5 h-5 rounded-full border-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
+                    class="w-5 h-5 rounded-full border-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10">
                 </div>
                 <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
-                    <div class="w-24 md:w-[820px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
+                    <div class="w-24 lg:w-[820px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[317px] mr-4 text-right -mt-2">
                         <h3>2024</h3>
                         <h4 class="font-bold text-sm my-1">Authorized BAIC Dealer</h4>
@@ -153,8 +166,10 @@
             </div>
 
             <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.97">
-                <div class="w-5 h-5 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black"></div>
-                <div class="w-16 md:w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                <div
+                    class="w-5 h-5 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black">
+                </div>
+                <div class="w-16 lg:w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
                 <div class=" max-w-[300px]">
                     <h3>2025</h3>
                     <h4 class="font-bold text-sm my-2">Best Start of Business</h4>
@@ -165,88 +180,89 @@
         </div>
 
         <!-- Mobile Story Layer -->
-        <div id="story-layer-mobile" class="absolute inset-0 pointer-events-none block md:hidden">
-            <div class="story-point  flex opacity-0 transition-opacity duration-500" data-path-progress="0.04">
+        <div id="story-layer-mobile" class="absolute inset-0 pointer-events-none block lg:hidden">
+            <div class="story-point  flex opacity-0 transition-opacity duration-500" data-path-progress="0.05">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2012</h3>
-                    <h4 class="font-bold text-xs my-1">Authorised Jeep Dealer</h4>
+                    <h4 class="font-bold text-base my-1">Authorised Jeep Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Dealer Otomotif pertama JHL Auto, dan memperoleh
                         penghargaan MURI untuk konsep Dealer "Amazon Jungle".</p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.24">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2015</h3>
-                    <h4 class="font-bold text-xs my-1">Garansindo Cup Jeep Agility</h4>
+                    <h4 class="font-bold text-base my-1">Garansindo Cup Jeep Agility</h4>
                     <p class="body text-[10px] leading-relaxed">Menyelenggarakan event offroad skala nasional yang
                         memperkuat komunitas Jeep Indonesia</p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.35">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2017</h3>
-                    <h4 class="font-bold text-xs my-1">Best Jeep Dealer</h4>
+                    <h4 class="font-bold text-base my-1">Best Jeep Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Meraih penghargaan "Best Jeep Dealer Indonesia" atas
                         keunggulan layanan dan penjualan</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.51">
+            <div class="story-point flex  !left-[100px] opacity-0 transition-opacity duration-500"
+                data-path-progress="0.539">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-14 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2019</h3>
-                    <h4 class="font-bold text-xs my-1">Best Seller at IIMS</h4>
+                    <h4 class="font-bold text-base my-1">Best Seller at IIMS</h4>
                     <p class="body text-[10px] leading-relaxed">Berhasil menjual 60 unit Jeep, dan juga meraih 72
                         pemesanan selama Event IIMS (Indonesia International Motor Show)</p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.63">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2021</h3>
-                    <h4 class="font-bold text-xs my-1">Best Seller Jeep</h4>
+                    <h4 class="font-bold text-base my-1">Best Seller Jeep</h4>
                     <p class="body text-[10px] leading-relaxed">JHL Auto mampu mencatatkan penjualan sampai 100 unit
                         dalam satu tahun saat Pandemik</p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.8">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2024</h3>
-                    <h4 class="font-bold text-xs my-1">Authorized BAIC Dealer</h4>
+                    <h4 class="font-bold text-base my-1">Authorized BAIC Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Berkembang menjadi Authorized BAIC Dealer di Indonesia.
                         Dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar
                         otomotif nasional.</p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.92">
+            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.94">
                 <div
-                    class="w-4 h-4 rounded-full border-2 mt-2 border-white bg-jhl-black ring-1 ring-jhl-black shrink-0">
+                    class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
-                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
-                <div class="max-w-[200px]">
+                <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2025</h3>
-                    <h4 class="font-bold text-xs my-1">Best Start of Business</h4>
+                    <h4 class="font-bold text-base my-1 mb-2">Best Start of Business</h4>
                     <p class="body text-[10px] leading-relaxed">Pengakuan BAIC Global atas pencapaian JHL Auto sebagai
                         dealer resmi BAIC di Indonesia</p>
                 </div>
@@ -269,7 +285,7 @@
         let path, svgElement, pathLength, storyPoints;
 
         function initTimelineState() {
-            const isMobile = window.innerWidth < 768;
+            const isMobile = window.innerWidth < 958;
             if (isMobile) {
                 path = pathMobile;
                 storyPoints = document.querySelectorAll("#story-layer-mobile .story-point");
@@ -310,44 +326,41 @@
                 car.style.display = "none";
             }
 
-            // 2. Position and Animate Story Points
             storyPoints.forEach(pointEl => {
                 const dotProgress = parseFloat(pointEl.dataset.pathProgress);
                 const pathPoint = path.getPointAtLength(dotProgress * pathLength);
+
                 const x = svgRect.left + (pathPoint.x * scaleX);
                 const y = svgRect.top + (pathPoint.y * scaleY);
 
                 const isLeft = pointEl.classList.contains('is-left');
-                const isMobile = window.innerWidth < 768;
-
-                // Dot size adjustment
-                const dotSize = isMobile ? 16 : 20;
-                const dotRadius = dotSize / 2;
+                const isMobile = window.innerWidth < 958;
 
                 pointEl.style.position = "fixed";
                 pointEl.style.top = `${y}px`;
+                pointEl.style.left = `${x}px`;
 
-                if (isLeft && !isMobile) {
-                    pointEl.style.left = `${x - dotRadius + 20}px`;
-                    pointEl.style.transform = "translate(-100%, -50%)";
+                if (isMobile) {
+                    pointEl.style.transform = `translate(-12px, -50%)`;
                 } else {
-                    // Always right on mobile or if not explicitly left on desktop
-                    const offset = isMobile ? 15 : 20;
-                    pointEl.style.left = `${x + dotRadius - offset}px`;
-                    pointEl.style.transform = "translate(0, -50%)";
+                    if (isLeft) {
+                        pointEl.style.transform = "translate(-100%, -50%)";
+                        pointEl.style.marginLeft = "10px";
+                    } else {
+                        pointEl.style.transform = "translate(-10px, -50%)";
+                    }
                 }
 
-                if (progress >= dotProgress - 0.2) {
-                    pointEl.classList.remove("opacity-0");
-                    pointEl.classList.add("opacity-100");
+                if (progress >= dotProgress - 0.15) {
+                    pointEl.style.opacity = "1";
+                    pointEl.style.pointerEvents = "auto";
                 } else {
-                    pointEl.classList.add("opacity-0");
-                    pointEl.classList.remove("opacity-100");
+                    pointEl.style.opacity = "0";
+                    pointEl.style.pointerEvents = "none";
                 }
             });
         }
 
-        // Initialize state
         initTimelineState();
 
         function tick() {
