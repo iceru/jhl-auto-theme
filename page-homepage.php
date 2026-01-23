@@ -1,7 +1,8 @@
 <?php get_header() ?>
 
-<section class="relative w-full h-screen">
-    <div class="absolute inset-0">
+<section class="relative w-full h-screen" data-scroll data-scroll-speed="-2" data-aos="zoom-out"
+    data-aos-duration="1000">
+    <div class="absolute inset-0 -top-4">
         <?php
 
         $hero_video_url = get_field('hero_video_file');
@@ -15,7 +16,7 @@
     </div>
 </section>
 
-<section class="bg-jhl-foreground/30 relative md:h-screen">
+<section class="bg-[#F4F4F4] relative md:h-screen z-10">
     <div class="container grid md:grid-cols-2 md:h-screen">
         <div class="flex flex-col justify-center md:pr-20 py-20 md:py-0">
             <h2 class="text-2xl md:text-[44px] mb-11 font-light">
@@ -35,13 +36,14 @@
                 </span>
             </a>
         </div>
-        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-4 md:mx-0">
+        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-4 md:mx-0 overflow-hidden">
             <?php
             $about_img = get_field('about_image');
             $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
             ?>
             <img src="<?php echo esc_url($about_img_url); ?>" alt="Sekilas Tentang Kami"
-                class=" top-0 left-0 w-full h-full object-cover">
+                class="parallax-img absolute -top-2 left-0 w-full h-full object-cover" data-scroll
+                data-scroll-speed="-2">
         </div>
     </div>
 
@@ -72,16 +74,16 @@
                 $promo_query->the_post(); ?>
 
                 <div class="flex-none w-[75%] snap-start md:w-full">
-                    <div class="mb-8">
+                    <a href="<?php the_permalink(); ?>" class="mb-8 block">
                         <?php if (has_post_thumbnail()): ?>
                             <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
                         <?php endif; ?>
-                    </div>
-
-                    <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black">
-                        <?php the_title(); ?>
-                    </h5>
-
+                    </a>
+                    <a href="<?php the_permalink(); ?>" class="block">
+                        <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black">
+                            <?php the_title(); ?>
+                        </h5>
+                    </a>
                     <a href="<?php the_permalink(); ?>"
                         class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                         <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
@@ -232,16 +234,18 @@
                     $news_query->the_post(); ?>
 
                     <div class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
-                        <div class="mb-4">
+                        <a href="<?php the_permalink(); ?>" class="mb-4">
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="rounded-lg w-full">
-                        </div>
+                        </a>
                         <div class="py-4 md:py-6 px-6 md:px-8">
                             <small class="text-[10px] uppercase tracking-wide block mb-3">
                                 <?php echo get_the_date('d F Y'); ?>
                             </small>
-                            <h3 class="leading-7 text-[27px] mb-3 font-light">
-                                <?php the_title(); ?>
-                            </h3>
+                            <a href="<?php the_permalink(); ?>">
+                                <h3 class="leading-7 text-[27px] mb-3 font-light">
+                                    <?php the_title(); ?>
+                                </h3>
+                            </a>
                             <p class="text-xs leading-6 mb-12 line-clamp-2">
                                 <?php echo get_the_excerpt(); ?>
                             </p>

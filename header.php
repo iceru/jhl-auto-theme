@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
@@ -38,7 +41,8 @@
     <div id="page" class="min-h-screen flex flex-col">
         <?php do_action('tailpress_header'); ?>
 
-        <header class="fixed z-40 top-4 left-1/2 -translate-x-1/2 max-w-[1200px] hidden md:block w-full">
+        <header data-aos="fade-down" data-aos-duration="1000"
+            class="fixed z-40 top-4 left-1/2 -translate-x-1/2 max-w-[1200px] hidden md:block w-full">
 
             <div class="flex items-center justify-between text-white rounded-full py-[11px] px-[35px] isolate w-full">
                 <div class="absolute inset-0 bg-[#171717]/30 backdrop-blur-2xl rounded-full -z-10"></div>
@@ -364,7 +368,7 @@
             });
         </script>
 
-        <div id="content" class="site-content grow">
+        <div id="content" class="site-content grow" data-scroll-container>
             <?php if (is_front_page()): ?>
             <?php endif; ?>
 

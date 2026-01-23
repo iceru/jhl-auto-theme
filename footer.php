@@ -101,6 +101,20 @@
 </footer>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    (function () {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true,
+            multiplier: 0.8, // Change to 0.5 for much slower scroll
+            lerp: 0.05    // Lower = "Heavier" and smoother feel
+        });
+    })();
+    AOS.init();
+</script>
+
 <?php wp_footer(); ?>
 </body>
 

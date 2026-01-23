@@ -113,8 +113,6 @@ h2 {
   font-weight: 300;
   font-size: 44px;
   line-height: 53px;
-
-
 }
 
 h5 {
@@ -173,4 +171,8 @@ p.body {
 
 .vacancy-trigger.is-active::before {
   transform: translateY(-50%) scaleX(1);
+}
+
+.parallax-img {
+  transition: transform 0.05s linear;
 }

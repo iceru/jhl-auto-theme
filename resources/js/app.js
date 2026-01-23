@@ -79,4 +79,22 @@ $(document).ready(function ($) {
         $('.vacancy-content').hide();
         $('#' + target).stop(true, true).fadeIn(400);
     });
+
+    // Parallax effect
+    // $(window).on('scroll', function () {
+    //     const scrolled = $(window).scrollTop();
+    //     $('.parallax-img').each(function () {
+    //         const $this = $(this);
+    //         const parent = $this.parent();
+    //         const parentOffset = parent.offset().top;
+    //         const parentHeight = parent.height();
+    //         const windowHeight = $(window).height();
+
+    //         if (scrolled + windowHeight > parentOffset && scrolled < parentOffset + parentHeight) {
+    //             const speed = 0.15;
+    //             const offset = (scrolled + windowHeight - parentOffset) * speed;
+    //             $this.css('transform', `translateY(${offset}px)`);
+    //         }
+    //     });
+    // });
 });

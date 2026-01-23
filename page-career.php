@@ -33,8 +33,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
 
 <section class="h-[170vh] md:h-[120vh] w-full relative flex flex-col justify-end pb-[123px] bg-jhl-black">
     <div>
-        <img class="absolute top-0 left-0 w-full h-screen md:h-[90vh] object-[75%_25%] object-cover"
-            src="<?php echo esc_url($hero_img); ?>" alt="">
+        <img class="absolute -top-4 left-0 w-full h-screen md:h-[90vh] object-[75%_25%] object-cover"
+            src="<?php echo esc_url($hero_img); ?>" alt="" data-scroll data-scroll-speed="-2">
     </div>
     <div class="absolute md:hidden left-0 bottom-[40%] w-full h-[30%] bg-gradient-to-t from-jhl-black to-jhl-black/0">
     </div>
@@ -137,7 +137,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
                 <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg">
                     <h3 class="p-8 max-w-[188px] md:max-w-none">
-                        <?php echo esc_html(get_jhl_field('benefit_3_title', 'Belajar & Berkembang')); ?></h3>
+                        <?php echo esc_html(get_jhl_field('benefit_3_title', 'Belajar & Berkembang')); ?>
+                    </h3>
                     <div class="relative w-full">
                         <div
                             class="absolute bg-gradient-to-b from-jhl-foreground to-transparent w-full h-[50%] z-10 top-0 left-0">
@@ -158,7 +159,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             <div class=" bg-jhl-foreground mb-6 rounded-lg">
                 <div class="pt-8 px-8">
                     <h3 class="mb-5">
-                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Jalur Pengembangan Diri')); ?></h3>
+                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Jalur Pengembangan Diri')); ?>
+                    </h3>
                     <p class="body md:max-w-[341px] mb-12">
                         <?php echo esc_html(get_jhl_field('benefit_5_description', 'JHL Auto mendukung masa depan para karyawan melalui perencanaan karier yang terstruktur, mentorship, dan peluang belajar yang disesuaikan dengan tujuan masing-masing karyawan.')); ?>
                     </p>
@@ -219,7 +221,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                             </div>
 
                             <a href="<?php echo get_permalink($vacancy->ID); ?>"
-                                class="inline-block mt-14 px-4 py-2 bg-jhl-black text-white font-bold rounded-sm hover:bg-gray-200 transition-colors">
+                                class="inline-block mt-14 px-4 py-2 bg-jhl-black text-white font-semibold text-xs rounded-sm hover:bg-jhl-black/80 uppercase transition-colors">
                                 Apply Now
                             </a>
                         </div>
