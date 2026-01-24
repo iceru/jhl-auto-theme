@@ -33,8 +33,9 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
 
 <section class="h-[170vh] md:h-[120vh] w-full relative flex flex-col justify-end pb-[123px] bg-jhl-black">
     <div>
-        <img class="absolute -top-4 left-0 w-full h-screen md:h-[90vh] object-[75%_25%] object-cover"
-            src="<?php echo esc_url($hero_img); ?>" alt="" data-scroll data-scroll-speed="-2">
+        <img class="absolute -top-4 left-0 w-full h-screen md:h-[90vh] object-[75%_25%] object-cover zoom-blur-out"
+            src="<?php echo esc_url($hero_img); ?>" alt="" data-scroll data-scroll-speed="-2"
+            data-scroll-class="is-inview">
     </div>
     <div class="absolute md:hidden left-0 bottom-[40%] w-full h-[30%] bg-gradient-to-t from-jhl-black to-jhl-black/0">
     </div>
@@ -42,18 +43,20 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
     <div class="absolute left-0 bottom-[20%] w-full h-[30%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
     <div class="absolute left-0 bottom-0 w-full h-[90%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
     <div class="container text-white relative z-10 px-6 text-center">
-        <h2 class="mb-12 max-w-[302px] mx-auto md:max-w-none">
+        <h2 class="mb-12 max-w-[302px] mx-auto md:max-w-none fade-down" data-scroll data-scroll-class="is-inview">
             <?php echo esc_html($hero_ttl); ?>
         </h2>
-        <h3 class="!text-[20px] md:!text-[27px] !leading-[27px] md:!leading-[36px] md:max-w-[995px] mx-auto">
+        <h3 class="!text-[20px] md:!text-[27px] !leading-[27px] md:!leading-[36px] md:max-w-[995px] mx-auto fade-up"
+            data-scroll data-scroll-class="is-inview">
             <?php echo esc_html($hero_desc); ?>
         </h3>
     </div>
 </section>
 
-<section class="bg-jhl-black w-full overflow-hidden pb-16">
+<section class="bg-jhl-black w-full overflow-hidden pb-16" data-scroll-section>
     <div class="flex gap-x-3 md:gap-x-6 container mx-auto relative  md:px-6">
-        <div class="rounded-2xl overflow-hidden mt-12 w-[40%] absolute -left-[42%]">
+        <div class="rounded-2xl overflow-hidden mt-12 w-[40%] absolute -left-[42%] fade-up" data-scroll
+            data-scroll-class="is-inview">
             <div>
                 <img src="<?php echo esc_url($g1); ?>" class="w-full h-full object-cover rounded-2xl" alt="Event Image">
             </div>
@@ -62,7 +65,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             </div>
         </div>
 
-        <div class="rounded-2xl overflow-hidden absolute -left-[21%] md:left-0 md:static w-[40%] md:w-[30.8%]">
+        <div class="rounded-2xl overflow-hidden absolute -left-[21%] md:left-0 md:static w-[40%] md:w-[30.8%] fade-down"
+            data-scroll data-scroll-class="is-inview">
             <div>
                 <img src="<?php echo esc_url($g3); ?>"
                     class="w-full h-full object-cover rounded-2xl aspect-square md:aspect-auto" alt="Red Car">
@@ -73,7 +77,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             </div>
         </div>
 
-        <div class="rounded-2xl overflow-hidden mx-auto w-[60%] md:w-[30.5%]">
+        <div class="rounded-2xl overflow-hidden mx-auto w-[60%] md:w-[30.5%] fade-up" data-scroll
+            data-scroll-class="is-inview">
             <div>
                 <img src="<?php echo esc_url($g5); ?>" class="w-full h-full object-cover rounded-2xl"
                     alt="Opening Banner">
@@ -83,8 +88,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             </div>
         </div>
 
-        <div
-            class="rounded-2xl overflow-hidden absolute -right-[20%] md:left-0 md:static w-[40%] md:w-[38.7%] mt-4 md:mt-10">
+        <div class="rounded-2xl overflow-hidden absolute -right-[20%] md:left-0 md:static w-[40%] md:w-[38.7%] mt-4 md:mt-10 fade-down"
+            data-scroll data-scroll-class="is-inview">
             <div>
                 <img src="<?php echo esc_url($g7); ?>"
                     class="w-full h-full object-cover rounded-2xl aspect-square md:aspect-auto" alt="Start Line">
@@ -95,7 +100,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             </div>
         </div>
 
-        <div class="rounded-2xl overflow-hidden w-[40%] absolute -right-[42%] mt-20">
+        <div class="rounded-2xl overflow-hidden w-[40%] absolute -right-[42%] mt-20 fade-up" data-scroll
+            data-scroll-class="is-inview">
             <div>
                 <img src="<?php echo esc_url($g9); ?>" class="w-full h-full object-cover rounded-2xl" alt="Start Line">
             </div>
@@ -106,21 +112,22 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
     </div>
 </section>
 
-<section class="py-[90px] container">
+<section class="py-[90px] container" data-scroll-section>
     <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
-        <div class="w-full md:w-[60%]">
+        <div class="w-full md:w-[60%] fade-up" data-scroll data-scroll-class="is-inview">
             <h2 class="mb-11"><?php echo esc_html(get_jhl_field('benefits_main_title', 'Keuntungan Karyawan')); ?></h2>
-            <p class="body">
+            <p class="body fade-down" data-scroll data-scroll-class="is-inview">
                 <?php echo esc_html(get_jhl_field('benefits_main_description', 'Pengalaman kerja terbaik dimulai dari perhatian terhadap orang-orang di dalamnya. Berikut berbagai manfaat yang kami hadirkan untuk mendukung keseharian, pertumbuhan, dan kualitas hidup para karyawan di JHL Auto.')); ?>
             </p>
-            <div class=" bg-jhl-foreground my-6 rounded-lg flex flex-wrap md:flex-nowrap">
-                <div class="w-full md:w-[60%] p-8">
+            <div class=" bg-jhl-foreground my-6 rounded-lg flex flex-wrap md:flex-nowrap fade-right" data-scroll
+                data-scroll-class="is-inview">
+                <div class="w-full md:w-[60%] p-8 fade-right" data-scroll data-scroll-class="is-inview">
                     <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?></h3>
                     <p class="body md:max-w-[291px]">
                         <?php echo esc_html(get_jhl_field('benefit_1_description', 'Potongan harga eksklusif untuk karyawan di seluruh brand, produk, dan layanan kami. Pembuktian bahwa menaikkan gaya hidup tetap bisa dilakukan sambil tetap berhemat.')); ?>
                     </p>
                 </div>
-                <div class="w-full md:w-[40%] relative">
+                <div class="w-full md:w-[40%] relative fade-left" data-scroll data-scroll-class="is-inview">
                     <div
                         class="absolute bg-gradient-to-b md:bg-gradient-to-r from-jhl-foreground to-transparent w-full md:w-[70%] h-[40%] md:h-full z-10 top-0 left-0">
                     </div>
@@ -129,13 +136,15 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
             </div>
             <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
-                <div class="w-full md:w-[60%] bg-jhl-foreground p-8 rounded-lg">
+                <div class="w-full md:w-[60%] bg-jhl-foreground p-8 rounded-lg fade-right" data-scroll
+                    data-scroll-class="is-inview">
                     <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_2_title', 'Asupan Harian')); ?></h3>
                     <p class="body md:max-w-[263px]">
                         <?php echo esc_html(get_jhl_field('benefit_2_description', 'Santapan siang yang enak dan gratis setiap hari untuk menjaga energi, fokus, dan performa terbaik.')); ?>
                     </p>
                 </div>
-                <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg">
+                <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg fade-left" data-scroll
+                    data-scroll-class="is-inview">
                     <h3 class="p-8 max-w-[188px] md:max-w-none">
                         <?php echo esc_html(get_jhl_field('benefit_3_title', 'Belajar & Berkembang')); ?>
                     </h3>
@@ -150,13 +159,13 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             </div>
         </div>
         <div class="w-full md:w-[40%]">
-            <div class="p-8 bg-jhl-foreground mb-6 rounded-lg">
+            <div class="p-8 bg-jhl-foreground mb-6 rounded-lg fade-down" data-scroll data-scroll-class="is-inview">
                 <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_4_title', 'Dana Kebersamaan')); ?></h3>
                 <p class="body md:max-w-[288px] mb-7">
                     <?php echo esc_html(get_jhl_field('benefit_4_description', 'Tunjangan bulanan untuk aktivitas bonding tim seperti kumpul-kumpul, aktivitas seru, hingga momen kebersamaan yang mempererat koneksi antar karyawan.')); ?>
                 </p>
             </div>
-            <div class=" bg-jhl-foreground mb-6 rounded-lg">
+            <div class=" bg-jhl-foreground mb-6 rounded-lg fade-up" data-scroll data-scroll-class="is-inview">
                 <div class="pt-8 px-8">
                     <h3 class="mb-5">
                         <?php echo esc_html(get_jhl_field('benefit_5_title', 'Jalur Pengembangan Diri')); ?>
@@ -178,9 +187,9 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
     </div>
 </section>
 
-<section class="bg-jhl-gray-2 text-white py-20">
+<section class="bg-jhl-gray-2 text-white py-20" data-scroll-section>
     <div class="container mx-auto">
-        <h2 class="mb-24 text-4xl font-bold">
+        <h2 class="mb-24 text-4xl font-bold fade-down" data-scroll data-scroll-class="is-inview">
             Temukan Peran Berikut Kamu
         </h2>
 
@@ -197,7 +206,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         if ($vacancies): ?>
             <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
-                <div class="md:col-span-3 flex flex-col gap-4 p-6 border border-white rounded-lg">
+                <div class="md:col-span-3 flex flex-col gap-4 p-6 border border-white rounded-lg fade-right" data-scroll
+                    data-scroll-class="is-inview">
                     <h5 class="font-bold uppercase mb-2 !text-white">Roles</h5>
                     <?php foreach ($vacancies as $index => $vacancy):
                         $active_class = ($index === 0) ? 'opacity-100 is-active' : 'opacity-40 hover:opacity-70';
@@ -209,7 +219,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     <?php endforeach; ?>
                 </div>
 
-                <div class="md:col-span-9  rounded-lg relative min-h-[400px] vacancy-text">
+                <div class="md:col-span-9  rounded-lg relative min-h-[400px] vacancy-text fade-left" data-scroll
+                    data-scroll-class="is-inview">
                     <?php foreach ($vacancies as $index => $vacancy):
                         $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
                         ?>

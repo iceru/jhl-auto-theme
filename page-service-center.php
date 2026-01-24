@@ -15,20 +15,21 @@ $service_desc = get_field('service_description') ?: 'Bengkel resmi JHL Auto memb
 $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
 ?>
 
-<section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px]">
+<section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px]" data-scroll-section>
     <div>
-        <img class="absolute top-0 left-0 w-full h-full object-cover object-[30%_center] md:object-center"
-            src="<?php echo $hero_bg_url; ?>" alt="<?php echo $hero_bg_alt; ?>">
+        <img class="absolute top-0 left-0 w-full h-full object-cover object-[30%_center] md:object-center zoom-out"
+            data-scroll data-scroll-class="is-inview" src="<?php echo $hero_bg_url; ?>"
+            alt="<?php echo $hero_bg_alt; ?>">
     </div>
     <div class="absolute left-0 bottom-0 w-full h-[80%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
     <div class="container text-white relative z-10">
-        <h2><?php echo esc_html($hero_title); ?></h2>
+        <h2 class="fade-down" data-scroll data-scroll-class="is-inview"><?php echo esc_html($hero_title); ?></h2>
     </div>
 </section>
 
 <section class="container py-20 overflow-hidden">
     <div class="flex justify-between items-end mb-10">
-        <p class="body max-w-[638px] text-jhl-gray-1">
+        <p class="body max-w-[638px] text-jhl-gray-1 fade-down" data-scroll data-scroll-class="is-inview">
             <?php echo nl2br(esc_html($service_desc)); ?>
         </p>
         <div id="service-arrows" class="flex gap-2"></div>
@@ -45,7 +46,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
             while ($service_query->have_posts()):
                 $service_query->the_post(); ?>
                 <div class="px-3 outline-none">
-                    <div class="flex flex-col h-full">
+                    <div class="flex flex-col h-full fade-right" data-scroll data-scroll-class="is-inview">
                         <div class="rounded-lg overflow-hidden mb-4">
                             <?php if (has_post_thumbnail()): ?>
                                 <?php the_post_thumbnail('large', ['class' => 'w-[384px] h-[426px] rounded object-cover']); ?>
@@ -67,7 +68,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
 
 <section class="py-20 bg-beijing-black">
     <div class="container text-white">
-        <div class="text-[28px] leading-[30px] mb-12">
+        <div class="text-[28px] leading-[30px] mb-12 fade-down" data-scroll data-scroll-class="is-inview">
             <?php echo esc_html($promo_title); ?>
         </div>
         <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-5 gap-[14px]">
@@ -82,7 +83,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
             if ($promo_query->have_posts()):
                 while ($promo_query->have_posts()):
                     $promo_query->the_post(); ?>
-                    <div class="flex-none w-[75%] snap-start md:w-full">
+                    <div class="flex-none w-[75%] snap-start md:w-full fade-right" data-scroll data-scroll-class="is-inview">
                         <div class="mb-8">
                             <?php if (has_post_thumbnail()): ?>
                                 <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">

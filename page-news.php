@@ -1,17 +1,20 @@
 <?php get_header() ?>
-<section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px] mb-9">
-    <div>
-        <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
-            src="<?php echo get_template_directory_uri() ?>/images/news-hero.jpg" alt="">
-    </div>
-    <div class="absolute left-0 bottom-0 w-full h-[80%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
-    <div class="container text-white relative z-10">
-        <h2>Berita & Promosi</h2>
-    </div>
+<section data-scroll-section>
+    <section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px] mb-9">
+        <div>
+            <img class="absolute top-0 left-0 w-full h-full object-cover object-center zoom-in" data-scroll
+                data-scroll-class="is-inview" src="<?php echo get_template_directory_uri() ?>/images/news-hero.jpg"
+                alt="">
+        </div>
+        <div class="absolute left-0 bottom-0 w-full h-[80%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
+        <div class="container text-white relative z-10 fade-down" data-scroll data-scroll-class="is-inview">
+            <h2>Berita & Promosi</h2>
+        </div>
+    </section>
 </section>
 
-<section class="container flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12 mb-20">
-    <div class="w-full md:w-1/4">
+<section class="container flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12 mb-20" data-scroll-section>
+    <div class="w-full md:w-1/4 fade-right" data-scroll data-scroll-class="is-inview">
         <h5 class="mb-8">Filter by Brand</h5>
         <div id="brand-filters" class="flex flex-col space-y-3">
             <?php
@@ -42,7 +45,7 @@
         </div>
     </div>
 
-    <div class="flex-1">
+    <div class="flex-1 fade-left" data-scroll data-scroll-class="is-inview">
         <div class="flex space-x-6 mb-9" id="type-toggle">
             <button data-type="post"
                 class="type-btn active uppercase bg-black text-white border-black border rounded-4xl w-[143px] flex justify-center py-[18px] text-xs transition-all">

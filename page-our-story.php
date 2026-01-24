@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section class="h-[130vh] md:h-screen relative flex flex-col justify-end pb-14 md:pb-[107px]">
-    <div class="absolute h-full w-full left-0 top-0">
+    <div class="absolute h-full w-full left-0 top-0" data-aos="zoom-out">
         <?php
         $header_img = get_field('story_header_image');
         $header_img_url = $header_img ? $header_img['url'] : get_template_directory_uri() . '/images/story-header.png';
@@ -10,13 +10,13 @@
     </div>
     <div class="absolute w-[90%] left-0 top-0 h-full bg-gradient-to-r from-jhl-black to-jhl-black/0"></div>
     <div class="container z-10 relative text-white">
-        <h1 class="text-[44px] font-light">
+        <h1 class="text-[44px] font-light" data-aos="fade-right">
             <?php echo get_field('story_header_title') ?: 'Awal Perjalanan'; ?>
         </h1>
-        <div class="mb-4">
+        <div class="mb-4" data-aos="fade-right" data-aos-delay="200">
             <?php echo get_field('story_header_desc_1') ?: 'Setiap perjalanan besar dimulai dari satu langkah berani. Pada 12 Januari 2012, JHL Auto resmi berdiri sebagai bagian dari JHL Group, menandai awal kiprah perusahaan dalam menghadirkan pengalaman otomotif premium di Indonesia.'; ?>
         </div>
-        <div>
+        <div data-aos="fade-right" data-aos-delay="200">
             <?php echo get_field('story_header_desc_2') ?: 'Sejak awal, JHL Auto membawa semangat integritas, inovasi, dan pelayanan berstandar internasional, dengan tujuan menjadi mitra mobilitas terpercaya bagi masyarakat Indonesia. Dari momentum bersejarah sebagai bagian dari Jaringan resmi Jeep di Indonesia, JHL Auto terus berkembang hingga pada Maret 2024 dipercaya sebagai Authorized BAIC Dealer, memperkuat posisinya sebagai bagian dari grup otomotif besar yang dinamis dan progresif.'; ?>
         </div>
     </div>
@@ -376,17 +376,17 @@
     });
 </script>
 <section class="py-32 container md:text-center">
-    <h2 class="text-2xl md:text-[44px] mb-2 font-light text-black">
+    <h2 class="text-2xl md:text-[44px] mb-2 font-light text-black" data-aos="fade-down">
         <?php echo get_field('panca_krida_title') ?: 'Panca Krida'; ?>
     </h2>
-    <h4 class="mb-11 text-xl text-black">
+    <h4 class="mb-11 text-xl text-black" data-aos="fade-down" data-aos-delay="200">
         <?php echo get_field('panca_krida_subtitle') ?: 'The Power to Success'; ?>
     </h4>
-    <p class="body mx-auto md:max-w-[859px] mb-11">
+    <p class="body mx-auto md:max-w-[859px] mb-11" data-aos="fade-down" data-aos-delay="400">
         <?php echo get_field('panca_krida_desc') ?: 'JHL Auto berpegang pada nilai-nilai Panca Krida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang inovatif dan terpercaya.'; ?>
     </p>
     <div class="grid md:grid-cols-3 gap-6 mb-6">
-        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
+        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center" data-aos="fade-right" data-aos-delay="600">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_1_title') ?: 'Kesempatan'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_1_sub') ?: 'Opportunity'; ?>
@@ -395,7 +395,7 @@
                 <?php echo get_field('krida_1_desc') ?: 'Memanfaatkan setiap peluang dengan bijaksana dan bertanggung jawab.'; ?>
             </p> -->
         </div>
-        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
+        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center" data-aos="fade-down" data-aos-delay="800">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_2_title') ?: 'Kerja Keras'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_2_sub') ?: 'Work Hard'; ?>
@@ -404,7 +404,7 @@
                 <?php echo get_field('krida_2_desc') ?: 'Dedikasi penuh dalam setiap langkah dan upaya tanpa kenal lelah'; ?>
             </p> -->
         </div>
-        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center">
+        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center" data-aos="fade-left" data-aos-delay="1000">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_3_title') ?: 'Kerja Cerdas'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_3_sub') ?: 'Smart Work'; ?>
@@ -415,7 +415,8 @@
         </div>
     </div>
     <div class="flex justify-center items-center space-y-6 md:space-y-0 md:space-x-6 w-full flex-wrap mx-auto">
-        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
+        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3" data-aos="fade-right"
+            data-aos-delay="1200">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_4_title') ?: 'Kerja Tuntas'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_4_sub') ?: 'Complete Work'; ?>
@@ -424,7 +425,8 @@
                 <?php echo get_field('krida_4_desc') ?: 'Menyelesaikan setiap tugas dengan sempurna dan berkualitas'; ?>
             </p> -->
         </div>
-        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3">
+        <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center w-full md:w-1/3" data-aos="fade-left"
+            data-aos-delay="1200">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_5_title') ?: 'Loyalitas'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
                 <?php echo get_field('krida_5_sub') ?: 'Loyalty'; ?>
@@ -436,7 +438,7 @@
     </div>
 </section>
 
-<section class="md:h-screen w-full flex flex-col md:flex-row space-x-16 bg-[#404040] relative ">
+<section class="md:h-screen w-full flex flex-col md:flex-row space-x-16 bg-[#404040] relative" data-scroll-section>
     <div class="md:absolute h-full w-full md:w-[426px] 2xl:w-[580px] md:left-0">
         <?php
         $vm_img = get_field('vm_side_image');
@@ -445,14 +447,16 @@
         <img class="w-full h-full object-cover" src="<?php echo esc_url($vm_img_url); ?>" alt="">
     </div>
     <div class="flex flex-col justify-center w-full py-7 container">
-        <div class="flex flex-col md:flex-row md:space-x-6 mb-20 justify-end">
-            <div class="bg-jhl-foreground p-11 rounded-lg mb-4 md:mb-0 lg:max-w-[380px] xxl:max-w-[403px] w-full">
+        <div class="flex flex-col md:flex-row md:space-x-6 mb-20 md:ml-[420px] justify-center">
+            <div class="bg-jhl-foreground p-11 rounded-lg mb-4 md:mb-0 lg:max-w-[380px] xxl:max-w-[403px] w-full"
+                data-aos="fade-right">
                 <h3 class="mb-8 font-light text-[27px]">Visi</h3>
                 <div class="body max-w-[254px]">
                     <?php echo get_field('visi_text') ?: 'Menjadi group dealer otomotif terdepan di Indonesia dalam inovasi, kualitas, dan layanan pelanggan'; ?>
                 </div>
             </div>
-            <div class="bg-jhl-foreground p-11 rounded-lg lg:max-w-[380px] xxl:max-w-[403px] w-full">
+            <div class="bg-jhl-foreground p-11 rounded-lg lg:max-w-[380px] xxl:max-w-[403px] w-full"
+                data-aos="fade-left">
                 <h3 class="mb-8 font-light text-[27px]">Misi</h3>
                 <div class="body max-w-[254px]">
                     <?php echo get_field('misi_text') ?: '<ul class="list-disc body pl-4"><li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.</li><li>Mendorong pengembangan organisasi yang berkelanjutan.</li><li>Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik</li></ul>'; ?>
@@ -461,14 +465,15 @@
         </div>
 
         <div
-            class="grid grid-cols-2 md:flex items-center justify-center md:ml-[420px] gap-y-20 md:gap-y-0 mb-14 md:mb-0 md:space-x-20">
+            class="grid grid-cols-2 md:flex items-center justify-center md:ml-[420px] gap-y-20 md:gap-y-0 mb-14 md:mb-0">
             <?php for ($i = 1; $i <= 4; $i++):
                 $icon = get_field('culture_icon_' . $i);
                 $label = get_field('culture_label_' . $i);
                 $def_labels = ['', 'Integritas', 'Semangat', 'Kepuasan Pelanggan', 'Kerja Sama tim'];
                 $def_imgs = ['', 'Warranty.png', 'Fist.png', 'Heart.png', 'Crowd.png'];
                 ?>
-                <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col justify-center items-center mx-10" data-aos="fade-down"
+                    data-aos-delay="<?php echo $i * 100; ?>">
                     <img class="w-20 h-20 object-contain mb-7"
                         src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/images/' . $def_imgs[$i]; ?>"
                         alt="">
@@ -484,14 +489,14 @@
 <section class="container py-24 md:py-32 grid gap-16 md:gap-0 md:grid-cols-4">
     <?php
     $stats = [
-        ['field' => 'stat_1', 'def_num' => '14', 'def_label' => 'Tahun <br /> Beroperasi'],
-        ['field' => 'stat_2', 'def_num' => '4', 'def_label' => 'Dealership <br /> di Indonesia'],
-        ['field' => 'stat_3', 'def_num' => '80+', 'def_label' => 'Total Karyawan'],
-        ['field' => 'stat_4', 'def_num' => '1000+', 'def_label' => 'Unit <br /> Mobil Terjual'],
+        ['field' => 'stat_1', 'delay' => '100', 'def_num' => '14', 'def_label' => 'Tahun <br /> Beroperasi'],
+        ['field' => 'stat_2', 'delay' => '200', 'def_num' => '4', 'def_label' => 'Dealership <br /> di Indonesia'],
+        ['field' => 'stat_3', 'delay' => '300', 'def_num' => '80+', 'def_label' => 'Total Karyawan'],
+        ['field' => 'stat_4', 'delay' => '400', 'def_num' => '1000+', 'def_label' => 'Unit <br /> Mobil Terjual'],
     ];
     foreach ($stats as $s):
         ?>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="<?php echo $s['delay']; ?>">
             <h1 class="!text-[74px] !leading-none font-extralight">
                 <?php echo get_field($s['field'] . '_num') ?: $s['def_num']; ?>
             </h1>
@@ -500,13 +505,16 @@
     <?php endforeach; ?>
 </section>
 
-<section class="py-[110px] bg-jhl-foreground/30 overflow-x-hidden">
+<section class="py-[110px] bg-jhl-foreground/30 overflow-x-hidden" data-scroll-section>
     <div class="container">
         <div class="flex flex-col md:flex-row mb-28">
             <div class="bg-jhl-gray-3/20 order-2 md:order-1 px-9 py-16 md:p-16 md:w-[60%]">
-                <h3 class="mb-3"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?></h3>
-                <h5 class="mb-11"><?php echo get_field('director_title') ?: 'Direktur Utama'; ?></h5>
-                <div class="body md:max-w-[494px]">
+                <h3 class="mb-3" data-aos="fade-right"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?>
+                </h3>
+                <h5 class="mb-11" data-aos="fade-right" data-aos-delay="100">
+                    <?php echo get_field('director_title') ?: 'Direktur Utama'; ?>
+                </h5>
+                <div class="body md:max-w-[494px]" data-aos="fade-right" data-aos-delay="200">
                     <?php echo get_field('director_desc') ?: 'Sebagai Direktur Utama yang visioner, Johnnathan Salim memimpin JHL Auto 
                     dengan komitmen terhadap inovasi berkelanjutan dan pengembangan industri otomotif di Indonesia. Berbekal lebih dari 
                     sepuluh tahun pengalaman, beliau berhasil memposisikan JHL Auto sebagai perusahaan yang tangguh dan adaptif, 
@@ -515,7 +523,7 @@
                     solusi otomotif berkualitas tinggi.'; ?>
                 </div>
             </div>
-            <div class="bg-white md:w-[40%] pt-10 order-1 md:order-2">
+            <div class="bg-white md:w-[40%] pt-10 order-1 md:order-2" data-aos="fade-left">
                 <?php
                 $dir_img = get_field('director_image');
                 $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur.png';
@@ -526,8 +534,10 @@
         </div>
 
         <div>
-            <h2 class="mb-11"><?php echo get_field('team_section_title') ?: 'Sosok-Sosok di Balik JHL Auto'; ?></h2>
-            <div class="flex justify-between items-end mb-8">
+            <h2 class="mb-11" data-aos="fade-down">
+                <?php echo get_field('team_section_title') ?: 'Sosok-Sosok di Balik JHL Auto'; ?>
+            </h2>
+            <div class="flex justify-between items-end mb-8" data-aos="fade-down" data-aos-delay="200">
                 <div class="body text-jhl-gray-1 md:max-w-[579px]">
                     <?php echo get_field('team_section_desc') ?: 'Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama mewujudkan visi perusahaan.'; ?>
                 </div>
@@ -536,7 +546,7 @@
         </div>
     </div>
 
-    <!-- <div class="slider-full-right pl-4">
+    <div class="slider-full-right pl-4">
         <?php
         $args = array(
             'post_type' => 'team',
@@ -548,7 +558,7 @@
         $team_query = new WP_Query($args);
 
         if ($team_query->have_posts()): ?>
-            <div class="teams -mx-2">
+            <div class="teams -mx-2" data-aos="fade-down" data-aos-delay="400">
                 <?php while ($team_query->have_posts()):
                     $team_query->the_post();
                     $position = get_field('position');
@@ -573,6 +583,6 @@
                 wp_reset_postdata(); ?>
             </div>
         <?php endif; ?>
-    </div> -->
+    </div>
 </section>
 <?php get_footer(); ?>

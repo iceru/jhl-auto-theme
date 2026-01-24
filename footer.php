@@ -9,7 +9,7 @@
 </main>
 
 <?php do_action('tailpress_content_end'); ?>
-</div>
+
 
 <?php do_action('tailpress_content_after'); ?>
 
@@ -99,20 +99,55 @@
         </div>
     </div>
 </footer>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    (function () {
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('[data-scroll-container]'),
+    document.addEventListener('DOMContentLoaded', () => {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smooth: true,
-            multiplier: 0.8, // Change to 0.5 for much slower scroll
-            lerp: 0.05    // Lower = "Heavier" and smoother feel
         });
-    })();
-    AOS.init();
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Handle ".is-inview" animation triggers (Previously Locomotive)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const targetClass = entry.target.getAttribute('data-scroll-class') || 'is-inview';
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(targetClass);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
+
+        // Handle "data-scroll-speed" parallax (Previously Locomotive)
+        lenis.on('scroll', (e) => {
+            AOS.refresh();
+            
+            document.querySelectorAll('[data-scroll-speed]').forEach(el => {
+                const speed = parseFloat(el.getAttribute('data-scroll-speed')) || 0;
+                // Center the parallax effect around the element's position for a more natural feel
+                const yPos = -(e.scroll * speed * 0.05); 
+                el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+            });
+        });
+
+        window.lenis = lenis;
+    });
+
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100, // offset (in px) from the original trigger point
+    });
 </script>
 
 <?php wp_footer(); ?>

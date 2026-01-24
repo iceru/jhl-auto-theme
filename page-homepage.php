@@ -1,35 +1,36 @@
 <?php get_header() ?>
+<section data-scroll-section>
+    <section class="relative w-full h-screen" data-scroll data-scroll-speed="-2">
+        <div class="absolute inset-0 -top-4 zoom-blur-out" data-scroll data-scroll-class="is-inview">
+            <?php
 
-<section class="relative w-full h-screen" data-scroll data-scroll-speed="-2" data-aos="zoom-out"
-    data-aos-duration="1000">
-    <div class="absolute inset-0 -top-4">
-        <?php
-
-        $hero_video_url = get_field('hero_video_file');
-        if ($hero_video_url):
-            ?>
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        <?php endif; ?>
-    </div>
+            $hero_video_url = get_field('hero_video_file');
+            if ($hero_video_url):
+                ?>
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <?php endif; ?>
+        </div>
+    </section>
 </section>
 
 <section class="bg-[#F4F4F4] relative md:h-screen z-10">
     <div class="container grid md:grid-cols-2 md:h-screen">
         <div class="flex flex-col justify-center md:pr-20 py-20 md:py-0">
-            <h2 class="text-2xl md:text-[44px] mb-11 font-light">
+            <h2 class="text-2xl md:text-[44px] mb-11 font-light fade-right" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
             </h2>
-            <div class="body mb-14 md:mb-[73px]">
+            <div class="body mb-14 md:mb-[73px] fade-up" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
             </div>
             <?php
             $about_link = get_field('about_link_url') ?: '';
             ?>
             <a href="/our-story"
-                class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline">
+                class="text-xs flex items-center space-x-2 uppercase text-jhl-gray-2 font-semibold tracking-wide !no-underline fade-up"
+                data-scroll data-scroll-class="is-inview">
                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                 <span>
                     Pelajari
@@ -49,17 +50,18 @@
 
 </section>
 
-<section class="container pr-0 md:pr-4 py-20 md:pt-32 md:pb-20">
+<section class="container pr-0 md:pr-4 py-20 md:pt-32 md:pb-20" data-scroll-section>
     <div class="md:text-center mb-12 pr-4 md:pr-0">
-        <h2 class="text-2xl md:text-[44px] mb-6 font-light">
+        <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-down" data-scroll data-scroll-class="is-inview">
             <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
         </h2>
-        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-none">
+        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-none fade-up" data-scroll data-scroll-class="is-inview">
             <?php echo get_field('promo_subtitle') ?: 'Nikmati penawaran terbaik kami hanya untuk Anda. <br class="hidden md:block" /> Manfaatkan promonya dan segera dapatkan kendaraan baru yang Anda impikan!'; ?>
         </p>
     </div>
 
-    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6">
+    <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 no-scrollbar pb-6 fade-right"
+        data-scroll data-scroll-class="is-inview">
         <?php
         $args = array(
             'post_type' => 'promotion',
@@ -99,18 +101,19 @@
     </div>
 </section>
 
-<section class="py-20 md:pt-32 md:pb-20 bg-black/80 text-white">
+<section class="py-20 md:pt-32 md:pb-20 bg-black/80 text-white" data-scroll-section>
     <div class="container pr-0 md:pr-4">
         <div class="md:text-center mb-12 pr-4 md:pr-0">
-            <h2 class="text-2xl md:text-[44px] mb-6 font-light">
+            <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-down" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('branches_title') ?: 'Cabang Kami'; ?>
             </h2>
-            <p class="body md:max-w-[486px] mx-auto">
+            <p class="body md:max-w-[486px] mx-auto fade-up" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('branches_description') ?: 'Rasakan pengalaman profesional JHL Auto di berbagai lokasi strategis terdekat yang siap melayani kebutuhan mobilitas Anda setiap saat.'; ?>
             </p>
         </div>
 
-        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6">
+        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6 fade-right"
+            data-scroll data-scroll-class="is-inview">
             <?php
             $args = array(
                 'post_type' => 'dealer',
@@ -130,11 +133,11 @@
                                 alt="<?php the_title(); ?>" class="rounded-lg h-[318px] object-cover w-full">
                         </div>
 
-                        <h4 class="leading-7 text-xl mb-4">
+                        <h4 class="leading-7 text-xl mb-4 fade-up" data-scroll data-scroll-class="is-inview">
                             <?php the_title(); ?>
                         </h4>
 
-                        <div class="body text-jhl-gray-1">
+                        <div class="body text-jhl-gray-1 fade-up" data-scroll data-scroll-class="is-inview">
                             <?php the_content(); ?>
                         </div>
                     </div>
@@ -145,18 +148,19 @@
         </div>
     </div>
 </section>
-<section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground">
+<section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground" data-scroll-section>
     <div class="container flex flex-wrap md:flex-nowrap justify-between items-center">
         <div class="mb-12">
-            <h2 class="text-2xl md:text-[44px] mb-6 font-light">
+            <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-right" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('awards_title') ?: 'Penghargaan Kami'; ?>
             </h2>
-            <p class="body md:max-w-[426px] mx-auto">
+            <p class="body md:max-w-[426px] mx-auto fade-up" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('awards_description') ?: 'Perjalanan kami di industri otomotif telah diakui melalui berbagai penghargaan bergengsi. 
                 Berikut deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.'; ?>
             </p>
         </div>
-        <div class="awards-container grid w-full md:w-fit grid-cols-2 gap-6 md:flex items-start md:space-x-14 md:gap-0">
+        <div class="awards-container grid w-full md:w-fit grid-cols-2 gap-6 md:flex items-start md:space-x-14 md:gap-0 fade-left"
+            data-scroll data-scroll-class="is-inview">
             <?php
             $args = array(
                 'post_type' => 'awards',
@@ -205,17 +209,18 @@
     });
 </script>
 
-<section class="py-20 md:pt-32 md:pb-20 bg-jhl-gray-3">
+<section class="py-20 md:pt-32 md:pb-20 bg-jhl-gray-3" data-scroll-section>
     <div class="container">
         <div class="md:text-center mb-12">
-            <h2 class="text-2xl md:text-[44px] mb-6 font-light">
+            <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-up" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('news_title') ?: 'Berita Terbaru'; ?>
             </h2>
-            <p class="body md:max-w-[547px] mx-auto mb-6">
+            <p class="body md:max-w-[547px] mx-auto mb-6 fade-up" data-scroll data-scroll-class="is-inview">
                 <?php echo get_field('news_subtitle') ?: 'Jadilah yang pertama tahu mengenai JHL Auto. Peluncuran model kendaraan terkini, aktivitas dealer resmi, hingga layanan dan inovasi, semua ada di sini.'; ?>
             </p>
             <a href="/news"
-                class="text-xs flex items-center md:justify-center space-x-2 text-jhl-black font-semibold tracking-wide !no-underline uppercase">
+                class="text-xs flex items-center md:justify-center space-x-2 text-jhl-black font-semibold tracking-wide !no-underline uppercase fade-up"
+                data-scroll data-scroll-class="is-inview">
                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" class="brightness-20"
                     alt="">
                 <span>
@@ -224,7 +229,8 @@
             </a>
         </div>
 
-        <div class="flex overflow-x-auto -mr-4 md:mr-0 snap-x snap-mandatory md:grid md:grid-cols-3 gap-4 no-scrollbar">
+        <div class="flex overflow-x-auto -mr-4 md:mr-0 snap-x snap-mandatory md:grid md:grid-cols-3 gap-4 no-scrollbar fade-up"
+            data-scroll data-scroll-class="is-inview">
             <?php
             $args = array('post_type' => 'post', 'posts_per_page' => 3);
             $news_query = new WP_Query($args);
@@ -263,29 +269,16 @@
     </div>
 </section>
 
-<style>
-    /* Add this to your CSS file to hide the scrollbars while keeping functionality */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-</style>
-
-
-<section class="relative md:min-h-[70vh] w-full py-16">
+<section class="relative md:min-h-[70vh] w-full py-16" data-scroll-section>
     <?php
     $loyalty_bg = get_field('loyalty_bg');
     $loyalty_bg_url = $loyalty_bg ? $loyalty_bg['url'] : get_template_directory_uri() . '/images/header-home-1.png';
     ?>
     <img src="<?php echo esc_url($loyalty_bg_url); ?>" alt="Hero Image"
         class="hidden md:block top-0 left-0 w-full h-full object-cover absolute">
-    <div class="container flex flex-col justify-center h-full p-4 md:p-0">
-        <div
-            class="md:bg-jhl-background/20 md:backdrop-blur-2xl p-7 text-white w-full md:w-[486px] rounded-xl flex space-x-4 relative z-10">
+    <div class="container flex flex-col justify-center h-full p-4">
+        <div class="md:bg-jhl-background/20 md:backdrop-blur-2xl p-7 text-white w-full md:w-[486px] rounded-xl flex space-x-4 relative z-10 fade-right"
+            data-scroll data-scroll-class="is-inview">
 
             <div class="md:hidden absolute z-0 w-full h-full left-0 top-0">
                 <img src="<?php echo get_template_directory_uri() ?>/images/mobile-loyalty.png" alt=""

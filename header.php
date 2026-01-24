@@ -30,7 +30,7 @@
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
@@ -368,7 +368,7 @@
             });
         </script>
 
-        <div id="content" class="site-content grow" data-scroll-container>
+        <div id="content" class="site-content grow">
             <?php if (is_front_page()): ?>
             <?php endif; ?>
 

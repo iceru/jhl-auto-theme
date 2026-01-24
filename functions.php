@@ -68,9 +68,10 @@ function filter_news_func()
             <div class="space-y-4 md:space-y-6 fade-in">
                 <div class="overflow-hidden rounded-sm">
                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: 'https://via.placeholder.com/400x180'; ?>"
-                        alt="" class="w-full h-[184px] object-cover hover:scale-105 transition-transform duration-500">
+                        alt=""
+                        class="w-full <?php echo $post_type === 'post' ? 'h-[184px]' : 'h-auto'; ?> object-cover hover:scale-105 transition-transform duration-500">
                 </div>
-                <h5 class="uppercase leading-tight !text-black md:min-h-[3rem]"><?php the_title(); ?></h5>
+                <h5 class="uppercase leading-tight !text-black "><?php the_title(); ?></h5>
                 <p class="text-sm text-gray-600 line-clamp-2">
                     <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                 </p>
