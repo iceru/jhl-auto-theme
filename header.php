@@ -59,7 +59,7 @@
                                 <div class="uppercase text-[13px] !no-underline">About Us</div>
 
                                 <ul
-                                    class="absolute left-0 top-full py-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-0">
+                                    class="absolute left-0 top-full py-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                                     <div class="p-[18px] space-y-3 isolate relative">
                                         <div
                                             class="absolute inset-0 mb-0 bg-[#171717]/30 backdrop-blur-2xl rounded-xl shadow-2xl -z-10 border border-white/10">
@@ -89,7 +89,7 @@
                                 <div class="uppercase text-[13px] !no-underline">Brands</div>
 
                                 <ul
-                                    class="absolute left-0 top-full py-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-0">
+                                    class="absolute left-0 top-full py-6 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                                     <div class="p-[18px] space-y-3 isolate relative">
                                         <div
                                             class="absolute inset-0 mb-0 bg-[#171717]/30 backdrop-blur-2xl rounded-xl shadow-2xl -z-10 border border-white/10">
@@ -148,7 +148,9 @@
         </header>
 
         <aside id="main-sidebar"
-            class="fixed inset-0 z-[60] bg-jhl-gray-1 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            class="fixed inset-0 z-[60]  transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="absolute inset-0 bg-[#171717]/30 backdrop-blur-2xl  -z-10"></div>
+
             <div class="flex flex-col justify-between items-center h-full pt-[22px] pb-24 px-4">
 
                 <div class="flex justify-between items-center w-full" id="sidebar-header">
