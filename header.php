@@ -254,10 +254,11 @@
             });
         </script>
 
-        <div id="contact-popup" class="fixed inset-0 z-[100] hidden items-center justify-center">
-            <div class="absolute inset-0 bg-black/40" id="close-overlay"></div>
+        <div id="contact-popup" class="fixed inset-0 z-[100]  hidden items-center justify-center">
+            <div class="absolute inset-0 bg-black/70" id="close-overlay"></div>
 
-            <div class="relative bg-white w-full max-w-4xl  py-16 px-24 shadow-2xl border-jhl-gray-3 border-5 z-10">
+            <div
+                class="relative bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto px-4 py-8 md:px-24 shadow-2xl border-jhl-gray-3 border-5 z-10">
                 <button id="close-contact" class="absolute top-4 right-4 text-white/50 hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -266,14 +267,13 @@
                     </svg>
                 </button>
 
-                <div class="text-[28px] mb-12">Hubungi Kami</div>
+                <div class="text-[28px] mb-10">Hubungi Kami</div>
 
-                <div class="cf7-popup-wrapper">
+                <div class="cf7-popup-wrapper td-form">
                     <?php echo do_shortcode('[contact-form-7 id="9781d18" title="Contact form 1"]'); ?>
                 </div>
             </div>
         </div>
-
         <div class="fixed bottom-6 right-6 z-[50] flex flex-col items-end space-y-4">
             <button id="social-toggle"
                 class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center transition-transform duration-300">
