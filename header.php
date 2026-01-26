@@ -266,10 +266,10 @@
                     </svg>
                 </button>
 
-                <div class="text-[28px] mb-12 uppercase">Contact Us</div>
+                <div class="text-[28px] mb-12">Hubungi Kami</div>
 
                 <div class="cf7-popup-wrapper">
-                    <?php echo do_shortcode('[contact-form-7 id="YOUR_FORM_ID" title="Contact Form Home"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="9781d18" title="Contact form 1"]'); ?>
                 </div>
             </div>
         </div>
