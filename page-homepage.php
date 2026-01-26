@@ -43,8 +43,7 @@
             $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
             ?>
             <img src="<?php echo esc_url($about_img_url); ?>" alt="Sekilas Tentang Kami"
-                class="parallax-img absolute -top-2 left-0 w-full h-full object-cover" data-scroll
-                data-scroll-speed="-2">
+                class="absolute left-0 w-full h-[110%] -top-[20%] object-cover" data-scroll data-scroll-speed="-2">
         </div>
     </div>
 
