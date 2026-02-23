@@ -377,13 +377,13 @@
 </script>
 <section class="py-32 container md:text-center">
     <h2 class="text-2xl md:text-[44px] mb-2 font-light text-black" data-aos="fade-down">
-        <?php echo get_field('panca_krida_title') ?: 'Panca Krida'; ?>
+        <?php echo get_field('panca_krida_title') ?: 'Pancakrida'; ?>
     </h2>
     <h4 class="mb-11 text-xl text-black" data-aos="fade-down" data-aos-delay="200">
         <?php echo get_field('panca_krida_subtitle') ?: 'The Power to Success'; ?>
     </h4>
     <p class="body mx-auto md:max-w-[859px] mb-11" data-aos="fade-down" data-aos-delay="400">
-        <?php echo get_field('panca_krida_desc') ?: 'JHL Auto berpegang pada nilai-nilai Panca Krida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang inovatif dan terpercaya.'; ?>
+        <?php echo get_field('panca_krida_desc') ?: 'JHL Auto berpegang pada nilai-nilai Pancakrida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang inovatif dan terpercaya.'; ?>
     </p>
     <div class="grid md:grid-cols-3 gap-6 mb-6">
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center" data-aos="fade-right" data-aos-delay="600">
@@ -407,7 +407,7 @@
         <div class="bg-jhl-gray-3/20 p-7 rounded-lg text-center" data-aos="fade-left" data-aos-delay="1000">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_3_title') ?: 'Kerja Cerdas'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
-                <?php echo get_field('krida_3_sub') ?: 'Smart Work'; ?>
+                <?php echo get_field('krida_3_sub') ?: 'Work Smart'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_3_desc') ?: 'Inovasi dan strategi tepat untuk mencapai hasil maksimal'; ?>
@@ -419,7 +419,7 @@
             data-aos-delay="1200">
             <h3 class="mb-2 font-light text-[27px]"><?php echo get_field('krida_4_title') ?: 'Kerja Tuntas'; ?></h3>
             <p class="font-medium text-[10px] uppercase tracking-wide">
-                <?php echo get_field('krida_4_sub') ?: 'Complete Work'; ?>
+                <?php echo get_field('krida_4_sub') ?: 'Work Thoroughly'; ?>
             </p>
             <!-- <p class="max-w-[248px] leading-6 text-xs mx-auto">
                 <?php echo get_field('krida_4_desc') ?: 'Menyelesaikan setiap tugas dengan sempurna dan berkualitas'; ?>
