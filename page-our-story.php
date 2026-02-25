@@ -14,10 +14,14 @@
             <?php echo get_field('story_header_title') ?: 'Awal Perjalanan'; ?>
         </h1>
         <div class="mb-4" data-aos="fade-right" data-aos-delay="200">
-            <?php echo get_field('story_header_desc_1') ?: 'Setiap perjalanan besar dimulai dari satu langkah berani. Pada 12 Januari 2012, JHL Auto resmi berdiri sebagai bagian dari JHL Group, menandai awal kiprah perusahaan dalam menghadirkan pengalaman otomotif premium di Indonesia.'; ?>
+            <?php echo get_field('story_header_desc_1') ?: 'Setiap perjalanan besar selalu dimulai dari satu keyakinan. 
+Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi menghadirkan standar baru dalam pengalaman otomotif di Indonesia.'; ?>
+        </div>
+        <div data-aos="fade-right" class="mb-4" data-aos-delay="200">
+            <?php echo get_field('story_header_desc_2') ?: 'Berawal dari kepercayaan sebagai bagian dari jaringan resmi Jeep di Indonesia, JHL Auto membangun fondasi yang kuat melalui integritas, inovasi, dan pelayanan berkelas internasional. Perjalanan tersebut menjadi titik awal transformasi kami.'; ?>
         </div>
         <div data-aos="fade-right" data-aos-delay="200">
-            <?php echo get_field('story_header_desc_2') ?: 'Sejak awal, JHL Auto membawa semangat integritas, inovasi, dan pelayanan berstandar internasional, dengan tujuan menjadi mitra mobilitas terpercaya bagi masyarakat Indonesia. Dari momentum bersejarah sebagai bagian dari Jaringan resmi Jeep di Indonesia, JHL Auto terus berkembang hingga pada Maret 2024 dipercaya sebagai Authorized BAIC Dealer, memperkuat posisinya sebagai bagian dari grup otomotif besar yang dinamis dan progresif.'; ?>
+            <?php echo get_field('story_header_desc_3') ?: 'Seiring waktu, kami terus berkembang dan beradaptasi dengan dinamika industri. Pada Maret 2024, JHL Auto dipercaya sebagai Authorized BAIC Dealer, menandai babak baru dalam perjalanan kami sebagai mitra mobilitas premium yang progresif dan visioner.'; ?>
         </div>
     </div>
 </section>
@@ -78,9 +82,10 @@
                 <div class="w-32 border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
                 <div class=" max-w-[300px]">
                     <h3>2012</h3>
-                    <h4 class="font-bold text-sm my-2">Authorised Jeep Dealer</h4>
-                    <p class="body">Dealer Otomotif pertama JHL Auto, dan memperoleh penghargaan MURI
-                        untuk konsep Dealer "Amazon Jungle".</p>
+                    <h4 class="font-bold text-sm my-2">Authorized Jeep Dealer</h4>
+                    <p class="body">Menjadi dealer otomotif pertama JHL Auto sekaligus memperoleh penghargaan MURI atas
+                        konsep dealer inovatif “Amazon Jungle”, menandai awal komitmen menghadirkan pengalaman otomotif
+                        yang berbeda di Indonesia</p>
                 </div>
             </div>
 
@@ -93,9 +98,11 @@
                     <div class="w-60 lg:w-[720px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[316px] mr-4 text-right -mt-2">
                         <h3>2015</h3>
-                        <h4 class="font-bold text-sm my-1">Garansindo Cup Jeep Agility</h4>
-                        <p class="body">Menyelenggarakan event offroad skala nasional yang memperkuat
-                            komunitas Jeep Indonesia</p>
+                        <h4 class="font-bold text-sm my-1">Strengthening the Jeep Community</h4>
+                        <p class="body">Berpartisipasi dalam ajang nasional Garansindo Cup “Jeep Agility Off Road
+                            Competition” sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi komunitas
+                            Jeep Indonesia
+                        </p>
                     </div>
                 </div>
             </div>
@@ -109,9 +116,11 @@
                     <div class="w-60 lg:w-[600px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[243px] mr-4 text-right -mt-2">
                         <h3>2017</h3>
-                        <h4 class="font-bold text-sm my-1">Best Jeep Dealer</h4>
-                        <p class="body">Meraih penghargaan "Best Jeep Dealer Indonesia" atas keunggulan
-                            layanan dan penjualan</p>
+                        <h4 class="font-bold text-sm my-1">Best Authorized Jeep Dealer – Indonesia</h4>
+                        <p class="body">Menerima penghargaan “Best Jeep Dealer Indonesia” sebagai pengakuan atas
+                            konsistensi performa, standar layanan premium, serta pencapaian penjualan unggul di tingkat
+                            nasional
+                        </p>
                     </div>
                 </div>
             </div>
@@ -125,9 +134,11 @@
                     <div class="w-10 lg:w-[300px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[291px] mr-4 text-right -mt-2">
                         <h3>2019</h3>
-                        <h4 class="font-bold text-sm my-1">Best Seller at IIMS</h4>
-                        <p class="body">Berhasil menjual 60 unit Jeep, dan juga meraih 72 pemesanan
-                            selama Event IIMS (Indonesia International Motor Show)</p>
+                        <h4 class="font-bold text-sm my-1">Best Seller Award – IIMS</h4>
+                        <p class="body">Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama ajang “Indonesia
+                            International Motor Show”, memperkuat posisi JHL Auto sebagai salah satu dealer dengan
+                            performa terbaik secara nasional
+                        </p>
                     </div>
                 </div>
             </div>
@@ -141,9 +152,11 @@
                     <div class="w-20 lg:w-[200px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[264px] mr-4 text-right -mt-2">
                         <h3>2021</h3>
-                        <h4 class="font-bold text-sm my-1">Best Seller Jeep</h4>
-                        <p class="body">JHL Auto mampu mencatatkan penjualan sampai 100 unit dalam satu
-                            tahun saat Pandemik</p>
+                        <h4 class="font-bold text-sm my-1">Outstanding Jeep Sales Performance
+                        </h4>
+                        <p class="body">Mencatatkan pencapaian hingga 100 unit penjualan dalam satu tahun di tengah
+                            tantangan pandemi, menunjukkan ketahanan bisnis dan kepercayaan pasar yang kuat
+                        </p>
                     </div>
                 </div>
             </div>
@@ -158,9 +171,10 @@
                     <div class="max-w-[317px] mr-4 text-right -mt-2">
                         <h3>2024</h3>
                         <h4 class="font-bold text-sm my-1">Authorized BAIC Dealer</h4>
-                        <p class="body">Berkembang menjadi Authorized BAIC Dealer di Indonesia. Dengan
+                        <p class="body">Memulai babak baru sebagai Authorized BAIC Dealer di Indonesia dengan
                             komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar
-                            otomotif nasional.</p>
+                            otomotif nasional
+                        </p>
                     </div>
                 </div>
             </div>
@@ -173,8 +187,8 @@
                 <div class=" max-w-[300px]">
                     <h3>2025</h3>
                     <h4 class="font-bold text-sm my-2">Best Start of Business</h4>
-                    <p class="body">Pengakuan BAIC Global atas pencapaian JHL Auto sebagai dealer resmi
-                        BAIC di Indonesia</p>
+                    <p class="body">Mendapatkan pengakuan dari BAIC Global atas pencapaian JHL Auto sebagai dealer resmi
+                        BAIC di Indonesia, menandai langkah strategis dalam ekspansi dan transformasi brand</p>
                 </div>
             </div>
         </div>
@@ -188,9 +202,11 @@
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2012</h3>
-                    <h4 class="font-bold text-base my-1">Authorised Jeep Dealer</h4>
-                    <p class="body text-[10px] leading-relaxed">Dealer Otomotif pertama JHL Auto, dan memperoleh
-                        penghargaan MURI untuk konsep Dealer "Amazon Jungle".</p>
+                    <h4 class="font-bold text-base my-1">Authorized Jeep Dealer</h4>
+                    <p class="body text-[10px] leading-relaxed">Menjadi dealer otomotif pertama JHL Auto sekaligus
+                        memperoleh penghargaan MURI atas konsep dealer inovatif “Amazon Jungle”, menandai awal komitmen
+                        menghadirkan pengalaman otomotif yang berbeda di Indonesia
+                    </p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.24">
@@ -200,9 +216,11 @@
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2015</h3>
-                    <h4 class="font-bold text-base my-1">Garansindo Cup Jeep Agility</h4>
-                    <p class="body text-[10px] leading-relaxed">Menyelenggarakan event offroad skala nasional yang
-                        memperkuat komunitas Jeep Indonesia</p>
+                    <h4 class="font-bold text-base my-1">Strengthening the Jeep Community</h4>
+                    <p class="body text-[10px] leading-relaxed">Berpartisipasi dalam ajang nasional Garansindo Cup “Jeep
+                        Agility Off Road Competition” sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi
+                        komunitas Jeep Indonesia
+                    </p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.35">
@@ -212,9 +230,11 @@
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2017</h3>
-                    <h4 class="font-bold text-base my-1">Best Jeep Dealer</h4>
-                    <p class="body text-[10px] leading-relaxed">Meraih penghargaan "Best Jeep Dealer Indonesia" atas
-                        keunggulan layanan dan penjualan</p>
+                    <h4 class="font-bold text-base my-1">Best Authorized Jeep Dealer – Indonesia</h4>
+                    <p class="body text-[10px] leading-relaxed">Menerima penghargaan “Best Jeep Dealer Indonesia”
+                        sebagai pengakuan atas konsistensi performa, standar layanan premium, serta pencapaian penjualan
+                        unggul di tingkat nasional
+                    </p>
                 </div>
             </div>
             <div class="story-point flex  !left-[100px] opacity-0 transition-opacity duration-500"
@@ -225,9 +245,11 @@
                 <div class="w-14 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2019</h3>
-                    <h4 class="font-bold text-base my-1">Best Seller at IIMS</h4>
-                    <p class="body text-[10px] leading-relaxed">Berhasil menjual 60 unit Jeep, dan juga meraih 72
-                        pemesanan selama Event IIMS (Indonesia International Motor Show)</p>
+                    <h4 class="font-bold text-base my-1">Best Seller Award – IIMS</h4>
+                    <p class="body text-[10px] leading-relaxed">Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama
+                        ajang “Indonesia International Motor Show”, memperkuat posisi JHL Auto sebagai salah satu dealer
+                        dengan performa terbaik secara nasional
+                    </p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.63">
@@ -237,9 +259,12 @@
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2021</h3>
-                    <h4 class="font-bold text-base my-1">Best Seller Jeep</h4>
-                    <p class="body text-[10px] leading-relaxed">JHL Auto mampu mencatatkan penjualan sampai 100 unit
-                        dalam satu tahun saat Pandemik</p>
+                    <h4 class="font-bold text-base my-1">Outstanding Jeep Sales Performance
+                    </h4>
+                    <p class="body text-[10px] leading-relaxed">Mencatatkan pencapaian hingga 100 unit penjualan dalam
+                        satu tahun di tengah tantangan pandemi, menunjukkan ketahanan bisnis dan kepercayaan pasar yang
+                        kuat
+                    </p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.8">
@@ -250,9 +275,10 @@
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2024</h3>
                     <h4 class="font-bold text-base my-1">Authorized BAIC Dealer</h4>
-                    <p class="body text-[10px] leading-relaxed">Berkembang menjadi Authorized BAIC Dealer di Indonesia.
-                        Dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar
-                        otomotif nasional.</p>
+                    <p class="body text-[10px] leading-relaxed">Memulai babak baru sebagai Authorized BAIC Dealer di
+                        Indonesia dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya
+                        bagi pasar otomotif nasional
+                    </p>
                 </div>
             </div>
             <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.94">
@@ -263,8 +289,9 @@
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2025</h3>
                     <h4 class="font-bold text-base my-1 mb-2">Best Start of Business</h4>
-                    <p class="body text-[10px] leading-relaxed">Pengakuan BAIC Global atas pencapaian JHL Auto sebagai
-                        dealer resmi BAIC di Indonesia</p>
+                    <p class="body text-[10px] leading-relaxed">Mendapatkan pengakuan dari BAIC Global atas pencapaian
+                        JHL Auto sebagai dealer resmi BAIC di Indonesia, menandai langkah strategis dalam ekspansi dan
+                        transformasi brand</p>
                 </div>
             </div>
         </div>
@@ -512,15 +539,11 @@
                 <h3 class="mb-3" data-aos="fade-right"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?>
                 </h3>
                 <h5 class="mb-11" data-aos="fade-right" data-aos-delay="100">
-                    <?php echo get_field('director_title') ?: 'Direktur Utama'; ?>
+                    <?php echo get_field('director_title') ?: 'President Director'; ?>
                 </h5>
                 <div class="body md:max-w-[494px]" data-aos="fade-right" data-aos-delay="200">
-                    <?php echo get_field('director_desc') ?: 'Sebagai Direktur Utama yang visioner, Johnnathan Salim memimpin JHL Auto 
-                    dengan komitmen terhadap inovasi berkelanjutan dan pengembangan industri otomotif di Indonesia. Berbekal lebih dari 
-                    sepuluh tahun pengalaman, beliau berhasil memposisikan JHL Auto sebagai perusahaan yang tangguh dan adaptif, 
-                    memperluas jaringan distribusi, meningkatkan standar pelayanan, serta membangun kemitraan strategis untuk menghadirkan 
-                    kendaraan premium ke Indonesia. Dedikasi ini memastikan JHL Auto tetap berada di garis terdepan dalam menyediakan 
-                    solusi otomotif berkualitas tinggi.'; ?>
+                    <?php echo get_field('director_desc') ?: 'Sebagai entrepreneur muda di industri otomotif, Johnnathan Salim memimpin JHL Auto dengan visi menghadirkan standar baru dalam pengalaman otomotif premium di Indonesia. Berbekal lebih dari satu dekade pengalaman serta kedekatannya dengan komunitas otomotif melalui platform digital, ia menggabungkan perspektif bisnis dengan passion terhadap dunia kendaraan. <br /> <br />
+                    Di bawah kepemimpinannya, JHL Auto terus bertransformasi menjadi perusahaan yang progresif, adaptif, dan terhubung dengan generasi baru pecinta otomotif. Ia meyakini bahwa masa depan industri otomotif dibangun melalui inovasi, konektivitas digital, dan kedekatan yang autentik dengan komunitas.'; ?>
                 </div>
             </div>
             <div class="bg-white md:w-[40%] pt-10 order-1 md:order-2" data-aos="fade-left">
@@ -535,11 +558,14 @@
 
         <div>
             <h2 class="mb-11" data-aos="fade-down">
-                <?php echo get_field('team_section_title') ?: 'Sosok-Sosok di Balik JHL Auto'; ?>
+                <?php echo get_field('team_section_title') ?: ' Tim Manajemen'; ?>
             </h2>
             <div class="flex justify-between items-end mb-8" data-aos="fade-down" data-aos-delay="200">
                 <div class="body text-jhl-gray-1 md:max-w-[579px]">
-                    <?php echo get_field('team_section_desc') ?: 'Di balik setiap pencapaian, terdapat tim yang berdedikasi. JHL Auto tumbuh bersama profesional yang kompeten dan berorientasi pada pelayanan, menjadikan sumber daya manusia sebagai pendorong utama mewujudkan visi perusahaan.'; ?>
+                    <?php echo get_field('team_section_desc') ?: 'Di balik transformasi JHL Auto, berdiri 
+                    tim manajemen yang memimpin dengan visi strategis dan standar profesionalisme tinggi. 
+                    Dengan pendekatan modern dan orientasi pada pertumbuhan berkelanjutan, mereka memastikan 
+                    perusahaan terus berkembang sebagai pemain otomotif yang kompetitif dan terpercaya.'; ?>
                 </div>
                 <div id="team-arrows" class="flex gap-2"></div>
             </div>

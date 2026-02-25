@@ -14,9 +14,9 @@ function get_jhl_field($field_name, $fallback)
 $theme_uri = get_template_directory_uri();
 
 // Fallback Variables
-$hero_img = get_jhl_field('hero_image', $theme_uri . '/images/career-hero.png');
-$hero_ttl = get_jhl_field('hero_title', 'Kehidupan di JHL Auto');
-$hero_desc = get_jhl_field('hero_description', 'JHL Auto mengerti bahwa pertumbuhan terjadi karena aksi nyata, kolaborasi, dan semangat bersama untuk terus maju. Kami senantiasa menciptakan ruang bagi setiap orang untuk memimpin, belajar, dan berkarya dengan makna. Di sini, ide dihargai, kontribusi diakui, dan perkembangan adalah milik bersama. Bagi para pembangun, pencipta, atau pemimpin, Anda adalah elemen tak tergantikan dari JHL Auto dalam mencapai tujuan.');
+$hero_img = get_jhl_field('hero_image', $theme_uri . '/images/career-hero.webp');
+$hero_ttl = get_jhl_field('hero_title', 'Tumbuh dan Berkarya Bersama JHL Auto');
+$hero_desc = get_jhl_field('hero_description', 'Di JHL Auto, kami percaya bahwa karier yang bermakna dibangun melalui kesempatan, kepercayaan, dan ruang untuk berkembang. Kami membuka peluang bagi individu yang ingin bertumbuh, berkontribusi nyata, dan menjadi bagian dari perjalanan kami dalam membangun standar baru di industri otomotif. Di sini, setiap peran memiliki dampak, setiap ide dihargai, dan setiap pencapaian adalah hasil kerja bersama.');
 
 // Gallery Images
 $g1 = get_jhl_field('gallery_img_1', $theme_uri . '/images/event.jpg');
@@ -115,16 +115,21 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
 <section class="py-[90px] container" data-scroll-section>
     <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
         <div class="w-full md:w-[60%] fade-up" data-scroll data-scroll-class="is-inview">
-            <h2 class="mb-11"><?php echo esc_html(get_jhl_field('benefits_main_title', 'Keuntungan Karyawan')); ?></h2>
+            <h2 class="mb-11">
+                <?php echo esc_html(get_jhl_field('benefits_main_title', 'Tumbuh dan Berkarya Bersama JHL Auto')); ?>
+            </h2>
             <p class="body fade-down" data-scroll data-scroll-class="is-inview">
-                <?php echo esc_html(get_jhl_field('benefits_main_description', 'Pengalaman kerja terbaik dimulai dari perhatian terhadap orang-orang di dalamnya. Berikut berbagai manfaat yang kami hadirkan untuk mendukung keseharian, pertumbuhan, dan kualitas hidup para karyawan di JHL Auto.')); ?>
+                <?php echo esc_html(get_jhl_field('benefits_main_description', 'Di JHL Auto, kami percaya bahwa kinerja terbaik lahir dari lingkungan yang menghargai setiap individu. Karena itu, kami menghadirkan berbagai manfaat yang mendukung keseimbangan hidup, pertumbuhan profesional, dan kenyamanan dalam bekerja.')); ?>
             </p>
             <div class=" bg-jhl-foreground my-6 rounded-lg flex flex-wrap md:flex-nowrap fade-right" data-scroll
                 data-scroll-class="is-inview">
                 <div class="w-full md:w-[60%] p-8 fade-right" data-scroll data-scroll-class="is-inview">
                     <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?></h3>
+                    <p class="body font-semibold mb-4">
+                        <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
+                    </p>
                     <p class="body md:max-w-[291px]">
-                        <?php echo esc_html(get_jhl_field('benefit_1_description', 'Potongan harga eksklusif untuk karyawan di seluruh brand, produk, dan layanan kami. Pembuktian bahwa menaikkan gaya hidup tetap bisa dilakukan sambil tetap berhemat.')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_1_description', 'Sebagai bagian dari JHL Group, karyawan JHL Auto berhak mendapatkan potongan harga khusus di berbagai jaringan JHL Group. Sebuah nilai tambah yang memungkinkan Anda menikmati berbagai layanan dan fasilitas dengan benefit eksklusif.')); ?>
                     </p>
                 </div>
                 <div class="w-full md:w-[40%] relative fade-left" data-scroll data-scroll-class="is-inview">
@@ -190,7 +195,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
 <section class="bg-jhl-gray-2 text-white py-20" data-scroll-section>
     <div class="container mx-auto">
         <h2 class="mb-24 text-4xl font-bold fade-down" data-scroll data-scroll-class="is-inview">
-            Temukan Peran Berikut Kamu
+            Mulai Perjalanan Kariermu Bersama Kami
         </h2>
 
         <?php

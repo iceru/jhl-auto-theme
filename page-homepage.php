@@ -40,7 +40,7 @@
         <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-4 md:mx-0 overflow-hidden">
             <?php
             $about_img = get_field('about_image');
-            $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/home-1.png';
+            $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/homepage-1.webp';
             ?>
             <img src="<?php echo esc_url($about_img_url); ?>" alt="Sekilas Tentang Kami"
                 class="absolute left-0 w-full h-[110%] -top-[20%] object-cover" data-scroll data-scroll-speed="-2">
@@ -52,10 +52,11 @@
 <section class="container pr-0 md:pr-4 py-20 md:pt-32 md:pb-20" data-scroll-section>
     <div class="md:text-center mb-12 pr-4 md:pr-0">
         <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-down" data-scroll data-scroll-class="is-inview">
-            <?php echo get_field('promo_title') ?: 'Promo Terbaru'; ?>
+            <?php echo get_field('promo_title') ?: 'Penawaran Eksklusif'; ?>
         </h2>
-        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-none fade-up" data-scroll data-scroll-class="is-inview">
-            <?php echo get_field('promo_subtitle') ?: 'Nikmati penawaran terbaik kami hanya untuk Anda. <br class="hidden md:block" /> Manfaatkan promonya dan segera dapatkan kendaraan baru yang Anda impikan!'; ?>
+        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-[554px] mx-auto fade-up" data-scroll
+            data-scroll-class="is-inview">
+            <?php echo get_field('promo_subtitle') ?: 'Temukan berbagai program spesial dari JHL Auto yang dirancang untuk memberikan nilai lebih dalam setiap perjalanan Anda.'; ?>
         </p>
     </div>
 
@@ -89,7 +90,7 @@
                         class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                         <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                         <span>
-                            Learn More
+                            Lihat Detail
                         </span>
                     </a>
                 </div>
@@ -104,10 +105,10 @@
     <div class="container pr-0 md:pr-4">
         <div class="md:text-center mb-12 pr-4 md:pr-0">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-down" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('branches_title') ?: 'Cabang Kami'; ?>
+                <?php echo get_field('branches_title') ?: 'Jaringan Dealer Kami'; ?>
             </h2>
             <p class="body md:max-w-[486px] mx-auto fade-up" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('branches_description') ?: 'Rasakan pengalaman profesional JHL Auto di berbagai lokasi strategis terdekat yang siap melayani kebutuhan mobilitas Anda setiap saat.'; ?>
+                <?php echo get_field('branches_description') ?: 'Dengan jaringan dealer resmi yang terus berkembang, JHL Auto memastikan standar layanan, profesionalisme, dan pengalaman premium dapat Anda rasakan di setiap lokasi kami.'; ?>
             </p>
         </div>
 
@@ -139,6 +140,13 @@
                         <div class="body text-jhl-gray-1 fade-up" data-scroll data-scroll-class="is-inview">
                             <?php the_content(); ?>
                         </div>
+                        <a href="<?php the_permalink(); ?>"
+                            class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                            <span>
+                                Lihat Detail
+                            </span>
+                        </a>
                     </div>
 
                 <?php endwhile;
@@ -151,11 +159,12 @@
     <div class="container flex flex-wrap md:flex-nowrap justify-between items-center">
         <div class="mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-right" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('awards_title') ?: 'Penghargaan Kami'; ?>
+                <?php echo get_field('awards_title') ?: 'Prestasi & Penghargaan'; ?>
             </h2>
             <p class="body md:max-w-[426px] mx-auto fade-up" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('awards_description') ?: 'Perjalanan kami di industri otomotif telah diakui melalui berbagai penghargaan bergengsi. 
-                Berikut deretan pencapaian yang mencerminkan komitmen kami terhadap kualitas dan layanan terbaik.'; ?>
+                <?php echo get_field('awards_description') ?: 'Perjalanan kami di industri otomotif ditandai 
+                dengan berbagai penghargaan bergengsi yang menjadi bukti komitmen terhadap kualitas, inovasi, 
+                dan standar layanan premium.'; ?>
             </p>
         </div>
         <div class="awards-container grid w-full md:w-fit grid-cols-2 gap-6 md:flex items-start md:space-x-14 md:gap-0 fade-left"
@@ -212,10 +221,10 @@
     <div class="container">
         <div class="md:text-center mb-12">
             <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-up" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('news_title') ?: 'Berita Terbaru'; ?>
+                <?php echo get_field('news_title') ?: 'Update & Aktivitas'; ?>
             </h2>
             <p class="body md:max-w-[547px] mx-auto mb-6 fade-up" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('news_subtitle') ?: 'Jadilah yang pertama tahu mengenai JHL Auto. Peluncuran model kendaraan terkini, aktivitas dealer resmi, hingga layanan dan inovasi, semua ada di sini.'; ?>
+                <?php echo get_field('news_subtitle') ?: 'Ikuti berbagai perkembangan terbaru seputar JHL Auto, mulai dari peluncuran produk, aktivitas dealer, hingga inovasi layanan yang terus berkembang.'; ?>
             </p>
             <a href="/news"
                 class="text-xs flex items-center md:justify-center space-x-2 text-jhl-black font-semibold tracking-wide !no-underline uppercase fade-up"
@@ -223,7 +232,7 @@
                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" class="brightness-20"
                     alt="">
                 <span>
-                    Telusuri
+                    Lihat Semua Artikel
                 </span>
             </a>
         </div>
@@ -256,7 +265,7 @@
                             </p>
                             <a href="<?php the_permalink(); ?>"
                                 class="text-xs pt-3 border-t pr-14 inline-block border-white font-semibold uppercase tracking-wide !no-underline">
-                                Read More
+                                Baca Selengkapnya
                             </a>
                         </div>
                     </div>
