@@ -137,10 +137,10 @@
                             <?php the_title(); ?>
                         </h4>
 
-                        <div class="body text-jhl-gray-1 fade-up" data-scroll data-scroll-class="is-inview">
+                        <div class="body text-jhl-gray-1 fade-up mb-4" data-scroll data-scroll-class="is-inview">
                             <?php the_content(); ?>
                         </div>
-                        <a href="<?php the_permalink(); ?>"
+                        <a href="https://baic.codeomnia.com/service/"
                             class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                             <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                             <span>
