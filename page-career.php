@@ -125,7 +125,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 data-scroll-class="is-inview">
                 <div class="w-full md:w-[60%] p-8 fade-right" data-scroll data-scroll-class="is-inview">
                     <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?></h3>
-                    <p class="body font-semibold mb-4">
+                    <p class="body !font-semibold mb-2">
                         <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
                     </p>
                     <p class="body md:max-w-[291px]">
@@ -143,15 +143,20 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
                 <div class="w-full md:w-[60%] bg-jhl-foreground p-8 rounded-lg fade-right" data-scroll
                     data-scroll-class="is-inview">
-                    <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_2_title', 'Asupan Harian')); ?></h3>
+                    <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_2_title', 'Aktivitas Kebersamaan Tim')); ?></h3>
+                     <p class="body !font-semibold mb-2">
+                        <?php echo esc_html(get_jhl_field('benefit_2_subdesc', 'Sehat, Solid, dan Kompetitif')); ?>
+                    </p>
                     <p class="body md:max-w-[263px]">
-                        <?php echo esc_html(get_jhl_field('benefit_2_description', 'Santapan siang yang enak dan gratis setiap hari untuk menjaga energi, fokus, dan performa terbaik.')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_2_description', 'Kami menyediakan jadwal olahraga rutin antar karyawan 
+                        JHL Auto seperti badminton, voli, dan mini soccer. Lebih dari sekadar aktivitas fisik, ini adalah ruang 
+                        untuk mempererat hubungan, membangun kekompakan, dan menumbuhkan semangat kolaborasi.')); ?>
                     </p>
                 </div>
                 <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg fade-left" data-scroll
                     data-scroll-class="is-inview">
                     <h3 class="p-8 max-w-[188px] md:max-w-none">
-                        <?php echo esc_html(get_jhl_field('benefit_3_title', 'Belajar & Berkembang')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_3_title', 'BPJS Kesehatan & Ketenagakerjaan')); ?>
                     </h3>
                     <div class="relative w-full">
                         <div
@@ -165,18 +170,27 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         </div>
         <div class="w-full md:w-[40%]">
             <div class="p-8 bg-jhl-foreground mb-6 rounded-lg fade-down" data-scroll data-scroll-class="is-inview">
-                <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_4_title', 'Dana Kebersamaan')); ?></h3>
+                <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_4_title', 'Pengembangan Karier & Kompetensi')); ?></h3>
+                 <p class="body !font-semibold mb-2">
+                        <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
+                    </p>
                 <p class="body md:max-w-[288px] mb-7">
-                    <?php echo esc_html(get_jhl_field('benefit_4_description', 'Tunjangan bulanan untuk aktivitas bonding tim seperti kumpul-kumpul, aktivitas seru, hingga momen kebersamaan yang mempererat koneksi antar karyawan.')); ?>
+                    <?php echo esc_html(get_jhl_field('benefit_4_description', 'Kami mendukung perjalanan profesional 
+                    Anda melalui perencanaan karier yang terstruktur, pendampingan, serta peluang pengembangan kompetensi 
+                    yang disesuaikan dengan potensi dan tujuan individu. 
+                    Di JHL Auto, pertumbuhan bukan kebetulan—melainkan proses yang dirancang.')); ?>
                 </p>
             </div>
             <div class=" bg-jhl-foreground mb-6 rounded-lg fade-up" data-scroll data-scroll-class="is-inview">
                 <div class="pt-8 px-8">
                     <h3 class="mb-5">
-                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Jalur Pengembangan Diri')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Apresiasi Berbasis Kinerja')); ?>
                     </h3>
                     <p class="body md:max-w-[341px] mb-12">
-                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'JHL Auto mendukung masa depan para karyawan melalui perencanaan karier yang terstruktur, mentorship, dan peluang belajar yang disesuaikan dengan tujuan masing-masing karyawan.')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'Kami menerapkan sistem penilaian
+                         kinerja (KPI) yang transparan dan terukur, dilengkapi dengan insentif, program loyalitas, 
+                         serta peluang promosi yang selaras dengan pencapaian individu. Setiap kontribusi nyata 
+                         akan mendapatkan penghargaan yang setimpal.')); ?>
                     </p>
                 </div>
                 <div class="relative w-full">
