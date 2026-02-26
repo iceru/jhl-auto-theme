@@ -117,8 +117,9 @@
 
 
                             <li>
-                                <a href="/news" class="uppercase text-[13px] font-medium !no-underline">News &
-                                    Promotion</a>
+                                <a href="/news" class="uppercase text-[13px] font-medium !no-underline">
+                                    Newsroom
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -177,8 +178,9 @@
                         </li>
                         <li><a href="javascript:void(0)" data-target="submenu-brands"
                                 class="submenu-trigger text-white uppercase font-medium tracking-widest">Brands</a></li>
-                        <li><a href="/news" class="text-white uppercase font-medium tracking-widest">News &
-                                Promotion</a></li>
+                        <li><a href="/news" class="text-white uppercase font-medium tracking-widest">
+                            Newsroom
+                        </a></li>
                     </ul>
 
                     <ul id="submenu-about"
