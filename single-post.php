@@ -4,16 +4,15 @@
     while (have_posts()):
         the_post(); ?>
 
-        <section class="w-full max-h-screen overflow-hidden">
+        <section class="w-full max-h-[500px] overflow-hidden">
             <div class="aspect-video w-full">
-                <img class="w-full h-full object-cover"
-                    src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                <img class="w-full h-full object-cover" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                     alt="<?php the_title(); ?>">
             </div>
         </section>
 
 
-        <section class="container py-20">
+        <section class="container py-16">
             <div class="text-[10px] font-medium text-jhl-gray-1 mb-10 uppercase">
                 <?php echo get_the_date('d M Y'); ?>
             </div>

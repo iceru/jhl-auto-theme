@@ -128,7 +128,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     <p class="body !font-semibold mb-2">
                         <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
                     </p>
-                    <p class="body md:max-w-[291px]">
+                    <p class="body">
                         <?php echo esc_html(get_jhl_field('benefit_1_description', 'Sebagai bagian dari JHL Group, karyawan JHL Auto berhak mendapatkan potongan harga khusus di berbagai jaringan JHL Group. Sebuah nilai tambah yang memungkinkan Anda menikmati berbagai layanan dan fasilitas dengan benefit eksklusif.')); ?>
                     </p>
                 </div>
@@ -137,25 +137,27 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                         class="absolute bg-gradient-to-b md:bg-gradient-to-r from-jhl-foreground to-transparent w-full md:w-[70%] h-[40%] md:h-full z-10 top-0 left-0">
                     </div>
                     <img src="<?php echo esc_url(get_jhl_field('benefit_1_image', $theme_uri . '/images/benefit-1.png')); ?>"
-                        class="w-full opacity-70 md:opacity-40 h-[254px] object-cover rounded-b-lg" alt="Benefit">
+                        class="w-full opacity-70 md:opacity-40 h-full object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
             <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
                 <div class="w-full md:w-[60%] bg-jhl-foreground p-8 rounded-lg fade-right" data-scroll
                     data-scroll-class="is-inview">
-                    <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_2_title', 'Aktivitas Kebersamaan Tim')); ?></h3>
-                     <p class="body !font-semibold mb-2">
+                    <h3 class="mb-5">
+                        <?php echo esc_html(get_jhl_field('benefit_2_title', 'Aktivitas Kebersamaan Tim')); ?>
+                    </h3>
+                    <p class="body !font-semibold mb-2">
                         <?php echo esc_html(get_jhl_field('benefit_2_subdesc', 'Sehat, Solid, dan Kompetitif')); ?>
                     </p>
-                    <p class="body md:max-w-[263px]">
+                    <p class="body">
                         <?php echo esc_html(get_jhl_field('benefit_2_description', 'Kami menyediakan jadwal olahraga rutin antar karyawan 
                         JHL Auto seperti badminton, voli, dan mini soccer. Lebih dari sekadar aktivitas fisik, ini adalah ruang 
                         untuk mempererat hubungan, membangun kekompakan, dan menumbuhkan semangat kolaborasi.')); ?>
                     </p>
                 </div>
-                <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg fade-left" data-scroll
-                    data-scroll-class="is-inview">
-                    <h3 class="p-8 max-w-[188px] md:max-w-none">
+                <div class="w-full md:w-[40%] bg-jhl-foreground rounded-lg fade-left flex flex-col justify-between"
+                    data-scroll data-scroll-class="is-inview">
+                    <h3 class="p-8">
                         <?php echo esc_html(get_jhl_field('benefit_3_title', 'BPJS Kesehatan & Ketenagakerjaan')); ?>
                     </h3>
                     <div class="relative w-full">
@@ -170,11 +172,13 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         </div>
         <div class="w-full md:w-[40%]">
             <div class="p-8 bg-jhl-foreground mb-6 rounded-lg fade-down" data-scroll data-scroll-class="is-inview">
-                <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_4_title', 'Pengembangan Karier & Kompetensi')); ?></h3>
-                 <p class="body !font-semibold mb-2">
-                        <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
-                    </p>
-                <p class="body md:max-w-[288px] mb-7">
+                <h3 class="mb-5">
+                    <?php echo esc_html(get_jhl_field('benefit_4_title', 'Pengembangan Karier & Kompetensi')); ?>
+                </h3>
+                <p class="body !font-semibold mb-2">
+                    <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
+                </p>
+                <p class="body mb-7">
                     <?php echo esc_html(get_jhl_field('benefit_4_description', 'Kami mendukung perjalanan profesional 
                     Anda melalui perencanaan karier yang terstruktur, pendampingan, serta peluang pengembangan kompetensi 
                     yang disesuaikan dengan potensi dan tujuan individu. 
@@ -186,7 +190,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     <h3 class="mb-5">
                         <?php echo esc_html(get_jhl_field('benefit_5_title', 'Apresiasi Berbasis Kinerja')); ?>
                     </h3>
-                    <p class="body md:max-w-[341px] mb-12">
+                    <p class="body mb-12">
                         <?php echo esc_html(get_jhl_field('benefit_5_description', 'Kami menerapkan sistem penilaian
                          kinerja (KPI) yang transparan dan terukur, dilengkapi dengan insentif, program loyalitas, 
                          serta peluang promosi yang selaras dengan pencapaian individu. Setiap kontribusi nyata 
@@ -225,11 +229,11 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         if ($vacancies): ?>
             <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
-                <div class="md:col-span-3 flex flex-col p-8 border border-white/20 rounded-2xl fade-right relative"
+                <div class="md:col-span-4 flex flex-col p-4 md:p-8 border border-white/20 rounded-2xl fade-right relative"
                     data-scroll data-scroll-class="is-inview">
                     <div class="absolute right-4 top-10 bottom-10 w-[3px] bg-white rounded-full"></div>
-                    <h5 class="font-bold uppercase mb-10 !text-white !text-sm tracking-widest pl-8">Roles</h5>
-                    <div class="flex flex-col gap-8 pl-8 pr-8">
+                    <h5 class="font-bold uppercase mb-6 md:mb-10 !text-white tracking-widest">Roles</h5>
+                    <div class="flex flex-col gap-8 px-6">
                         <?php foreach ($vacancies as $index => $vacancy):
                             $active_class = ($index === 0) ? 'is-active opacity-100' : 'opacity-40 hover:opacity-70';
                             ?>
@@ -243,7 +247,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                                             stroke-linejoin="round" />
                                     </svg>
                                 </span>
-                                <h5 class="!text-white !font-semibold !m-0 !text-xl !leading-tight">
+                                <h5 class="!text-white !m-0 !leading-tight">
                                     <?php echo get_the_title($vacancy->ID); ?>
                                 </h5>
                             </button>
@@ -251,7 +255,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     </div>
                 </div>
 
-                <div class="md:col-span-9  rounded-lg relative min-h-[400px] vacancy-text fade-left" data-scroll
+                <div class="md:col-span-8  rounded-lg relative min-h-[400px] vacancy-text fade-left" data-scroll
                     data-scroll-class="is-inview">
                     <?php foreach ($vacancies as $index => $vacancy):
                         $display_style = ($index === 0) ? 'display: block;' : 'display: none;';

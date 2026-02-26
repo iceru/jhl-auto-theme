@@ -546,13 +546,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     Di bawah kepemimpinannya, JHL Auto terus bertransformasi menjadi perusahaan yang progresif, adaptif, dan terhubung dengan generasi baru pecinta otomotif. Ia meyakini bahwa masa depan industri otomotif dibangun melalui inovasi, konektivitas digital, dan kedekatan yang autentik dengan komunitas.'; ?>
                 </div>
             </div>
-            <div class="bg-white md:w-[40%] pt-10 order-1 md:order-2" data-aos="fade-left">
+            <div class="md:w-[40%] h-full order-1 md:order-2" data-aos="fade-left">
                 <?php
                 $dir_img = get_field('director_image');
-                $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur.png';
+                $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur-2.jpg';
                 ?>
-                <img class="w-full h-full max-h-[438px] object-contain" src="<?php echo esc_url($dir_img_url); ?>"
-                    alt="">
+                <img class="w-full h-full object-cover max-h-[550px] md:max-h-[600px]"
+                    src="<?php echo esc_url($dir_img_url); ?>" alt="">
             </div>
         </div>
 
