@@ -67,10 +67,10 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
             style="display: none; will-change: transform;">
             <?php
             $car_icon = get_field('timeline_car_icon');
-            $car_icon_url = $car_icon ? $car_icon['url'] : get_template_directory_uri() . '/images/car.png';
+            $car_icon_url = $car_icon ? $car_icon['url'] : get_template_directory_uri() . '/images/car-2.png';
             ?>
             <img src="<?php echo esc_url($car_icon_url); ?>" id="car-img"
-                class="object-contain rotate-180 w-[33px] lg:w-[44px] h-[99px]" alt="car">
+                class="object-contain rotate-180 w-[33px] lg:w-[47px] h-[93px]" alt="car">
         </div>
 
         <!-- Desktop Story Layer -->
