@@ -40,9 +40,9 @@
                         while ($related_query->have_posts()):
                             $related_query->the_post(); ?>
                             <div class="space-y-8">
-                                <div>
+                                <div class="aspect-video overflow-hidden">
                                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
-                                        alt="<?php the_title(); ?>" class="w-full h-[216px] object-cover">
+                                        alt="<?php the_title(); ?>" class="w-full h-full object-cover">
                                 </div>
                                 <h5 class="uppercase"><?php the_title(); ?></h5>
                                 <p class="body line-clamp-2 text-ellipsis text-black">

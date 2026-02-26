@@ -76,9 +76,9 @@
                 $promo_query->the_post(); ?>
 
                 <div class="flex-none w-[75%] snap-start md:w-full">
-                    <a href="<?php the_permalink(); ?>" class="mb-8 block">
+                    <a href="<?php the_permalink(); ?>" class="mb-8 block aspect-video overflow-hidden rounded-lg">
                         <?php if (has_post_thumbnail()): ?>
-                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
+                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="w-full h-full object-cover">
                         <?php endif; ?>
                     </a>
                     <a href="<?php the_permalink(); ?>" class="block">
@@ -248,8 +248,8 @@
                     $news_query->the_post(); ?>
 
                     <div class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
-                        <a href="<?php the_permalink(); ?>" class="mb-4">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="rounded-lg w-full">
+                        <a href="<?php the_permalink(); ?>" class="mb-4 block aspect-video overflow-hidden rounded-lg">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="w-full h-full object-cover">
                         </a>
                         <div class="py-4 md:py-6 px-6 md:px-8">
                             <small class="text-[10px] uppercase tracking-wide block mb-3">
