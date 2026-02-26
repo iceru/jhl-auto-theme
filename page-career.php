@@ -211,17 +211,30 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         if ($vacancies): ?>
             <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
-                <div class="md:col-span-3 flex flex-col gap-4 p-6 border border-white rounded-lg fade-right" data-scroll
-                    data-scroll-class="is-inview">
-                    <h5 class="font-bold uppercase mb-2 !text-white">Roles</h5>
-                    <?php foreach ($vacancies as $index => $vacancy):
-                        $active_class = ($index === 0) ? 'opacity-100 is-active' : 'opacity-40 hover:opacity-70';
-                        ?>
-                        <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
-                            class="vacancy-trigger text-left transition-all duration-300 group <?php echo $active_class; ?>">
-                            <h5 class="!text-white"><?php echo get_the_title($vacancy->ID); ?></h5>
-                        </button>
-                    <?php endforeach; ?>
+                <div class="md:col-span-3 flex flex-col p-8 border border-white/20 rounded-2xl fade-right relative"
+                    data-scroll data-scroll-class="is-inview">
+                    <div class="absolute right-4 top-10 bottom-10 w-[3px] bg-white rounded-full"></div>
+                    <h5 class="font-bold uppercase mb-10 !text-white !text-sm tracking-widest pl-8">Roles</h5>
+                    <div class="flex flex-col gap-8 pl-8 pr-8">
+                        <?php foreach ($vacancies as $index => $vacancy):
+                            $active_class = ($index === 0) ? 'is-active opacity-100' : 'opacity-40 hover:opacity-70';
+                            ?>
+                            <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
+                                class="vacancy-trigger text-left transition-all duration-300 group relative flex items-start <?php echo $active_class; ?>">
+                                <span
+                                    class="absolute -left-7 top-1 opacity-0 group-[.is-active]:opacity-100 transition-all duration-300 transform group-[.is-active]:translate-x-1">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="3" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <h5 class="!text-white !font-semibold !m-0 !text-xl !leading-tight">
+                                    <?php echo get_the_title($vacancy->ID); ?>
+                                </h5>
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
 
                 <div class="md:col-span-9  rounded-lg relative min-h-[400px] vacancy-text fade-left" data-scroll
