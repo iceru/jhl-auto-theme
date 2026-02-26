@@ -76,9 +76,9 @@
                 $promo_query->the_post(); ?>
 
                 <div class="flex-none w-[75%] snap-start md:w-full">
-                    <a href="<?php the_permalink(); ?>" class="mb-8 block aspect-video overflow-hidden rounded-lg">
+                    <a href="<?php the_permalink(); ?>" class="mb-8 block">
                         <?php if (has_post_thumbnail()): ?>
-                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="w-full h-full object-cover">
+                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full h-[358px] object-cover">
                         <?php endif; ?>
                     </a>
                     <a href="<?php the_permalink(); ?>" class="block">
