@@ -10,7 +10,11 @@ $hero_bg_alt = $hero_bg_field ? esc_attr($hero_bg_field['alt']) : 'JHL Auto Serv
 
 $hero_title = get_field('service_hero_title') ?: 'JHL Auto Service Center';
 
-$service_desc = get_field('service_description') ?: 'Bengkel resmi JHL Auto memberikan perawatan purna jual berstandar global untuk BAIC, serta layanan servis khusus untuk kendaraan unik Premium Car (service only). Fasilitas kami dilengkapi peralatan modern dan teknisi bersertifikat untuk memastikan kendaraan Anda selalu dalam kondisi optimal.';
+$service_desc = get_field('service_description') ?: 'JHL Auto Service Center 
+menghadirkan layanan purna jual berstandar global untuk BAIC serta perawatan 
+khusus bagi kendaraan premium (service only). Didukung fasilitas modern dan 
+teknisi bersertifikasi, setiap proses dirancang untuk menjaga performa, 
+keamanan, dan nilai kendaraan Anda secara optimal.';
 
 $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
 ?>
@@ -35,7 +39,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
         <div id="service-arrows" class="flex gap-2"></div>
     </div>
 
-    <div id="services-slider" class="-mx-3">
+    <div class="grid md:grid-cols-4 gap-3">
         <?php
         $service_query = new WP_Query([
             'post_type' => 'services',
@@ -45,7 +49,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
         if ($service_query->have_posts()):
             while ($service_query->have_posts()):
                 $service_query->the_post(); ?>
-                <div class="px-3 outline-none">
+                <div class="outline-none">
                     <div class="flex flex-col h-full fade-right" data-scroll data-scroll-class="is-inview">
                         <div class="rounded-lg overflow-hidden mb-4">
                             <?php if (has_post_thumbnail()): ?>
