@@ -5,7 +5,7 @@
  * ACF Fields with Hardcoded Fallbacks
  */
 $hero_bg_field = get_field('service_hero_image');
-$hero_bg_url = $hero_bg_field ? esc_url($hero_bg_field['url']) : get_template_directory_uri() . '/images/service-hero.png';
+$hero_bg_url = $hero_bg_field ? esc_url($hero_bg_field['url']) : get_template_directory_uri() . '/images/service-center.jpg';
 $hero_bg_alt = $hero_bg_field ? esc_attr($hero_bg_field['alt']) : 'JHL Auto Service Center';
 
 $hero_title = get_field('service_hero_title') ?: 'JHL Auto Service Center';
