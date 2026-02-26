@@ -10,13 +10,9 @@ $hero_bg_alt = $hero_bg_field ? esc_attr($hero_bg_field['alt']) : 'JHL Auto Serv
 
 $hero_title = get_field('service_hero_title') ?: 'JHL Auto Service Center';
 
-$service_desc = get_field('service_description') ?: 'JHL Auto Service Center 
-menghadirkan layanan purna jual berstandar global untuk BAIC serta perawatan 
-khusus bagi kendaraan premium (service only). Didukung fasilitas modern dan 
-teknisi bersertifikasi, setiap proses dirancang untuk menjaga performa, 
-keamanan, dan nilai kendaraan Anda secara optimal.';
+$service_desc = get_field('service_description') ?: 'JHL Auto Service Center menghadirkan layanan purna jual berstandar global untuk BAIC serta perawatan khusus bagi kendaraan premium (service only). Didukung fasilitas modern dan teknisi bersertifikasi, setiap proses dirancang untuk menjaga performa, keamanan, dan nilai kendaraan Anda secara optimal.';
 
-$promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
+$promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
 ?>
 
 <section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px]" data-scroll-section>
@@ -39,7 +35,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
         <div id="service-arrows" class="flex gap-2"></div>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-3">
+    <div class="grid md:grid-cols-4 gap-6">
         <?php
         $service_query = new WP_Query([
             'post_type' => 'services',
@@ -72,7 +68,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
 
 <section class="py-20 bg-beijing-black">
     <div class="container text-white">
-        <div class="text-[28px] leading-[30px] mb-12 fade-down" data-scroll data-scroll-class="is-inview">
+        <div class="text-[28px] leading-[30px] mb-12 fade-down uppercase" data-scroll data-scroll-class="is-inview">
             <?php echo esc_html($promo_title); ?>
         </div>
         <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-5 gap-[14px]">
@@ -99,7 +95,7 @@ $promo_title = get_field('service_promotions_title') ?: 'PROMOTIONS';
                         <a href="<?php the_permalink(); ?>"
                             class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                             <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
-                            <span>Learn More</span>
+                            <span>Lihat Detail</span>
                         </a>
                     </div>
                 <?php endwhile;
