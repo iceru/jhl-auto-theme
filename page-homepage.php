@@ -167,7 +167,7 @@
                 dan standar layanan premium.'; ?>
             </p>
         </div>
-        <div class="awards-container grid w-full md:w-fit grid-cols-2 gap-6 md:flex items-start md:space-x-14 md:gap-0 fade-left"
+        <div class="awards-container grid w-full md:w-fit grid-cols-2 gap-6 md:flex items-start md:gap-12 fade-left"
             data-scroll data-scroll-class="is-inview">
             <?php
             $args = array(
@@ -252,7 +252,7 @@
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="w-full h-full object-cover">
                         </a>
                         <div class="py-4 md:py-6 px-6 md:px-8">
-                            <div class="h-[180px]">
+                            <div class="h-[220px]">
                                 <small class="text-[10px] uppercase tracking-wide block mb-3">
                                     <?php echo get_the_date('d F Y'); ?>
                                 </small>

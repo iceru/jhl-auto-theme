@@ -49,7 +49,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
                     <div class="flex flex-col h-full fade-right" data-scroll data-scroll-class="is-inview">
                         <div class="rounded-lg overflow-hidden mb-4">
                             <?php if (has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail('large', ['class' => 'w-[384px] h-[426px] rounded object-cover']); ?>
+                                <?php the_post_thumbnail('large', ['class' => 'w-full h-[345px] rounded object-cover']); ?>
                             <?php else: ?>
                                 <div class="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
                             <?php endif; ?>
@@ -89,7 +89,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
                                 <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
                             <?php endif; ?>
                         </div>
-                        <h5 class="leading-[22px] font-medium mb-6 !text-white line-clamp-2 h-11">
+                        <h5 class="leading-[22px] font-medium mb-6 !text-white line-clamp-3 h-16">
                             <?php the_title(); ?>
                         </h5>
                         <a href="<?php the_permalink(); ?>"
