@@ -3,8 +3,7 @@
     <section class="h-[389px] w-full relative flex flex-col justify-end pb-[71px] mb-9">
         <div>
             <img class="absolute top-0 left-0 w-full h-full object-cover object-center zoom-in" data-scroll
-                data-scroll-class="is-inview" src="<?php echo get_template_directory_uri() ?>/images/news-hero.jpg"
-                alt="">
+                data-scroll-class="is-inview" src="<?php echo get_template_directory_uri() ?>/images/news.jpg" alt="">
         </div>
         <div class="absolute left-0 bottom-0 w-full h-[80%] bg-gradient-to-t from-jhl-black to-jhl-black/0"></div>
         <div class="container text-white relative z-10 fade-down" data-scroll data-scroll-class="is-inview">
@@ -49,7 +48,7 @@
         <div class="flex space-x-6 mb-9" id="type-toggle">
             <button data-type="post"
                 class="type-btn active uppercase bg-black text-white border-black border rounded-4xl w-[143px] flex justify-center py-[18px] text-xs transition-all">
-                News 
+                News
             </button>
             <button data-type="promotion"
                 class="type-btn uppercase bg-white border-jhl-gray-2 text-jhl-gray-2 border rounded-4xl w-[143px] flex justify-center py-[18px] text-xs transition-all">

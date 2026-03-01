@@ -20,10 +20,10 @@
     <div class="container grid md:grid-cols-2 md:h-screen">
         <div class="flex flex-col justify-center md:pr-20 py-20 md:py-0">
             <h2 class="text-2xl md:text-[44px] mb-11 font-light fade-right" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('about_title') ?: 'Sekilas Tentang Kami'; ?>
+                <?php echo get_field('about_title') ?: 'Tentang JHL Auto'; ?>
             </h2>
             <div class="body mb-14 md:mb-[73px] fade-up" data-scroll data-scroll-class="is-inview">
-                <?php echo get_field('about_description') ?: 'Sejak 2012, JHL Auto sebagai bagian dari JHL Group berkomitmen menghadirkan pengalaman otomotif premium di Indonesia. Kini, melalui jaringan merek global seperti Jeep dan BAIC, JHL Auto terus memperkuat posisinya sebagai mitra mobilitas yang tepercaya dan progresif di Indonesia.'; ?>
+                <?php echo get_field('about_description') ?: 'JHL Auto bukan sekadar dealer otomotif. Kami adalah bagian dari transformasi industri, menghadirkan standar layanan yang terukur, pengalaman premium yang konsisten, dan visi ekspansi jangka panjang sebagai group dealer otomotif terdepan di Indonesia.'; ?>
             </div>
             <?php
             $about_link = get_field('about_link_url') ?: '';
@@ -82,7 +82,7 @@
                         <?php endif; ?>
                     </a>
                     <a href="<?php the_permalink(); ?>" class="block">
-                        <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black">
+                        <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black line-clamp-3 h-[66px]">
                             <?php the_title(); ?>
                         </h5>
                     </a>
@@ -192,7 +192,7 @@
                                 src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
                         </div>
 
-                        <p class="award-title body <?php echo $is_first ? 'block' : 'hidden'; ?>">
+                        <p class="award-title body max-w-[140px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
                             <?php the_title(); ?>
                         </p>
                     </div>
@@ -252,17 +252,19 @@
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="w-full h-full object-cover">
                         </a>
                         <div class="py-4 md:py-6 px-6 md:px-8">
-                            <small class="text-[10px] uppercase tracking-wide block mb-3">
-                                <?php echo get_the_date('d F Y'); ?>
-                            </small>
-                            <a href="<?php the_permalink(); ?>">
-                                <h3 class="leading-7 text-[27px] mb-3 font-light">
-                                    <?php the_title(); ?>
-                                </h3>
-                            </a>
-                            <p class="text-xs leading-6 mb-12 line-clamp-2">
-                                <?php echo get_the_excerpt(); ?>
-                            </p>
+                            <div class="h-[180px]">
+                                <small class="text-[10px] uppercase tracking-wide block mb-3">
+                                    <?php echo get_the_date('d F Y'); ?>
+                                </small>
+                                <a href="<?php the_permalink(); ?>">
+                                    <h3 class="leading-7 text-[27px] mb-3 font-light line-clamp-2">
+                                        <?php the_title(); ?>
+                                    </h3>
+                                </a>
+                                <p class="text-xs leading-6 line-clamp-2 h-12">
+                                    <?php echo get_the_excerpt(); ?>
+                                </p>
+                            </div>
                             <a href="<?php the_permalink(); ?>"
                                 class="text-xs pt-3 border-t pr-14 inline-block border-white font-semibold uppercase tracking-wide !no-underline">
                                 Baca Selengkapnya

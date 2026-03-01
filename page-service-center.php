@@ -35,7 +35,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
         <div id="service-arrows" class="flex gap-2"></div>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-4 gap-4">
         <?php
         $service_query = new WP_Query([
             'post_type' => 'services',
@@ -89,7 +89,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
                                 <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
                             <?php endif; ?>
                         </div>
-                        <h5 class="leading-[22px] font-medium mb-6 !text-white">
+                        <h5 class="leading-[22px] font-medium mb-6 !text-white line-clamp-2 h-11">
                             <?php the_title(); ?>
                         </h5>
                         <a href="<?php the_permalink(); ?>"

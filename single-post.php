@@ -24,7 +24,7 @@
             </div>
 
             <div class="mt-20">
-                <h3 class="mb-8">Related Articles</h3>
+                <h3 class="mb-8">Berita Lainnya</h3>
                 <div class="grid md:grid-cols-3 gap-8">
                     <?php
                     $related_args = array(
