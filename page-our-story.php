@@ -297,7 +297,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         </div>
     </div>
     <h3 class="flex justify-center text-center">
-        Perjalanan Terus Berlanjut...
+        Perjalanan ini Terus Berlanjut
     </h3>
 </section>
 
@@ -515,21 +515,33 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
 
 <section class="container py-24 md:py-32 grid gap-16 md:gap-0 md:grid-cols-4">
     <?php
-    $stats = [
-        ['field' => 'stat_1', 'delay' => '100', 'def_num' => '14', 'def_label' => 'Tahun <br /> Beroperasi'],
-        ['field' => 'stat_2', 'delay' => '200', 'def_num' => '4', 'def_label' => 'Dealership <br /> di Indonesia'],
-        ['field' => 'stat_3', 'delay' => '300', 'def_num' => '80+', 'def_label' => 'Total Karyawan'],
-        ['field' => 'stat_4', 'delay' => '400', 'def_num' => '1000+', 'def_label' => 'Unit <br /> Mobil Terjual'],
-    ];
-    foreach ($stats as $s):
-        ?>
-        <div data-aos="fade-up" data-aos-delay="<?php echo $s['delay']; ?>">
-            <h1 class="!text-[74px] !leading-none font-extralight">
-                <?php echo get_field($s['field'] . '_num') ?: $s['def_num']; ?>
-            </h1>
-            <h5 class="text-jhl-gray-1 font-medium"><?php echo get_field($s['field'] . '_label') ?: $s['def_label']; ?></h5>
-        </div>
-    <?php endforeach; ?>
+    $args = array(
+        'post_type' => 'statistic',
+        'posts_per_page' => 4,
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+    );
+    $stats_query = new WP_Query($args);
+    $delay = 100;
+
+    if ($stats_query->have_posts()):
+        while ($stats_query->have_posts()):
+            $stats_query->the_post();
+            $number = strip_tags(get_the_content()) ?: '0';
+            $label = get_field('label') ?: get_the_title();
+            ?>
+            <div data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
+                <h1 class="!text-[74px] !leading-none font-extralight">
+                    <?php echo $number; ?>
+                </h1>
+                <h5 class="text-jhl-gray-1 font-medium"><?php echo $label; ?></h5>
+            </div>
+            <?php
+            $delay += 100;
+        endwhile;
+        wp_reset_postdata();
+    endif;
+    ?>
 </section>
 
 <section class="py-[110px] bg-jhl-foreground/30 overflow-x-hidden" data-scroll-section>
@@ -549,7 +561,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
             <div class="md:w-[40%] h-full order-1 md:order-2" data-aos="fade-left">
                 <?php
                 $dir_img = get_field('director_image');
-                $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur-2.jpg';
+                $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur-3.jpg';
                 ?>
                 <img class="w-full h-full object-cover max-h-[550px] md:max-h-[600px]"
                     src="<?php echo esc_url($dir_img_url); ?>" alt="">

@@ -52,7 +52,7 @@
                                         class="text-xs text-black tracking-[5%] font-semibold flex items-center space-x-2 !no-underline">
                                         <img class="w-1 h-2" src="<?php echo get_template_directory_uri() ?>/images/c-right-black.png"
                                             alt="">
-                                        <span>Read More</span>
+                                        <span>Baca Selengkapnya</span>
                                     </a>
                                 </div>
                             </div>

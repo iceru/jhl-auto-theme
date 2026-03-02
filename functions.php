@@ -65,26 +65,26 @@ function filter_news_func()
     if ($query->have_posts()):
         while ($query->have_posts()):
             $query->the_post(); ?>
-            <div class="space-y-4 md:space-y-6 fade-in">
+            <a href="<?php the_permalink(); ?>" class="space-y-4 md:space-y-6 fade-in">
                 <div class="overflow-hidden rounded-sm">
                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: 'https://via.placeholder.com/400x180'; ?>"
                         alt=""
                         class="w-full <?php echo $post_type === 'post' ? 'h-[184px]' : 'h-auto'; ?> object-cover hover:scale-105 transition-transform duration-500">
                 </div>
-                <h5 class="uppercase leading-tight !text-black "><?php the_title(); ?></h5>
-                <p class="text-sm text-gray-600 line-clamp-2">
+                <h5 class="uppercase leading-tight !text-black line-clamp-3"><?php the_title(); ?></h5>
+                <p class="text-sm text-gray-600 line-clamp-2 min-h-10">
                     <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                 </p>
-                <a href="<?php the_permalink(); ?>" class="text-xs font-semibold flex items-center space-x-2 group !no-underline">
+                <div class="text-xs font-semibold flex items-center space-x-2 group !no-underline">
                     <img class="w-1.5 h-2.5 group-hover:translate-x-0.5 transition-transform"
                         src="<?php echo get_template_directory_uri() ?>/images/c-right-black.png" alt="">
-                    <span>Read More</span>
-                </a>
-            </div>
+                    <span><?php echo $post_type === 'post' ? 'Baca Selengkapnya' : 'Lihat Detail' ?></span>
+                </div>
+            </a>
         <?php endwhile;
         wp_reset_postdata();
     else:
-        echo '<div class="col-span-3 py-10 text-center text-gray-400 italic">No posts found in this category.</div>';
+        echo '<div class="col-span-3 py-10 text-center text-gray-400 italic">Tidak ada data.</div>';
     endif;
 
     wp_die(); // Always use wp_die() in AJAX
