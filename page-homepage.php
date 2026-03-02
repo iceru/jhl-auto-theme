@@ -196,7 +196,7 @@
                             <?php the_title(); ?>
                         </p>
                         <p class="body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
-                            <?php get_field('category') ?>
+                            <?php echo strip_tags(get_the_content()); ?>
                         </p>
                     </div>
 
