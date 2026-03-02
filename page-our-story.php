@@ -529,12 +529,14 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
             $stats_query->the_post();
             $number = strip_tags(get_the_content()) ?: '0';
             $label = get_field('label') ?: get_the_title();
+            $max_w = get_field('max_width');
+            $max_w_class = $max_w ? 'max-w-[' . $max_w . ']' : '';
             ?>
             <div data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
                 <h1 class="!text-[74px] !leading-none font-extralight">
                     <?php echo $number; ?>
                 </h1>
-                <h5 class="text-jhl-gray-1 font-medium"><?php echo $label; ?></h5>
+                <h5 class="text-jhl-gray-1 font-medium <?php echo $max_w_class; ?>"><?php echo $label; ?></h5>
             </div>
             <?php
             $delay += 100;
@@ -547,7 +549,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
 <section class="py-[110px] bg-jhl-foreground/30 overflow-x-hidden" data-scroll-section>
     <div class="container">
         <div class="flex flex-col md:flex-row mb-28">
-            <div class="bg-jhl-gray-3/20 order-2 md:order-1 px-9 py-16 md:p-16 md:w-[60%]">
+            <div class="bg-jhl-gray-3/20 order-2 md:order-1 px-9 py-16 md:p-16 md:w-[50%]">
                 <h3 class="mb-3" data-aos="fade-right"><?php echo get_field('director_name') ?: 'Johnnathan Salim'; ?>
                 </h3>
                 <h5 class="mb-11" data-aos="fade-right" data-aos-delay="100">
@@ -558,7 +560,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     Di bawah kepemimpinannya, JHL Auto terus bertransformasi menjadi perusahaan yang progresif, adaptif, dan terhubung dengan generasi baru pecinta otomotif. Ia meyakini bahwa masa depan industri otomotif dibangun melalui inovasi, konektivitas digital, dan kedekatan yang autentik dengan komunitas.'; ?>
                 </div>
             </div>
-            <div class="md:w-[40%] h-full order-1 md:order-2" data-aos="fade-left">
+            <div class="md:w-[50%] h-full order-1 md:order-2" data-aos="fade-left">
                 <?php
                 $dir_img = get_field('director_image');
                 $dir_img_url = $dir_img ? $dir_img['url'] : get_template_directory_uri() . '/images/direktur-3.jpg';

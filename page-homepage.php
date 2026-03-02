@@ -192,7 +192,7 @@
                                 src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
                         </div>
 
-                        <p class="award-title body max-w-[180px] mb-2 <?php echo $is_first ? 'block' : 'hidden'; ?>">
+                        <p class="award-title body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
                             <?php the_title(); ?>
                         </p>
                         <p class="body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
