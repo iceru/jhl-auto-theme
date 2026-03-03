@@ -572,7 +572,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
 
         <div>
             <h2 class="mb-11" data-aos="fade-down">
-                <?php echo get_field('team_section_title') ?: ' Tim Manajemen'; ?>
+                <?php echo get_field('team_section_title') ?: 'Tim Manajemen'; ?>
             </h2>
             <div class="flex justify-between items-end mb-8" data-aos="fade-down" data-aos-delay="200">
                 <div class="body text-jhl-gray-1 md:max-w-[579px]">
@@ -608,7 +608,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                         <div class="relative overflow-hidden rounded-lg">
                             <?php if ($thumbnail): ?>
                                 <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
-                                    class="w-full object-cover transition-transform duration-500 h-[365px]">
+                                    class="w-full object-cover object-top transition-transform duration-500 h-[365px]">
                             <?php endif; ?>
 
                             <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
