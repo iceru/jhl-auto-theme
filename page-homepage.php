@@ -195,7 +195,7 @@
                         <p class="award-title body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
                             <?php the_title(); ?>
                         </p>
-                        <p class="body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
+                        <p class="award-description body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
                             <?php echo strip_tags(get_the_content()); ?>
                         </p>
                     </div>
@@ -213,9 +213,11 @@
         $('.award-item').on('click', function () {
             $('.award-image-wrapper').removeClass('opacity-100').addClass('opacity-40');
             $('.award-title').addClass('hidden').removeClass('block');
+            $('.award-description').addClass('hidden').removeClass('block');
 
             $(this).find('.award-image-wrapper').addClass('opacity-100').removeClass('opacity-40');
             $(this).find('.award-title').removeClass('hidden').addClass('block');
+            $(this).find('.award-description').removeClass('hidden').addClass('block');
         });
     });
 </script>
@@ -252,7 +254,7 @@
 
                     <div class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
                         <a href="<?php the_permalink(); ?>" class="mb-4 block aspect-video overflow-hidden rounded-lg">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="w-full h-full object-cover">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="w-full h-full object-cover">
                         </a>
                         <div class="py-4 md:py-6 px-6 md:px-8">
                             <div class="h-[220px]">

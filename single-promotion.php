@@ -40,7 +40,7 @@
                             $related_query->the_post(); ?>
                             <div class="space-y-8">
                                 <div>
-                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
+                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                         alt="<?php the_title(); ?>" class="w-full h-[359px] object-cover rounded-lg">
                                 </div>
                                 <h5 class="!text-jhl-black text-base">
