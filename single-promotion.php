@@ -38,7 +38,7 @@
                     <div class="grid md:grid-cols-4 gap-4">
                         <?php while ($related_query->have_posts()):
                             $related_query->the_post(); ?>
-                            <div class="space-y-8">
+                            <a href="<?php the_permalink(); ?>" class="space-y-8">
                                 <div>
                                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                         alt="<?php the_title(); ?>" class="w-full h-[359px] object-cover rounded-lg">
@@ -47,14 +47,14 @@
                                     <?php the_title(); ?>
                                 </h5>
                                 <div>
-                                    <a href="<?php the_permalink(); ?>"
+                                    <div
                                         class="text-xs text-jhl-gray-1 tracking-[5%] font-semibold flex items-center space-x-2 !no-underline">
                                         <img class="w-1 h-2" src="<?php echo get_template_directory_uri() ?>/images/c-right-black.png"
                                             alt="">
                                         <span>Learn More</span>
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         <?php endwhile;
                         wp_reset_postdata(); ?>
                     </div>

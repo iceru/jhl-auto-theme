@@ -75,25 +75,24 @@
             while ($promo_query->have_posts()):
                 $promo_query->the_post(); ?>
 
-                <div class="flex-none w-[75%] snap-start md:w-full">
-                    <a href="<?php the_permalink(); ?>" class="mb-8 block">
+                <a href="<?php the_permalink(); ?>" class="flex-none w-[75%] snap-start md:w-full">
+                    <div class="mb-8 block">
                         <?php if (has_post_thumbnail()): ?>
                             <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full h-[358px] object-cover">
                         <?php endif; ?>
-                    </a>
-                    <a href="<?php the_permalink(); ?>" class="block">
+                    </div>
+                    <div class="block">
                         <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black line-clamp-3 h-[66px]">
                             <?php the_title(); ?>
                         </h5>
-                    </a>
-                    <a href="<?php the_permalink(); ?>"
-                        class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
+                    </div>
+                    <divd class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                         <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                         <span>
                             Lihat Detail
                         </span>
-                    </a>
-                </div>
+                </a>
+                </a>
 
             <?php endwhile;
             wp_reset_postdata();
@@ -252,30 +251,32 @@
                 while ($news_query->have_posts()):
                     $news_query->the_post(); ?>
 
-                    <div class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
-                        <a href="<?php the_permalink(); ?>" class="mb-4 block aspect-video overflow-hidden rounded-lg">
-                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="w-full h-full object-cover">
-                        </a>
+                    <a href="<?php the_permalink(); ?>"
+                        class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
+                        <div class="mb-4 block aspect-video overflow-hidden rounded-lg">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
+                                class="w-full h-full object-cover">
+                        </div>
                         <div class="py-4 md:py-6 px-6 md:px-8">
                             <div class="h-[220px]">
                                 <small class="text-[10px] uppercase tracking-wide block mb-3">
                                     <?php echo get_the_date('d F Y'); ?>
                                 </small>
-                                <a href="<?php the_permalink(); ?>">
+                                <div class="block">
                                     <h3 class="leading-7 text-[27px] mb-3 font-light line-clamp-2">
                                         <?php the_title(); ?>
                                     </h3>
-                                </a>
+                                </div>
                                 <p class="text-xs leading-6 line-clamp-2 h-12">
                                     <?php echo get_the_excerpt(); ?>
                                 </p>
                             </div>
-                            <a href="<?php the_permalink(); ?>"
+                            <div
                                 class="text-xs pt-3 border-t pr-14 inline-block border-white font-semibold uppercase tracking-wide !no-underline">
                                 Baca Selengkapnya
-                            </a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                 <?php endwhile;
                 wp_reset_postdata();
