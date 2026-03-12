@@ -40,7 +40,7 @@
                             $related_query->the_post(); ?>
                             <a href="<?php the_permalink(); ?>" class="space-y-8">
                                 <div class="aspect-video overflow-hidden">
-                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
+                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                         alt="<?php the_title(); ?>" class="w-full h-full object-cover">
                                 </div>
                                 <h5 class="uppercase"><?php the_title(); ?></h5>

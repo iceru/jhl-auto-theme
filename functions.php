@@ -67,7 +67,7 @@ function filter_news_func()
             $query->the_post(); ?>
             <a href="<?php the_permalink(); ?>" class="space-y-4 md:space-y-6 fade-in">
                 <div class="overflow-hidden rounded-sm">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: 'https://via.placeholder.com/400x180'; ?>"
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?: 'https://via.placeholder.com/400x180'; ?>"
                         alt=""
                         class="w-full <?php echo $post_type === 'post' ? 'h-[184px]' : 'h-auto'; ?> object-cover hover:scale-105 transition-transform duration-500">
                 </div>
