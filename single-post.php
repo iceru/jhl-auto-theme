@@ -38,7 +38,7 @@
                     if ($related_query->have_posts()):
                         while ($related_query->have_posts()):
                             $related_query->the_post(); ?>
-                            <div class="space-y-8">
+                            <a href="<?php the_permalink(); ?>" class="space-y-8">
                                 <div class="aspect-video overflow-hidden">
                                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
                                         alt="<?php the_title(); ?>" class="w-full h-full object-cover">
@@ -48,14 +48,14 @@
                                     <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                                 </p>
                                 <div>
-                                    <a href="<?php the_permalink(); ?>"
+                                    <span
                                         class="text-xs text-black tracking-[5%] font-semibold flex items-center space-x-2 !no-underline">
                                         <img class="w-1 h-2" src="<?php echo get_template_directory_uri() ?>/images/c-right-black.png"
                                             alt="">
                                         <span>Baca Selengkapnya</span>
-                                    </a>
+                                    </span>
                                 </div>
-                            </div>
+                            </a>
                         <?php endwhile;
                         wp_reset_postdata();
                     endif; ?>

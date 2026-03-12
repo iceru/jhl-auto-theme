@@ -83,7 +83,8 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
             if ($promo_query->have_posts()):
                 while ($promo_query->have_posts()):
                     $promo_query->the_post(); ?>
-                    <div class="flex-none w-[75%] snap-start md:w-full fade-right" data-scroll data-scroll-class="is-inview">
+                    <a href="<?php the_permalink(); ?>" class="flex-none w-[75%] snap-start md:w-full fade-right" data-scroll
+                        data-scroll-class="is-inview">
                         <div class="mb-8">
                             <?php if (has_post_thumbnail()): ?>
                                 <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full object-cover">
@@ -92,12 +93,12 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
                         <h5 class="leading-[22px] font-medium mb-6 !text-white line-clamp-3 h-16">
                             <?php the_title(); ?>
                         </h5>
-                        <a href="<?php the_permalink(); ?>"
+                        <div
                             class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                             <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                             <span>Lihat Detail</span>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
