@@ -84,7 +84,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <h3>2012</h3>
                     <h4 class="font-bold text-sm my-2">Authorized Jeep Dealer</h4>
                     <p class="body">Menjadi dealer otomotif pertama JHL Auto sekaligus memperoleh penghargaan MURI atas
-                        konsep dealer inovatif “Amazon Jungle”, menandai awal komitmen menghadirkan pengalaman otomotif
+                        konsep dealer inovatif <i>“Amazon Jungle”</i>, menandai awal komitmen menghadirkan pengalaman
+                        otomotif
                         yang berbeda di Indonesia</p>
                 </div>
             </div>
@@ -99,8 +100,9 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <div class="max-w-[316px] mr-4 text-right -mt-2">
                         <h3>2015</h3>
                         <h4 class="font-bold text-sm my-1">Strengthening the Jeep Community</h4>
-                        <p class="body">Berpartisipasi dalam ajang nasional Garansindo Cup “Jeep Agility Off Road
-                            Competition” sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi komunitas
+                        <p class="body">Berpartisipasi dalam ajang nasional Garansindo Cup <i>“Jeep Agility Off Road
+                                Competition”</i> sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi
+                            komunitas
                             Jeep Indonesia
                         </p>
                     </div>
@@ -117,7 +119,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <div class="max-w-[243px] mr-4 text-right -mt-2">
                         <h3>2017</h3>
                         <h4 class="font-bold text-sm my-1">Best Authorized Jeep Dealer – Indonesia</h4>
-                        <p class="body">Menerima penghargaan “Best Jeep Dealer Indonesia” sebagai pengakuan atas
+                        <p class="body">Menerima penghargaan <i>“Best Jeep Dealer
+                                Indonesia”</i> sebagai pengakuan atas
                             konsistensi performa, standar layanan premium, serta pencapaian penjualan unggul di tingkat
                             nasional
                         </p>
@@ -135,8 +138,9 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <div class="max-w-[291px] mr-4 text-right -mt-2">
                         <h3>2019</h3>
                         <h4 class="font-bold text-sm my-1">Best Seller Award – IIMS</h4>
-                        <p class="body">Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama ajang “Indonesia
-                            International Motor Show”, memperkuat posisi JHL Auto sebagai salah satu dealer dengan
+                        <p class="body">Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama ajang <i>“Indonesia
+                                International Motor Show”</i>, memperkuat posisi JHL Auto sebagai salah satu dealer
+                            dengan
                             performa terbaik secara nasional
                         </p>
                     </div>
@@ -204,7 +208,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <h3 class="text-lg">2012</h3>
                     <h4 class="font-bold text-base my-1">Authorized Jeep Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Menjadi dealer otomotif pertama JHL Auto sekaligus
-                        memperoleh penghargaan MURI atas konsep dealer inovatif “Amazon Jungle”, menandai awal komitmen
+                        memperoleh penghargaan MURI atas konsep dealer inovatif <i>“Amazon Jungle”</i>, menandai awal
+                        komitmen
                         menghadirkan pengalaman otomotif yang berbeda di Indonesia
                     </p>
                 </div>
@@ -217,8 +222,10 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2015</h3>
                     <h4 class="font-bold text-base my-1">Strengthening the Jeep Community</h4>
-                    <p class="body text-[10px] leading-relaxed">Berpartisipasi dalam ajang nasional Garansindo Cup “Jeep
-                        Agility Off Road Competition” sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi
+                    <p class="body text-[10px] leading-relaxed">Berpartisipasi dalam ajang nasional Garansindo Cup
+                        <i>“Jeep
+                            Agility Off Road Competition”</i> sebagai wujud komitmen dalam memperkuat kolaborasi dan
+                        eksistensi
                         komunitas Jeep Indonesia
                     </p>
                 </div>
@@ -231,7 +238,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2017</h3>
                     <h4 class="font-bold text-base my-1">Best Authorized Jeep Dealer – Indonesia</h4>
-                    <p class="body text-[10px] leading-relaxed">Menerima penghargaan “Best Jeep Dealer Indonesia”
+                    <p class="body text-[10px] leading-relaxed">Menerima penghargaan <i>“Best Jeep Dealer
+                            Indonesia”</i>
                         sebagai pengakuan atas konsistensi performa, standar layanan premium, serta pencapaian penjualan
                         unggul di tingkat nasional
                     </p>
@@ -247,7 +255,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <h3 class="text-lg">2019</h3>
                     <h4 class="font-bold text-base my-1">Best Seller Award – IIMS</h4>
                     <p class="body text-[10px] leading-relaxed">Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama
-                        ajang “Indonesia International Motor Show”, memperkuat posisi JHL Auto sebagai salah satu dealer
+                        ajang <i>“Indonesia International Motor Show”</i>, memperkuat posisi JHL Auto sebagai salah
+                        satu dealer
                         dengan performa terbaik secara nasional
                     </p>
                 </div>
