@@ -124,12 +124,17 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
             <div class=" bg-jhl-foreground my-6 rounded-lg flex flex-wrap md:flex-nowrap fade-right" data-scroll
                 data-scroll-class="is-inview">
                 <div class="w-full md:w-[60%] p-8 fade-right" data-scroll data-scroll-class="is-inview">
-                    <h3 class="mb-5"><?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?></h3>
+                    <h3 class="mb-5">
+                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Apresiasi Berbasis Kinerja')); ?>
+                    </h3>
                     <p class="body !font-semibold mb-2">
-                        <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
                     </p>
-                    <p class="body">
-                        <?php echo esc_html(get_jhl_field('benefit_1_description', 'Sebagai bagian dari JHL Group, karyawan JHL Auto berhak mendapatkan potongan harga khusus di berbagai jaringan JHL Group. Sebuah nilai tambah yang memungkinkan Anda menikmati berbagai layanan dan fasilitas dengan benefit eksklusif.')); ?>
+                    <p class="body mb-2">
+
+                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'Kami menerapkan sistem penilaian
+                         kinerja (KPI) yang transparan dan terukur, dilengkapi dengan insentif, program loyalitas, 
+                         serta peluang promosi yang selaras dengan pencapaian individu. Setiap kontribusi nyata 
+                         akan mendapatkan penghargaan yang setimpal.')); ?>
                     </p>
                 </div>
                 <div class="w-full md:w-[40%] relative fade-left" data-scroll data-scroll-class="is-inview">
@@ -164,7 +169,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                         <div
                             class="absolute bg-gradient-to-b from-jhl-foreground to-transparent w-full h-[50%] z-10 top-0 left-0">
                         </div>
-                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/benefit-2.png')); ?>"
+                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/benefit-2.jpg')); ?>"
                             class="w-full opacity-40 h-[116px] object-cover rounded-b-lg" alt="Benefit">
                     </div>
                 </div>
@@ -173,36 +178,39 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         <div class="w-full md:w-[40%]">
             <div class="p-8 bg-jhl-foreground mb-6 rounded-lg fade-down" data-scroll data-scroll-class="is-inview">
                 <h3 class="mb-5">
-                    <?php echo esc_html(get_jhl_field('benefit_4_title', 'Pengembangan Karier & Kompetensi')); ?>
+                    <?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?>
                 </h3>
                 <p class="body !font-semibold mb-2">
-                    <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
+                    <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
                 </p>
-                <p class="body mb-7">
-                    <?php echo esc_html(get_jhl_field('benefit_4_description', 'Kami mendukung perjalanan profesional 
-                    Anda melalui perencanaan karier yang terstruktur, pendampingan, serta peluang pengembangan kompetensi 
-                    yang disesuaikan dengan potensi dan tujuan individu. 
-                    Di JHL Auto, pertumbuhan bukan kebetulan—melainkan proses yang dirancang.')); ?>
+                <p class="body">
+
+                    <?php echo esc_html(get_jhl_field('benefit_1_description', 'Sebagai bagian dari JHL Group, karyawan JHL Auto berhak mendapatkan potongan harga khusus di berbagai jaringan JHL Group. Sebuah nilai tambah yang memungkinkan Anda menikmati berbagai layanan dan fasilitas dengan benefit eksklusif.')); ?>
                 </p>
             </div>
             <div class=" bg-jhl-foreground mb-6 rounded-lg fade-up" data-scroll data-scroll-class="is-inview">
                 <div class="pt-8 px-8">
                     <h3 class="mb-5">
-                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Apresiasi Berbasis Kinerja')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_4_title', 'Pengembangan Karier & Kompetensi')); ?>
                     </h3>
-                    <p class="body mb-12">
-                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'Kami menerapkan sistem penilaian
-                         kinerja (KPI) yang transparan dan terukur, dilengkapi dengan insentif, program loyalitas, 
-                         serta peluang promosi yang selaras dengan pencapaian individu. Setiap kontribusi nyata 
-                         akan mendapatkan penghargaan yang setimpal.')); ?>
+                    <p class="body !font-semibold mb-2">
+                        <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
+
+                        <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
+                    </p>
+                    <p class="body mb-5">
+                        <?php echo esc_html(get_jhl_field('benefit_4_description', 'Kami mendukung perjalanan profesional 
+                    Anda melalui perencanaan karier yang terstruktur, pendampingan, serta peluang pengembangan kompetensi 
+                    yang disesuaikan dengan potensi dan tujuan individu. 
+                    Di JHL Auto, pertumbuhan bukan kebetulan—melainkan proses yang dirancang.')); ?>
                     </p>
                 </div>
                 <div class="relative w-full">
                     <div
                         class="absolute bg-gradient-to-b from-jhl-foreground to-transparent w-full h-[50%] z-10 top-0 left-0">
                     </div>
-                    <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-3.png')); ?>"
-                        class="w-full opacity-40 h-[200px] object-cover rounded-b-lg" alt="Benefit">
+                    <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-1.jpg')); ?>"
+                        class="w-full opacity-20 h-[200px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
         </div>
@@ -227,56 +235,56 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         $vacancies = $vacancies_query->posts;
 
         if ($vacancies): ?>
-            <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div id="vacancies" class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
-                <div class="md:col-span-4 flex flex-col p-4 md:p-8 border border-white/20 rounded-2xl fade-right relative"
-                    data-scroll data-scroll-class="is-inview">
-                    <div class="absolute right-4 top-10 bottom-10 w-[3px] bg-white rounded-full"></div>
-                    <h5 class="font-bold uppercase mb-6 md:mb-10 !text-white tracking-widest">Roles</h5>
-                    <div class="flex flex-col gap-8 px-6">
-                        <?php foreach ($vacancies as $index => $vacancy):
+            <div class="md:col-span-4 flex flex-col p-4 md:p-8 border border-white/20 rounded-2xl fade-right relative"
+                data-scroll data-scroll-class="is-inview">
+                <div class="absolute right-4 top-10 bottom-10 w-[3px] bg-white rounded-full"></div>
+                <h5 class="font-bold uppercase mb-6 md:mb-10 !text-white tracking-widest">Roles</h5>
+                <div class="flex flex-col gap-8 px-6">
+                    <?php foreach ($vacancies as $index => $vacancy):
                             $active_class = ($index === 0) ? 'is-active opacity-100' : 'opacity-40 hover:opacity-70';
                             ?>
-                            <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
-                                class="vacancy-trigger text-left transition-all duration-300 group relative flex items-start <?php echo $active_class; ?>">
-                                <span
-                                    class="absolute -left-7 top-1 opacity-0 group-[.is-active]:opacity-100 transition-all duration-300 transform group-[.is-active]:translate-x-1">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="3" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <h5 class="!text-white !m-0 !leading-tight">
-                                    <?php echo get_the_title($vacancy->ID); ?>
-                                </h5>
-                            </button>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <div class="md:col-span-8  rounded-lg relative min-h-[400px] vacancy-text fade-left" data-scroll
-                    data-scroll-class="is-inview">
-                    <?php foreach ($vacancies as $index => $vacancy):
-                        $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
-                        ?>
-                        <div id="vacancy-<?php echo $vacancy->ID; ?>" class="vacancy-content"
-                            style="<?php echo $display_style; ?>">
-
-                            <div class="body">
-                                <?php echo apply_filters('the_content', $vacancy->post_content); ?>
-                            </div>
-
-                            <a href="<?php echo get_permalink($vacancy->ID); ?>"
-                                class="inline-block mt-14 px-4 py-2 bg-jhl-black text-white font-semibold text-xs rounded-sm hover:bg-jhl-black/80 uppercase transition-colors">
-                                Apply Now
-                            </a>
-                        </div>
+                    <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
+                        class="vacancy-trigger text-left transition-all duration-300 group relative flex items-start <?php echo $active_class; ?>">
+                        <span
+                            class="absolute -left-7 top-1 opacity-0 group-[.is-active]:opacity-100 transition-all duration-300 transform group-[.is-active]:translate-x-1">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="white" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <h5 class="!text-white !m-0 !leading-tight">
+                            <?php echo get_the_title($vacancy->ID); ?>
+                        </h5>
+                    </button>
                     <?php endforeach; ?>
                 </div>
-
             </div>
-            <?php wp_reset_postdata(); endif; ?>
+
+            <div class="md:col-span-8  rounded-lg relative min-h-[400px] vacancy-text fade-left" data-scroll
+                data-scroll-class="is-inview">
+                <?php foreach ($vacancies as $index => $vacancy):
+                        $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
+                        ?>
+                <div id="vacancy-<?php echo $vacancy->ID; ?>" class="vacancy-content"
+                    style="<?php echo $display_style; ?>">
+
+                    <div class="body">
+                        <?php echo apply_filters('the_content', $vacancy->post_content); ?>
+                    </div>
+
+                    <a href="<?php echo get_permalink($vacancy->ID); ?>"
+                        class="inline-block mt-14 px-4 py-2 bg-jhl-black text-white font-semibold text-xs rounded-sm hover:bg-jhl-black/80 uppercase transition-colors">
+                        Apply Now
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+        <?php wp_reset_postdata(); endif; ?>
     </div>
 </section>
 <?php get_footer(); ?>
