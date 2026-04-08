@@ -485,7 +485,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         <img class="w-full h-full object-cover" src="<?php echo esc_url($vm_img_url); ?>" alt="">
     </div>
     <div class="flex flex-col justify-center w-full py-7 container">
-        <div class="flex flex-col md:flex-row md:space-x-6 mb-20 md:ml-[420px] justify-center">
+        <div class="flex flex-col md:flex-row md:space-x-6 mb-20 xl:ml-[420px] justify-center">
             <div class="bg-jhl-foreground p-11 rounded-lg mb-4 md:mb-0 lg:max-w-[380px] xxl:max-w-[403px] w-full"
                 data-aos="fade-right">
                 <h3 class="mb-8 font-light text-[27px]">Visi</h3>
