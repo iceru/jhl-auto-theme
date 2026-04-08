@@ -207,10 +207,10 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
                 <div class="relative w-full">
                     <div
-                        class="absolute bg-gradient-to-b from-jhl-foreground to-transparent w-full h-[50%] z-10 top-0 left-0">
+                        class="absolute bg-gradient-to-b from-jhl-foreground/60 to-transparent w-full h-[50%] z-10 top-0 left-0">
                     </div>
                     <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-1.jpg')); ?>"
-                        class="w-full opacity-20 h-[200px] object-cover rounded-b-lg" alt="Benefit">
+                        class="w-full h-[200px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
         </div>

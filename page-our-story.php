@@ -476,8 +476,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
     </div>
 </section>
 
-<section class="md:h-screen w-full flex flex-col md:flex-row space-x-16 bg-[#404040] relative" data-scroll-section>
-    <div class="md:absolute h-full w-full md:w-[426px] 2xl:w-[580px] md:left-0">
+<section class="xl:h-screen w-full flex flex-col xl:flex-row space-x-16 bg-[#404040] relative" data-scroll-section>
+    <div class="xl:absolute h-full w-full xl:w-[426px] 2xl:w-[580px] xl:left-0">
         <?php
         $vm_img = get_field('vm_side_image');
         $vm_img_url = $vm_img ? $vm_img['url'] : get_template_directory_uri() . '/images/story-image-2.jpg';
@@ -485,8 +485,8 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         <img class="w-full h-full object-cover" src="<?php echo esc_url($vm_img_url); ?>" alt="">
     </div>
     <div class="flex flex-col justify-center w-full py-7 container">
-        <div class="flex flex-col md:flex-row md:space-x-6 mb-20 md:ml-[420px] justify-center">
-            <div class="bg-jhl-foreground p-11 rounded-lg mb-4 md:mb-0 lg:max-w-[380px] xxl:max-w-[403px] w-full"
+        <div class="flex flex-col xl:flex-row xl:space-x-6 mb-20 xl:ml-[420px] justify-center">
+            <div class="bg-jhl-foreground p-11 rounded-lg mb-4 xl:mb-0 lg:max-w-[380px] xxl:max-w-[403px] w-full"
                 data-aos="fade-right">
                 <h3 class="mb-8 font-light text-[27px]">Visi</h3>
                 <div class="body max-w-[254px]">
@@ -503,7 +503,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         </div>
 
         <div
-            class="grid grid-cols-2 md:flex items-center justify-center md:ml-[420px] gap-y-20 md:gap-y-0 mb-14 md:mb-0">
+            class="grid grid-cols-2 xl:flex items-center justify-center xl:ml-[420px] gap-y-20 xl:gap-y-0 mb-14 xl:mb-0">
             <?php for ($i = 1; $i <= 4; $i++):
                 $icon = get_field('culture_icon_' . $i);
                 $label = get_field('culture_label_' . $i);
