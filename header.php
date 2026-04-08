@@ -96,7 +96,7 @@
                                         </div>
 
                                         <div class="relative z-10">
-                                            <a href="https://baic.codeomnia.com"
+                                            <a href="https://baic.codeomnia.cloud"
                                                 class="text-xs uppercase flex justify-between items-center !no-underline mb-5 pb-5 border-b border-white/10">
                                                 <span>BAIC</span>
                                                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png"
@@ -179,8 +179,8 @@
                         <li><a href="javascript:void(0)" data-target="submenu-brands"
                                 class="submenu-trigger text-white uppercase font-medium tracking-widest">Brands</a></li>
                         <li><a href="/news" class="text-white uppercase font-medium tracking-widest">
-                            Newsroom
-                        </a></li>
+                                Newsroom
+                            </a></li>
                     </ul>
 
                     <ul id="submenu-about"
@@ -192,7 +192,7 @@
 
                     <ul id="submenu-brands"
                         class="hidden absolute inset-0 flex flex-col space-y-8 justify-center items-center px-10 text-center transition-all duration-300">
-                        <li><a href="https://baic.codeomnia.com"
+                        <li><a href="https://baic.codeomnia.cloud"
                                 class="text-white uppercase font-medium tracking-widest">BAIC</a></li>
                         <li><a href="/service-center" class="text-white uppercase font-medium tracking-widest">Service
                                 Center</a></li>
