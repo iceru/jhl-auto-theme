@@ -62,7 +62,7 @@
                     </p>
                     <ul class="text-white space-y-3">
                         <li>
-                            <a href="https://baic.codeomnia.com" class="text-xs !no-underline">
+                            <a href="https://baic.codeomnia.cloud" class="text-xs !no-underline">
                                 BAIC
                             </a>
                         </li>
@@ -123,12 +123,15 @@
         if (!isMobile) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    const targetClass = entry.target.getAttribute('data-scroll-class') || 'is-inview';
+                    const targetClass = entry.target.getAttribute('data-scroll-class') ||
+                        'is-inview';
                     if (entry.isIntersecting) {
                         entry.target.classList.add(targetClass);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, {
+                threshold: 0.1
+            });
 
             document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
         } else {
