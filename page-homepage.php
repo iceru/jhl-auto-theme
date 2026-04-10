@@ -7,10 +7,10 @@
             $hero_video_url = get_field('hero_video_file');
             if ($hero_video_url):
                 ?>
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             <?php endif; ?>
         </div>
     </section>
@@ -75,26 +75,26 @@
             while ($promo_query->have_posts()):
                 $promo_query->the_post(); ?>
 
-        <a href="<?php the_permalink(); ?>" class="flex-none w-[75%] snap-start md:w-full">
-            <div class="mb-8 block">
-                <?php if (has_post_thumbnail()): ?>
-                <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full h-[358px] object-cover">
-                <?php endif; ?>
-            </div>
-            <div class="block">
-                <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black line-clamp-3 h-[66px]">
-                    <?php the_title(); ?>
-                </h5>
-            </div>
-            <divd class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
-                <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
-                <span>
-                    Lihat Detail
-                </span>
-        </a>
-        </a>
+                <a href="<?php the_permalink(); ?>" class="flex-none w-[75%] snap-start md:w-full">
+                    <div class="mb-8 block">
+                        <?php if (has_post_thumbnail()): ?>
+                            <img src="<?php the_post_thumbnail_url('large'); ?>" class="rounded-lg w-full h-auto object-cover">
+                        <?php endif; ?>
+                    </div>
+                    <div class="block">
+                        <h5 class="leading-[22px] font-medium mb-8 !text-jhl-black line-clamp-3 h-[66px]">
+                            <?php the_title(); ?>
+                        </h5>
+                    </div>
+                    <divd class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
+                        <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                        <span>
+                            Lihat Detail
+                        </span>
+                </a>
+                </a>
 
-        <?php endwhile;
+            <?php endwhile;
             wp_reset_postdata();
         endif; ?>
     </div>
@@ -126,29 +126,29 @@
                 while ($dealers_query->have_posts()):
                     $dealers_query->the_post(); ?>
 
-            <div class="flex-none w-[75%] snap-start md:w-full">
-                <div class="mb-4">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
-                        alt="<?php the_title(); ?>" class="rounded-lg h-[318px] object-cover w-full">
-                </div>
+                    <div class="flex-none w-[75%] snap-start md:w-full">
+                        <div class="mb-4">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
+                                alt="<?php the_title(); ?>" class="rounded-lg h-[318px] object-cover w-full">
+                        </div>
 
-                <h4 class="leading-7 text-xl mb-4 fade-up" data-scroll data-scroll-class="is-inview">
-                    <?php the_title(); ?>
-                </h4>
+                        <h4 class="leading-7 text-xl mb-4 fade-up" data-scroll data-scroll-class="is-inview">
+                            <?php the_title(); ?>
+                        </h4>
 
-                <div class="body text-jhl-gray-1 fade-up mb-4" data-scroll data-scroll-class="is-inview">
-                    <?php the_content(); ?>
-                </div>
-                <a href="https://baic.codeomnia.cloud/service/"
-                    class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
-                    <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
-                    <span>
-                        Lihat Detail
-                    </span>
-                </a>
-            </div>
+                        <div class="body text-jhl-gray-1 fade-up mb-4" data-scroll data-scroll-class="is-inview">
+                            <?php the_content(); ?>
+                        </div>
+                        <a href="https://baic.codeomnia.cloud/service/"
+                            class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
+                            <span>
+                                Lihat Detail
+                            </span>
+                        </a>
+                    </div>
 
-            <?php endwhile;
+                <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
@@ -184,22 +184,22 @@
                     $is_first = ($count === 0);
                     ?>
 
-            <div class="award-item text-center group cursor-pointer <?php echo $is_first ? 'active' : ''; ?>">
-                <div
-                    class="award-image-wrapper flex justify-center mb-4 transition <?php echo $is_first ? 'opacity-100' : 'opacity-40'; ?>">
-                    <img class="w-auto h-[130px] object-contain"
-                        src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
-                </div>
+                    <div class="award-item text-center group cursor-pointer <?php echo $is_first ? 'active' : ''; ?>">
+                        <div
+                            class="award-image-wrapper flex justify-center mb-4 transition <?php echo $is_first ? 'opacity-100' : 'opacity-40'; ?>">
+                            <img class="w-auto h-[130px] object-contain"
+                                src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
+                        </div>
 
-                <p class="award-title body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
-                    <?php the_title(); ?>
-                </p>
-                <p class="award-description body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
-                    <?php echo strip_tags(get_the_content()); ?>
-                </p>
-            </div>
+                        <p class="award-title body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
+                            <?php the_title(); ?>
+                        </p>
+                        <p class="award-description body max-w-[180px] <?php echo $is_first ? 'block' : 'hidden'; ?>">
+                            <?php echo strip_tags(get_the_content()); ?>
+                        </p>
+                    </div>
 
-            <?php $count++;
+                    <?php $count++;
                 endwhile;
                 wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -251,34 +251,34 @@
                 while ($news_query->have_posts()):
                     $news_query->the_post(); ?>
 
-            <a href="<?php the_permalink(); ?>"
-                class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
-                <div class="mb-4 block aspect-video overflow-hidden rounded-lg">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
-                        class="w-full h-full object-cover">
-                </div>
-                <div class="py-4 md:py-6 px-6 md:px-8">
-                    <div class="h-[220px]">
-                        <small class="text-[10px] uppercase tracking-wide block mb-3">
-                            <?php echo get_the_date('d F Y'); ?>
-                        </small>
-                        <div class="block">
-                            <h3 class="leading-7 text-[27px] mb-3 font-light line-clamp-2">
-                                <?php the_title(); ?>
-                            </h3>
+                    <a href="<?php the_permalink(); ?>"
+                        class="bg-[#060606]/20 backdrop-blur-xl flex-none w-[75%] snap-start md:w-full text-white rounded-lg">
+                        <div class="mb-4 block aspect-video overflow-hidden rounded-lg">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
+                                class="w-full h-full object-cover">
                         </div>
-                        <p class="text-xs leading-6 line-clamp-2 h-12">
-                            <?php echo get_the_excerpt(); ?>
-                        </p>
-                    </div>
-                    <div
-                        class="text-xs pt-3 border-t pr-14 inline-block border-white font-semibold uppercase tracking-wide !no-underline">
-                        Baca Selengkapnya
-                    </div>
-                </div>
-            </a>
+                        <div class="py-4 md:py-6 px-6 md:px-8">
+                            <div class="h-[220px]">
+                                <small class="text-[10px] uppercase tracking-wide block mb-3">
+                                    <?php echo get_the_date('d F Y'); ?>
+                                </small>
+                                <div class="block">
+                                    <h3 class="leading-7 text-[27px] mb-3 font-light line-clamp-2">
+                                        <?php the_title(); ?>
+                                    </h3>
+                                </div>
+                                <p class="text-xs leading-6 line-clamp-2 h-12">
+                                    <?php echo get_the_excerpt(); ?>
+                                </p>
+                            </div>
+                            <div
+                                class="text-xs pt-3 border-t pr-14 inline-block border-white font-semibold uppercase tracking-wide !no-underline">
+                                Baca Selengkapnya
+                            </div>
+                        </div>
+                    </a>
 
-            <?php endwhile;
+                <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
