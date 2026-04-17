@@ -311,7 +311,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
 </section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const pathDesktop = document.querySelector("#road-path");
         const pathMobile = document.querySelector("#road-path-mobile");
         const car = document.querySelector("#car");
@@ -407,7 +407,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         }
         tick();
 
-        window.addEventListener("resize", function () {
+        window.addEventListener("resize", function() {
             initTimelineState();
             updateTimeline();
         });
@@ -509,16 +509,16 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                 $label = get_field('culture_label_' . $i);
                 $def_labels = ['', 'Integritas', 'Semangat', 'Kepuasan Pelanggan', 'Kerja Sama tim'];
                 $def_imgs = ['', 'Warranty.png', 'Fist.png', 'Heart.png', 'Crowd.png'];
-                ?>
-            <div class="flex flex-col justify-center items-center mx-10" data-aos="fade-down"
-                data-aos-delay="<?php echo $i * 100; ?>">
-                <img class="w-20 h-20 object-contain mb-7"
-                    src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/images/' . $def_imgs[$i]; ?>"
-                    alt="">
-                <span class="text-white tracking-wide max-w-[95px] block text-center">
-                    <?php echo $label ?: $def_labels[$i]; ?>
-                </span>
-            </div>
+            ?>
+                <div class="flex flex-col justify-center items-center mx-10" data-aos="fade-down"
+                    data-aos-delay="<?php echo $i * 100; ?>">
+                    <img class="w-20 h-20 object-contain mb-7"
+                        src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/images/' . $def_imgs[$i]; ?>"
+                        alt="">
+                    <span class="text-white tracking-wide max-w-[95px] block text-center">
+                        <?php echo $label ?: $def_labels[$i]; ?>
+                    </span>
+                </div>
             <?php endfor; ?>
         </div>
     </div>
@@ -542,13 +542,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
             $label = get_field('label') ?: get_the_title();
             $max_w = get_field('max_width');
             $max_w_class = $max_w ? 'max-w-[' . $max_w . ']' : '';
-            ?>
-    <div data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
-        <h1 class="!text-[74px] !leading-none font-extralight">
-            <?php echo $number; ?>
-        </h1>
-        <h5 class="text-jhl-gray-1 font-medium <?php echo $max_w_class; ?>"><?php echo $label; ?></h5>
-    </div>
+    ?>
+            <div data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
+                <h1 class="!text-[74px] !leading-none font-extralight">
+                    <?php echo $number; ?>
+                </h1>
+                <h5 class="text-jhl-gray-1 font-medium <?php echo $max_w_class; ?>"><?php echo $label; ?></h5>
+            </div>
     <?php
             $delay += 100;
         endwhile;
@@ -600,39 +600,38 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
     <div class="slider-full-right pl-4">
         <?php
         $args = array(
-            'post_type' => 'team',
+            'post_type'      => 'team',
             'posts_per_page' => -1,
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
         );
-
         $team_query = new WP_Query($args);
 
         if ($team_query->have_posts()): ?>
-        <div class="teams -mx-2" data-aos="fade-down" data-aos-delay="400">
-            <?php while ($team_query->have_posts()):
+            <div class="teams -mx-2" data-aos="fade-down" data-aos-delay="400">
+                <?php while ($team_query->have_posts()):
                     $team_query->the_post();
                     $position = get_field('position');
                     $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                    ?>
-            <div class="px-2 outline-none text-center ">
-                <div class="relative overflow-hidden rounded-lg">
-                    <?php if ($thumbnail): ?>
-                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
-                        class="w-full object-cover object-top transition-transform duration-500 h-[365px]">
-                    <?php endif; ?>
+                ?>
+                    <div class="px-2 outline-none text-center ">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <?php if ($thumbnail): ?>
+                                <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title(); ?>"
+                                    class="w-full object-cover object-top transition-transform duration-500 h-[365px]">
+                            <?php endif; ?>
 
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
-                        <h5 class="!text-white"><?php the_title(); ?></h5>
-                        <?php if ($position): ?>
-                        <p class="body text-white"><?php echo esc_html($position); ?></p>
-                        <?php endif; ?>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 bg-[#2f2f2f]/20 backdrop-blur-2xl">
+                                <h5 class="!text-white"><?php the_title(); ?></h5>
+                                <?php if ($position): ?>
+                                    <p class="body text-white"><?php echo esc_html($position); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <?php endwhile;
+                <?php endwhile;
                 wp_reset_postdata(); ?>
-        </div>
+            </div>
         <?php endif; ?>
     </div>
 </section>
