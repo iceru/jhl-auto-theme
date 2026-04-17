@@ -167,9 +167,9 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     </h3>
                     <div class="relative w-full">
                         <div
-                            class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[30%] z-10 top-0 left-0">
+                            class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[45%] w-full z-10 top-0 left-0">
                         </div>
-                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/jhl-bpjs.jpg')); ?>"
+                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/jhl-bpjs.png')); ?>"
                             class="w-full h-[182px] object-cover rounded-b-lg" alt="Benefit">
                     </div>
                 </div>
@@ -207,7 +207,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
                 <div class="relative w-full">
                     <div
-                        class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[30%] z-10 top-0 left-0">
+                        class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[45%] w-full z-10 top-0 left-0">
                     </div>
                     <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-1.jpg')); ?>"
                         class="w-full h-[220px] 2xl:h-[224px] 3xl:h-[320px] object-cover rounded-b-lg" alt="Benefit">
