@@ -167,9 +167,9 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     </h3>
                     <div class="relative w-full">
                         <div
-                            class="absolute bg-gradient-to-b from-jhl-foreground to-jhl-foreground/40 w-full h-[100%] z-10 top-0 left-0">
+                            class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[30%] z-10 top-0 left-0">
                         </div>
-                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/benefit-2.jpg')); ?>"
+                        <img src="<?php echo esc_url(get_jhl_field('benefit_3_image', $theme_uri . '/images/jhl-bpjs.jpg')); ?>"
                             class="w-full h-[182px] object-cover rounded-b-lg" alt="Benefit">
                     </div>
                 </div>
@@ -207,10 +207,10 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
                 <div class="relative w-full">
                     <div
-                        class="absolute bg-gradient-to-b from-jhl-foreground to-jhl-foreground/40 w-full h-[100%] z-10 top-0 left-0">
+                        class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[30%] z-10 top-0 left-0">
                     </div>
                     <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-1.jpg')); ?>"
-                        class="w-full h-[220px] 2xl:h-[320px] object-cover rounded-b-lg" alt="Benefit">
+                        class="w-full h-[220px] 2xl:h-[224px] 3xl:h-[320px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
         </div>
@@ -244,7 +244,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     <div class="flex flex-col gap-8 px-6">
                         <?php foreach ($vacancies as $index => $vacancy):
                             $active_class = ($index === 0) ? 'is-active opacity-100' : 'opacity-40 hover:opacity-70';
-                            ?>
+                        ?>
                             <button data-target="vacancy-<?php echo $vacancy->ID; ?>"
                                 class="vacancy-trigger text-left transition-all duration-300 group relative flex items-start <?php echo $active_class; ?>">
                                 <span
@@ -267,7 +267,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                     data-scroll-class="is-inview">
                     <?php foreach ($vacancies as $index => $vacancy):
                         $display_style = ($index === 0) ? 'display: block;' : 'display: none;';
-                        ?>
+                    ?>
                         <div id="vacancy-<?php echo $vacancy->ID; ?>" class="vacancy-content"
                             style="<?php echo $display_style; ?>">
 
@@ -284,7 +284,8 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
 
             </div>
-            <?php wp_reset_postdata(); endif; ?>
+        <?php wp_reset_postdata();
+        endif; ?>
     </div>
 </section>
 <?php get_footer(); ?>
