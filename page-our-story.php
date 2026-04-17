@@ -603,7 +603,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
             'post_type'      => 'team',
             'posts_per_page' => -1,
             'orderby'        => 'date',
-            'order'          => 'DESC',
+            'order'          => 'ASC',
         );
         $team_query = new WP_Query($args);
 
