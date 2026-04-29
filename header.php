@@ -211,7 +211,7 @@
         </aside>
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 // Function to reset menu state
                 function resetMenu() {
                     $('#back-container').addClass('invisible opacity-0');
@@ -220,22 +220,22 @@
                 }
 
                 // Open Sidebar
-                $('#sidebar-btn').on('click', function () {
+                $('#sidebar-btn').on('click', function() {
                     $('#main-sidebar').removeClass('-translate-x-full');
                 });
 
                 // Close Sidebar
-                $('#close-sidebar').on('click', function () {
+                $('#close-sidebar').on('click', function() {
                     $('#main-sidebar').addClass('-translate-x-full');
                     // Reset to main menu after slide-out animation completes
                     setTimeout(resetMenu, 300);
                 });
 
                 // Open Submenu
-                $('.submenu-trigger').on('click', function () {
+                $('.submenu-trigger').on('click', function() {
                     const target = $(this).data('target');
 
-                    $('#menu-main').fadeOut(200, function () {
+                    $('#menu-main').fadeOut(200, function() {
                         $('#' + target).removeClass('hidden').fadeIn(200);
                         // Show Back button in header
                         $('#back-container').removeClass('invisible opacity-0');
@@ -243,10 +243,10 @@
                 });
 
                 // Back to Main Menu
-                $('.back-to-main').on('click', function () {
+                $('.back-to-main').on('click', function() {
                     const visibleSubmenu = $('[id^="submenu-"]:visible');
 
-                    visibleSubmenu.fadeOut(200, function () {
+                    visibleSubmenu.fadeOut(200, function() {
                         $(this).addClass('hidden');
                         $('#menu-main').fadeIn(200);
                         // Hide Back button in header
@@ -296,19 +296,19 @@
                         alt="Email">
                 </a>
 
-                <a href="<?php echo get_field('instagram_url', 'option') ?: '#'; ?>" target="_blank"
+                <a href="<?php echo get_field('instagram_url', 'option') ?: 'https://www.instagram.com/baic.jhlauto/'; ?>" target="_blank"
                     class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center hover:bg-[#808285] transition-colors">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/instagram.png" class="w-5 h-5"
                         alt="Instagram">
                 </a>
 
-                <a href="<?php echo get_field('tiktok_url', 'option') ?: '#'; ?>" target="_blank"
+                <a href="<?php echo get_field('tiktok_url', 'option') ?: 'https://www.tiktok.com/@baic.jhlauto'; ?>" target="_blank"
                     class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center hover:bg-[#808285] transition-colors">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/tiktok.png" class="w-5 h-5"
                         alt="TikTok">
                 </a>
 
-                <a href="<?php echo get_field('facebook_url', 'option') ?: '#'; ?>" target="_blank"
+                <a href="<?php echo get_field('facebook_url', 'option') ?: 'https://www.facebook.com/profile.php?id=61576658541187'; ?>" target="_blank"
                     class="w-11 h-11 rounded-full bg-jhl-gray-1 flex items-center justify-center hover:bg-[#808285] transition-colors">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/facebook.png" class="w-5 h-5"
                         alt="Facebook">
@@ -328,26 +328,26 @@
         </div>
 
         <script>
-            $(document).ready(function ($) {
+            $(document).ready(function($) {
                 // Open Popup
-                $('#open-contact').on('click', function () {
+                $('#open-contact').on('click', function() {
                     $('#contact-popup').removeClass('hidden').addClass('flex');
                     $('body').addClass('overflow-hidden'); // Disable scroll
                 });
 
                 // Close Popup (Button or Overlay)
-                $('#close-contact, #close-overlay').on('click', function () {
+                $('#close-contact, #close-overlay').on('click', function() {
                     $('#contact-popup').addClass('hidden').removeClass('flex');
                     $('body').removeClass('overflow-hidden');
                 });
 
                 // Close on ESC key
-                $(document).keyup(function (e) {
+                $(document).keyup(function(e) {
                     if (e.key === "Escape") {
                         $('#close-contact').click();
                     }
                 });
-                $('#social-toggle').on('click', function () {
+                $('#social-toggle').on('click', function() {
                     const $btn = $(this);
                     const $container = $('#social-expandable');
                     const $iconArrow = $('#toggle-icon');
