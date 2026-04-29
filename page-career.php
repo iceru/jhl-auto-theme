@@ -275,7 +275,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                                 <?php echo apply_filters('the_content', $vacancy->post_content); ?>
                             </div>
 
-                            <a href="<?php echo get_permalink($vacancy->ID); ?>"
+                            <a href="mailto:hcga@jhlauto.co.id?subject=Application for <?php echo urlencode(get_the_title($vacancy->ID)); ?>"
                                 class="inline-block mt-14 px-4 py-2 bg-jhl-black text-white font-semibold text-xs rounded-sm hover:bg-jhl-black/80 uppercase transition-colors">
                                 Apply Now
                             </a>
