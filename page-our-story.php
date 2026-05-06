@@ -118,7 +118,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     <div class="w-60 lg:w-[600px] border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
                     <div class="max-w-[243px] mr-4 text-right -mt-2">
                         <h3>2017</h3>
-                        <h4 class="font-bold text-sm my-1">Best Authorized Jeep Dealer – Indonesia</h4>
+                        <h4 class="font-bold text-sm my-1">Best Authorized Jeep Dealer</h4>
                         <p class="body">Menerima penghargaan <i>“Best Jeep Dealer
                                 Indonesia”</i> sebagai pengakuan atas
                             konsistensi performa, standar layanan premium, serta pencapaian penjualan unggul di tingkat
@@ -237,7 +237,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
                 <div class="w-[160px] pr-4 flex-shrink-0">
                     <h3 class="text-lg">2017</h3>
-                    <h4 class="font-bold text-base my-1">Best Authorized Jeep Dealer – Indonesia</h4>
+                    <h4 class="font-bold text-base my-1">Best Authorized Jeep Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Menerima penghargaan <i>“Best Jeep Dealer
                             Indonesia”</i>
                         sebagai pengakuan atas konsistensi performa, standar layanan premium, serta pencapaian penjualan
@@ -311,7 +311,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
 </section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const pathDesktop = document.querySelector("#road-path");
         const pathMobile = document.querySelector("#road-path-mobile");
         const car = document.querySelector("#car");
@@ -407,7 +407,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         }
         tick();
 
-        window.addEventListener("resize", function() {
+        window.addEventListener("resize", function () {
             initTimelineState();
             updateTimeline();
         });
@@ -509,7 +509,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                 $label = get_field('culture_label_' . $i);
                 $def_labels = ['', 'Integritas', 'Semangat', 'Kepuasan Pelanggan', 'Kerja Sama tim'];
                 $def_imgs = ['', 'Warranty.png', 'Fist.png', 'Heart.png', 'Crowd.png'];
-            ?>
+                ?>
                 <div class="flex flex-col justify-center items-center mx-10" data-aos="fade-down"
                     data-aos-delay="<?php echo $i * 100; ?>">
                     <img class="w-20 h-20 object-contain mb-7"
@@ -542,14 +542,14 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
             $label = get_field('label') ?: get_the_title();
             $max_w = get_field('max_width');
             $max_w_class = $max_w ? 'max-w-[' . $max_w . ']' : '';
-    ?>
+            ?>
             <div data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
                 <h1 class="!text-[74px] !leading-none font-extralight">
                     <?php echo $number; ?>
                 </h1>
                 <h5 class="text-jhl-gray-1 font-medium <?php echo $max_w_class; ?>"><?php echo $label; ?></h5>
             </div>
-    <?php
+            <?php
             $delay += 100;
         endwhile;
         wp_reset_postdata();
@@ -600,10 +600,10 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
     <div class="slider-full-right pl-4">
         <?php
         $args = array(
-            'post_type'      => 'team',
+            'post_type' => 'team',
             'posts_per_page' => -1,
-            'orderby'        => 'date',
-            'order'          => 'ASC',
+            'orderby' => 'date',
+            'order' => 'ASC',
         );
         $team_query = new WP_Query($args);
 
@@ -613,7 +613,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     $team_query->the_post();
                     $position = get_field('position');
                     $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                ?>
+                    ?>
                     <div class="px-2 outline-none text-center ">
                         <div class="relative overflow-hidden rounded-lg">
                             <?php if ($thumbnail): ?>
