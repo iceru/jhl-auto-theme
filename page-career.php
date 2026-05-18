@@ -125,23 +125,24 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 data-scroll-class="is-inview">
                 <div class="w-full md:w-[60%] p-8 fade-right" data-scroll data-scroll-class="is-inview">
                     <h3 class="mb-5">
-                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Apresiasi Berbasis Kinerja')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_1_title', 'Pengembangan Karier & Kompetensi ')); ?>
                     </h3>
                     <p class="body !font-semibold mb-2">
+                        <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
                     </p>
                     <p class="body mb-2">
 
-                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'Kami menerapkan sistem penilaian
-                         kinerja (KPI) yang transparan dan terukur, dilengkapi dengan insentif, program loyalitas, 
-                         serta peluang promosi yang selaras dengan pencapaian individu. Setiap kontribusi nyata 
-                         akan mendapatkan penghargaan yang setimpal.')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_1_description', 'Kami mendukung perjalanan profesional 
+                    Anda melalui perencanaan karier yang terstruktur, pendampingan, serta peluang pengembangan kompetensi 
+                    yang disesuaikan dengan potensi dan tujuan individu. 
+                    Di JHL Auto, pertumbuhan bukan kebetulan—melainkan proses yang dirancang.')); ?>
                     </p>
                 </div>
                 <div class="w-full md:w-[40%] relative fade-left" data-scroll data-scroll-class="is-inview">
                     <div
                         class="absolute bg-gradient-to-b md:bg-gradient-to-r from-jhl-foreground to-transparent w-full md:w-[70%] h-[40%] md:h-full z-10 top-0 left-0">
                     </div>
-                    <img src="<?php echo esc_url(get_jhl_field('benefit_1_image', $theme_uri . '/images/benefit-1.png')); ?>"
+                    <img src="<?php echo esc_url(get_jhl_field('benefit_1_image', $theme_uri . '/images/benefit-1.jpg')); ?>"
                         class="w-full opacity-70 md:opacity-40 h-full object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
@@ -178,38 +179,38 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
         <div class="w-full md:w-[40%]">
             <div class="p-8 bg-jhl-foreground mb-6 rounded-lg fade-down" data-scroll data-scroll-class="is-inview">
                 <h3 class="mb-5">
-                    <?php echo esc_html(get_jhl_field('benefit_1_title', 'Diskon Karyawan')); ?>
+                    <?php echo esc_html(get_jhl_field('benefit_4_title', 'Diskon Karyawan')); ?>
                 </h3>
                 <p class="body !font-semibold mb-2">
-                    <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
+                    <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
                 </p>
                 <p class="body">
 
-                    <?php echo esc_html(get_jhl_field('benefit_1_description', 'Sebagai bagian dari JHL Group, karyawan JHL Auto berhak mendapatkan potongan harga khusus di berbagai jaringan JHL Group. Sebuah nilai tambah yang memungkinkan Anda menikmati berbagai layanan dan fasilitas dengan benefit eksklusif.')); ?>
+                    <?php echo esc_html(get_jhl_field('benefit_4_description', 'Sebagai bagian dari JHL Group, karyawan JHL Auto berhak mendapatkan potongan harga khusus di berbagai jaringan JHL Group. Sebuah nilai tambah yang memungkinkan Anda menikmati berbagai layanan dan fasilitas dengan benefit eksklusif.')); ?>
                 </p>
             </div>
             <div class=" bg-jhl-foreground mb-6 rounded-lg fade-up" data-scroll data-scroll-class="is-inview">
                 <div class="pt-8 px-8">
                     <h3 class="mb-5">
-                        <?php echo esc_html(get_jhl_field('benefit_4_title', 'Pengembangan Karier & Kompetensi')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_5_title', 'Apresiasi Berbasis Kinerja')); ?>
                     </h3>
-                    <p class="body !font-semibold mb-2">
-                        <?php echo esc_html(get_jhl_field('benefit_4_subdesc', 'Tumbuh dengan Arah yang Jelas')); ?>
-
-                        <?php echo esc_html(get_jhl_field('benefit_1_subdesc', 'Privilege di Seluruh Jaringan JHL Group')); ?>
-                    </p>
+                    <?php if (get_jhl_field('benefit_5_subdesc', '')): ?>
+                        <p class="body !font-semibold mb-2">
+                            <?php echo esc_html(get_jhl_field('benefit_5_subdesc', '')); ?>
+                        </p>
+                    <?php endif; ?>
                     <p class="body mb-5">
-                        <?php echo esc_html(get_jhl_field('benefit_4_description', 'Kami mendukung perjalanan profesional 
-                    Anda melalui perencanaan karier yang terstruktur, pendampingan, serta peluang pengembangan kompetensi 
-                    yang disesuaikan dengan potensi dan tujuan individu. 
-                    Di JHL Auto, pertumbuhan bukan kebetulan—melainkan proses yang dirancang.')); ?>
+                        <?php echo esc_html(get_jhl_field('benefit_5_description', 'Kami menerapkan sistem penilaian
+                         kinerja (KPI) yang transparan dan terukur, dilengkapi dengan insentif, program loyalitas, 
+                         serta peluang promosi yang selaras dengan pencapaian individu. Setiap kontribusi nyata 
+                         akan mendapatkan penghargaan yang setimpal.')); ?>
                     </p>
                 </div>
                 <div class="relative w-full">
                     <div
                         class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[45%] w-full z-10 top-0 left-0">
                     </div>
-                    <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-1.jpg')); ?>"
+                    <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-5.jpg')); ?>"
                         class="w-full h-[220px] 2xl:h-[224px] 3xl:h-[320px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
