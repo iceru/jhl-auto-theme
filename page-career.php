@@ -114,7 +114,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
 
 <section class="py-[90px] container" data-scroll-section>
     <div class="flex flex-wrap md:flex-nowrap space-y-6 md:space-x-6 md:space-y-0">
-        <div class="w-full md:w-[60%] fade-up" data-scroll data-scroll-class="is-inview">
+        <div class="w-full md:w-[68%] fade-up" data-scroll data-scroll-class="is-inview">
             <h2 class="mb-11">
                 <?php echo esc_html(get_jhl_field('benefits_main_title', 'Tumbuh dan Berkarya Bersama JHL Auto')); ?>
             </h2>
@@ -176,7 +176,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                 </div>
             </div>
         </div>
-        <div class="w-full md:w-[40%]">
+        <div class="w-full md:w-[32%]">
             <div class="p-8 bg-jhl-foreground mb-6 rounded-lg fade-down" data-scroll data-scroll-class="is-inview">
                 <h3 class="mb-5">
                     <?php echo esc_html(get_jhl_field('benefit_4_title', 'Diskon Karyawan')); ?>
@@ -211,7 +211,7 @@ $g10 = get_jhl_field('gallery_img_10', $theme_uri . '/images/event-2.jpg');
                         class="absolute bg-gradient-to-b from-jhl-foreground to-transparent h-[45%] w-full z-10 top-0 left-0">
                     </div>
                     <img src="<?php echo esc_url(get_jhl_field('benefit_5_image', $theme_uri . '/images/benefit-5.jpg')); ?>"
-                        class="w-full h-[220px] 2xl:h-[224px] 3xl:h-[320px] object-cover rounded-b-lg" alt="Benefit">
+                        class="w-full h-[230px] 2xl:h-[230px] 3xl:h-[320px] object-cover rounded-b-lg" alt="Benefit">
                 </div>
             </div>
         </div>
