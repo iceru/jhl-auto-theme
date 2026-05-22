@@ -79,7 +79,26 @@
         const buttons = document.querySelectorAll('.type-btn');
         const checkboxes = document.querySelectorAll('.filter-checkbox');
 
-        let currentType = 'post';
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestedType = urlParams.get('type');
+
+        let currentType = requestedType === 'promo' || requestedType === 'promotion'
+            ? 'promotion'
+            : 'post';
+
+        function setActiveType(type) {
+            buttons.forEach(button => {
+                const isActive = button.dataset.type === type;
+
+                button.classList.toggle('active', isActive);
+                button.classList.toggle('bg-black', isActive);
+                button.classList.toggle('text-white', isActive);
+                button.classList.toggle('border-black', isActive);
+                button.classList.toggle('bg-white', !isActive);
+                button.classList.toggle('text-jhl-gray-2', !isActive);
+                button.classList.toggle('border-jhl-gray-2', !isActive);
+            });
+        }
 
         function fetchPosts() {
             const container = document.getElementById('news-container');
@@ -125,13 +144,8 @@
         // Button Toggle Logic
         buttons.forEach(btn => {
             btn.addEventListener('click', function () {
-                buttons.forEach(b => {
-                    b.classList.remove('active', 'bg-black', 'text-white');
-                    b.classList.add('bg-white', 'text-jhl-gray-2', 'border-jhl-gray-2');
-                });
-
-                this.classList.add('active');
                 currentType = this.dataset.type;
+                setActiveType(currentType);
                 fetchPosts();
             });
         });
@@ -142,6 +156,7 @@
         });
 
         // Initial Load
+        setActiveType(currentType);
         fetchPosts();
     });
 </script>
