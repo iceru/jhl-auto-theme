@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/career" class="text-xs !no-underline">
+                            <a href="javascript:void(0)" class="open-contact text-xs !no-underline">
                                 Contact
                             </a>
                         </li>

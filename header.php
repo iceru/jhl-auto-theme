@@ -126,7 +126,7 @@
                 </div>
                 <div>
                     <a href="javascript:void(0)" id="open-contact"
-                        class="text-[13px] font-medium flex items-center !no-underline space-x-2">
+                        class="open-contact text-[13px] font-medium flex items-center !no-underline space-x-2">
                         <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3"
                             alt="">
                         <span>Contact</span>
@@ -200,8 +200,8 @@
                 </div>
 
                 <div>
-                    <a href="javascript:void(0)" id="open-contact"
-                        class="text-[13px] font-medium flex items-center !no-underline space-x-1 text-white">
+                    <a href="javascript:void(0)"
+                        class="open-contact text-[13px] font-medium flex items-center !no-underline space-x-1 text-white">
                         <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3"
                             alt="">
                         <span>Contact</span>
@@ -333,7 +333,7 @@
         <script>
             $(document).ready(function ($) {
                 // Open Popup
-                $('#open-contact').on('click', function () {
+                $('.open-contact').on('click', function () {
                     $('#contact-popup').removeClass('hidden').addClass('flex');
                     $('body').addClass('overflow-hidden'); // Disable scroll
                 });
