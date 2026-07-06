@@ -199,12 +199,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
 
         <!-- Mobile Story Layer -->
         <div id="story-layer-mobile" class="absolute inset-0 pointer-events-none block lg:hidden">
-            <div class="story-point  flex opacity-0 transition-opacity duration-500" data-path-progress="0.05">
+            <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0"
+                data-path-progress="0.05">
                 <div
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2012</h3>
                     <h4 class="font-bold text-base my-1">Authorized Jeep Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Menjadi dealer otomotif pertama JHL Auto sekaligus
@@ -214,12 +215,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     </p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.24">
+            <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0"
+                data-path-progress="0.22">
                 <div
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2015</h3>
                     <h4 class="font-bold text-base my-1">Strengthening the Jeep Community</h4>
                     <p class="body text-[10px] leading-relaxed">Berpartisipasi dalam ajang nasional Garansindo Cup
@@ -230,12 +232,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     </p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.35">
+            <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0"
+                data-path-progress="0.33">
                 <div
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2017</h3>
                     <h4 class="font-bold text-base my-1">Best Authorized Jeep Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Menerima penghargaan <i>“Best Jeep Dealer
@@ -251,7 +254,7 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-14 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2019</h3>
                     <h4 class="font-bold text-base my-1">Best Seller Award – IIMS</h4>
                     <p class="body text-[10px] leading-relaxed">Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama
@@ -261,12 +264,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     </p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.63">
+            <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0"
+                data-path-progress="0.645">
                 <div
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2021</h3>
                     <h4 class="font-bold text-base my-1">Outstanding Jeep Sales Performance
                     </h4>
@@ -276,12 +280,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     </p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.8">
+            <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0"
+                data-path-progress="0.81">
                 <div
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2024</h3>
                     <h4 class="font-bold text-base my-1">Authorized BAIC Dealer</h4>
                     <p class="body text-[10px] leading-relaxed">Memulai babak baru sebagai Authorized BAIC Dealer di
@@ -290,12 +295,13 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                     </p>
                 </div>
             </div>
-            <div class="story-point flex opacity-0 transition-opacity duration-500" data-path-progress="0.94">
+            <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0"
+                data-path-progress="0.94">
                 <div
                     class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
                 </div>
                 <div class="w-20 shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
-                <div class="w-[160px] pr-4 flex-shrink-0">
+                <div class="w-[180px] lg:pr-4 flex-shrink-0">
                     <h3 class="text-lg">2025</h3>
                     <h4 class="font-bold text-base my-1 mb-2">Best Start of Business</h4>
                     <p class="body text-[10px] leading-relaxed">Mendapatkan pengakuan dari BAIC Global atas pencapaian

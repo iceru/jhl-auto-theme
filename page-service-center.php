@@ -35,7 +35,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
         <div id="service-arrows" class="flex gap-2"></div>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-6">
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-4">
         <?php
         $service_query = new WP_Query([
             'post_type' => 'services',
@@ -45,7 +45,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
         if ($service_query->have_posts()):
             while ($service_query->have_posts()):
                 $service_query->the_post(); ?>
-                <div class="outline-none">
+                <div class="outline-none flex-none w-[72%] snap-start md:w-auto">
                     <div class="flex flex-col h-full fade-right" data-scroll data-scroll-class="is-inview">
                         <div class="rounded-lg overflow-hidden mb-4">
                             <?php if (has_post_thumbnail()): ?>
@@ -54,7 +54,7 @@ $promo_title = get_field('service_promotions_title') ?: 'Penawaran Eksklusif';
                                 <div class="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
                             <?php endif; ?>
                         </div>
-                        <h4 class="text-xl mb-2 h-16 line-clamp-2"><?php the_title(); ?></h4>
+                        <h4 class="text-xl mb-6 md:mb-2 md:h-16 line-clamp-2"><?php the_title(); ?></h4>
                         <p class="body text-jhl-gray-1 text-sm">
                             <?php echo get_the_excerpt(); ?>
                         </p>

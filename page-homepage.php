@@ -54,7 +54,7 @@
         <h2 class="text-2xl md:text-[44px] mb-6 font-light fade-down" data-scroll data-scroll-class="is-inview">
             <?php echo get_field('promo_title') ?: 'Penawaran Eksklusif'; ?>
         </h2>
-        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-[554px] mx-auto fade-up" data-scroll
+        <p class="text-jhl-gray-1 body max-w-[290px] md:max-w-[554px] md:mx-auto fade-up" data-scroll
             data-scroll-class="is-inview">
             <?php echo get_field('promo_subtitle') ?: 'Temukan berbagai program spesial dari JHL Auto yang dirancang untuk memberikan nilai lebih dalam setiap perjalanan Anda.'; ?>
         </p>
