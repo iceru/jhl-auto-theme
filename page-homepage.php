@@ -6,7 +6,7 @@
 
             $hero_video_url = get_field('hero_video_file');
             if ($hero_video_url):
-                ?>
+            ?>
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
                     <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
                     Your browser does not support the video tag.
@@ -37,13 +37,13 @@
                 </span>
             </a>
         </div>
-        <div class="md:absolute md:right-0 md:top-0 md:w-1/2 h-full -mx-4 md:mx-0 overflow-hidden">
+        <div class="relative md:absolute md:right-0 md:top-0 md:w-1/2 h-[360px] md:h-full -mx-4 md:mx-0 overflow-hidden">
             <?php
             $about_img = get_field('about_image');
             $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/homepage-1.webp';
             ?>
             <img src="<?php echo esc_url($about_img_url); ?>" alt="Sekilas Tentang Kami"
-                class="absolute left-0 w-full h-[110%] -top-[20%] object-cover" data-scroll data-scroll-speed="-2">
+                class="absolute left-0 top-0 md:-top-[20%] w-full h-full md:h-[110%] object-cover" data-scroll data-scroll-speed="-2">
         </div>
     </div>
 
@@ -94,7 +94,7 @@
                 </a>
                 </a>
 
-            <?php endwhile;
+        <?php endwhile;
             wp_reset_postdata();
         endif; ?>
     </div>
@@ -139,7 +139,7 @@
                         <div class="body text-jhl-gray-1 fade-up mb-4" data-scroll data-scroll-class="is-inview">
                             <?php the_content(); ?>
                         </div>
-                        <a href="https://baic.codeomnia.cloud/service/"
+                        <a href="https://baic.jhlauto.co.id/service/"
                             class="text-xs flex items-center space-x-2 text-jhl-gray-1 font-semibold tracking-wide !no-underline">
                             <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png" alt="">
                             <span>
@@ -148,7 +148,7 @@
                         </a>
                     </div>
 
-                <?php endwhile;
+            <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
@@ -182,7 +182,7 @@
                 while ($awards_query->have_posts()):
                     $awards_query->the_post();
                     $is_first = ($count === 0);
-                    ?>
+            ?>
 
                     <div class="award-item text-center group cursor-pointer <?php echo $is_first ? 'active' : ''; ?>">
                         <div
@@ -199,7 +199,7 @@
                         </p>
                     </div>
 
-                    <?php $count++;
+                <?php $count++;
                 endwhile;
                 wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -208,8 +208,8 @@
 </section>
 
 <script>
-    jQuery(document).ready(function ($) {
-        $('.award-item').on('click', function () {
+    jQuery(document).ready(function($) {
+        $('.award-item').on('click', function() {
             $('.award-image-wrapper').removeClass('opacity-100').addClass('opacity-40');
             $('.award-title').addClass('hidden').removeClass('block');
             $('.award-description').addClass('hidden').removeClass('block');
@@ -278,7 +278,7 @@
                         </div>
                     </a>
 
-                <?php endwhile;
+            <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
         </div>
