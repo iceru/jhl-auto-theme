@@ -1,6 +1,6 @@
 <?php get_header() ?>
 <section data-scroll-section>
-    <section class="relative w-full h-screen" data-scroll data-scroll-speed="-2">
+    <section class="relative w-full h-full aspect-video" data-scroll data-scroll-speed="-2">
         <div class="absolute inset-0 -top-4 zoom-blur-out" data-scroll data-scroll-class="is-inview">
             <?php
 
