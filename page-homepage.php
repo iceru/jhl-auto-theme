@@ -37,7 +37,7 @@
                 </span>
             </a>
         </div>
-        <div class="relative md:absolute md:right-0 md:top-0 md:w-1/2 h-[360px] md:h-full -mx-4 md:mx-0 overflow-hidden">
+        <div class="relative md:absolute md:right-0 md:top-0 md:w-1/2 h-[500px] md:h-full -mx-4 md:mx-0 overflow-hidden">
             <?php
             $about_img = get_field('about_image');
             $about_img_url = $about_img ? $about_img['url'] : get_template_directory_uri() . '/images/homepage-1.webp';
