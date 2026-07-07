@@ -136,7 +136,7 @@
         </header>
 
         <header
-            class="md:hidden w-full absolute left-0 top-0 px-4 py-11 bg-gradient-to-b from-black to-transparent flex justify-between items-center z-50">
+            class="md:hidden w-full absolute left-0 top-0 px-4 py-8 md:py-11 bg-gradient-to-b from-black to-transparent flex justify-between items-center z-50">
             <div class="space-y-3 cursor-pointer" id="sidebar-btn">
                 <div class="h-[1px] w-8 bg-white"></div>
                 <div class="h-[1px] w-8 bg-white"></div>
