@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/career" class="text-xs !no-underline">
+                            <a href="javascript:void(0)" class="open-contact text-xs !no-underline">
                                 Contact
                             </a>
                         </li>
@@ -62,7 +62,7 @@
                     </p>
                     <ul class="text-white space-y-3">
                         <li>
-                            <a href="https://baic.codeomnia.cloud" class="text-xs !no-underline">
+                            <a href="https://baic.jhlauto.co.id" class="text-xs !no-underline">
                                 BAIC
                             </a>
                         </li>

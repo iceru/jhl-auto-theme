@@ -96,7 +96,7 @@
                                         </div>
 
                                         <div class="relative z-10">
-                                            <a href="https://baic.codeomnia.cloud"
+                                            <a href="https://baic.jhlauto.co.id"
                                                 class="text-xs uppercase flex justify-between items-center !no-underline mb-5 pb-5 border-b border-white/10">
                                                 <span>BAIC</span>
                                                 <img src="<?php echo get_template_directory_uri() ?>/images/chevron-right.png"
@@ -126,7 +126,7 @@
                 </div>
                 <div>
                     <a href="javascript:void(0)" id="open-contact"
-                        class="text-[13px] font-medium flex items-center !no-underline space-x-2">
+                        class="open-contact text-[13px] font-medium flex items-center !no-underline space-x-2">
                         <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3"
                             alt="">
                         <span>Contact</span>
@@ -136,7 +136,7 @@
         </header>
 
         <header
-            class="md:hidden w-full absolute left-0 top-0 px-4 py-11 bg-gradient-to-b from-black to-transparent flex justify-between items-center z-50">
+            class="md:hidden w-full absolute left-0 top-0 px-4 py-8 md:py-11 bg-gradient-to-b from-black to-transparent flex justify-between items-center z-50">
             <div class="space-y-3 cursor-pointer" id="sidebar-btn">
                 <div class="h-[1px] w-8 bg-white"></div>
                 <div class="h-[1px] w-8 bg-white"></div>
@@ -192,7 +192,7 @@
 
                     <ul id="submenu-brands"
                         class="hidden absolute inset-0 flex flex-col space-y-8 justify-center items-center px-10 text-center transition-all duration-300">
-                        <li><a href="https://baic.codeomnia.cloud"
+                        <li><a href="https://baic.jhlauto.co.id"
                                 class="text-white uppercase font-medium tracking-widest">BAIC</a></li>
                         <li><a href="/service-center" class="text-white uppercase font-medium tracking-widest">Service
                                 Center</a></li>
@@ -200,8 +200,8 @@
                 </div>
 
                 <div>
-                    <a href="javascript:void(0)" id="open-contact"
-                        class="text-[13px] font-medium flex items-center !no-underline space-x-1 text-white">
+                    <a href="javascript:void(0)"
+                        class="open-contact text-[13px] font-medium flex items-center !no-underline space-x-1 text-white">
                         <img src="<?php echo get_template_directory_uri() ?>/images/icon-contact.png" class="size-3"
                             alt="">
                         <span>Contact</span>
@@ -211,7 +211,7 @@
         </aside>
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 // Function to reset menu state
                 function resetMenu() {
                     $('#back-container').addClass('invisible opacity-0');
@@ -220,22 +220,22 @@
                 }
 
                 // Open Sidebar
-                $('#sidebar-btn').on('click', function () {
+                $('#sidebar-btn').on('click', function() {
                     $('#main-sidebar').removeClass('-translate-x-full');
                 });
 
                 // Close Sidebar
-                $('#close-sidebar').on('click', function () {
+                $('#close-sidebar').on('click', function() {
                     $('#main-sidebar').addClass('-translate-x-full');
                     // Reset to main menu after slide-out animation completes
                     setTimeout(resetMenu, 300);
                 });
 
                 // Open Submenu
-                $('.submenu-trigger').on('click', function () {
+                $('.submenu-trigger').on('click', function() {
                     const target = $(this).data('target');
 
-                    $('#menu-main').fadeOut(200, function () {
+                    $('#menu-main').fadeOut(200, function() {
                         $('#' + target).removeClass('hidden').fadeIn(200);
                         // Show Back button in header
                         $('#back-container').removeClass('invisible opacity-0');
@@ -243,10 +243,10 @@
                 });
 
                 // Back to Main Menu
-                $('.back-to-main').on('click', function () {
+                $('.back-to-main').on('click', function() {
                     const visibleSubmenu = $('[id^="submenu-"]:visible');
 
-                    visibleSubmenu.fadeOut(200, function () {
+                    visibleSubmenu.fadeOut(200, function() {
                         $(this).addClass('hidden');
                         $('#menu-main').fadeIn(200);
                         // Hide Back button in header
@@ -331,26 +331,26 @@
         </div>
 
         <script>
-            $(document).ready(function ($) {
+            $(document).ready(function($) {
                 // Open Popup
-                $('#open-contact').on('click', function () {
+                $('.open-contact').on('click', function() {
                     $('#contact-popup').removeClass('hidden').addClass('flex');
                     $('body').addClass('overflow-hidden'); // Disable scroll
                 });
 
                 // Close Popup (Button or Overlay)
-                $('#close-contact, #close-overlay').on('click', function () {
+                $('#close-contact, #close-overlay').on('click', function() {
                     $('#contact-popup').addClass('hidden').removeClass('flex');
                     $('body').removeClass('overflow-hidden');
                 });
 
                 // Close on ESC key
-                $(document).keyup(function (e) {
+                $(document).keyup(function(e) {
                     if (e.key === "Escape") {
                         $('#close-contact').click();
                     }
                 });
-                $('#social-toggle').on('click', function () {
+                $('#social-toggle').on('click', function() {
                     const $btn = $(this);
                     const $container = $('#social-expandable');
                     const $iconArrow = $('#toggle-icon');
