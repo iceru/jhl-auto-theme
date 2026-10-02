@@ -333,10 +333,9 @@ p.body {
 }
 
 .dealer-carousel-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
-  background: #808285;
+  width: 52px;
+  height: 52px;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,19 +343,19 @@ p.body {
   top: 159px;
   z-index: 10;
   transform: translateY(-50%);
-  transition: opacity 150ms ease, background-color 150ms ease;
+  transition: opacity 150ms ease;
 }
 
 .dealer-carousel-arrow-prev {
-  left: 0.5rem;
+  left: -3.25rem;
 }
 
 .dealer-carousel-arrow-next {
-  right: 0.5rem;
+  right: -3.25rem;
 }
 
 .dealer-carousel-arrow:hover {
-  background: #151515;
+  opacity: 0.7;
 }
 
 .dealer-carousel-arrow.slick-disabled {
@@ -365,13 +364,23 @@ p.body {
 }
 
 .dealer-carousel-arrow img {
-  width: 8px;
-  height: 14px;
+  width: 18px;
+  height: 32px;
   object-fit: contain;
 }
 
 .dealer-carousel-arrow-next img {
   transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+  .dealer-carousel-arrow-prev {
+    left: -0.75rem;
+  }
+
+  .dealer-carousel-arrow-next {
+    right: -0.75rem;
+  }
 }
 
 .submit-form {
