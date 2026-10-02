@@ -125,8 +125,7 @@
 
         <div class="<?php echo $dealer_is_slider ? 'dealer-carousel color-slick-slider fade-right' : 'flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6 fade-right'; ?>"
             data-scroll data-scroll-class="is-inview"
-            data-prev-arrow="<?php echo esc_url(get_template_directory_uri() . '/images/chevron-left.png'); ?>"
-            data-next-arrow="<?php echo esc_url(get_template_directory_uri() . '/images/chevron-right.png'); ?>">
+            data-arrow="<?php echo esc_url(get_template_directory_uri() . '/images/chevron-left.png'); ?>">
             <?php
 
             if ($dealers_query->have_posts()):
@@ -159,9 +158,6 @@
                 wp_reset_postdata();
             endif; ?>
         </div>
-        <?php if ($dealer_is_slider): ?>
-            <div id="dealer-arrows" class="flex items-center justify-center gap-3 mt-8"></div>
-        <?php endif; ?>
     </div>
 </section>
 <section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground" data-scroll-section>

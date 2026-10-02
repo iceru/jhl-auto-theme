@@ -68,8 +68,7 @@ $(document).ready(function ($) {
             return;
         }
 
-        const prevArrow = $slider.data('prev-arrow');
-        const nextArrow = $slider.data('next-arrow');
+        const arrow = $slider.data('arrow');
 
         $slider.slick({
             dots: false,
@@ -77,9 +76,8 @@ $(document).ready(function ($) {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
-            appendArrows: $('#dealer-arrows'),
-            prevArrow: `<button type="button" class="dealer-carousel-arrow dealer-carousel-arrow-prev" aria-label="Previous dealer"><img src="${prevArrow}" alt=""></button>`,
-            nextArrow: `<button type="button" class="dealer-carousel-arrow dealer-carousel-arrow-next" aria-label="Next dealer"><img src="${nextArrow}" alt=""></button>`,
+            prevArrow: `<button type="button" class="dealer-carousel-arrow dealer-carousel-arrow-prev" aria-label="Previous dealer"><img src="${arrow}" alt=""></button>`,
+            nextArrow: `<button type="button" class="dealer-carousel-arrow dealer-carousel-arrow-next" aria-label="Next dealer"><img src="${arrow}" alt=""></button>`,
             responsive: [
                 {
                     breakpoint: 1024,

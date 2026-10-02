@@ -316,6 +316,7 @@ p.body {
 
 .dealer-carousel {
   margin-inline: -0.5rem;
+  position: relative;
 }
 
 .dealer-carousel .slick-track {
@@ -339,7 +340,19 @@ p.body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 159px;
+  z-index: 10;
+  transform: translateY(-50%);
   transition: opacity 150ms ease, background-color 150ms ease;
+}
+
+.dealer-carousel-arrow-prev {
+  left: 0.5rem;
+}
+
+.dealer-carousel-arrow-next {
+  right: 0.5rem;
 }
 
 .dealer-carousel-arrow:hover {
@@ -355,6 +368,10 @@ p.body {
   width: 8px;
   height: 14px;
   object-fit: contain;
+}
+
+.dealer-carousel-arrow-next img {
+  transform: rotate(180deg);
 }
 
 .submit-form {
