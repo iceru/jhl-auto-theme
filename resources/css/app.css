@@ -314,6 +314,49 @@ p.body {
   display: none;
 }
 
+.dealer-carousel {
+  margin-inline: -0.5rem;
+}
+
+.dealer-carousel .slick-track {
+  display: flex;
+}
+
+.dealer-carousel .slick-slide {
+  height: auto;
+}
+
+.dealer-carousel .slick-slide > div,
+.dealer-carousel .slick-slide > div > div {
+  height: 100%;
+}
+
+.dealer-carousel-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #808285;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 150ms ease, background-color 150ms ease;
+}
+
+.dealer-carousel-arrow:hover {
+  background: #151515;
+}
+
+.dealer-carousel-arrow.slick-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.dealer-carousel-arrow img {
+  width: 8px;
+  height: 14px;
+  object-fit: contain;
+}
+
 .submit-form {
   @apply flex justify-end font-semibold mt-6;
 }

@@ -111,22 +111,29 @@
             </p>
         </div>
 
-        <div class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6 fade-right"
-            data-scroll data-scroll-class="is-inview">
+        <?php
+        $args = array(
+            'post_type' => 'dealer',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC'
+        );
+        $dealers_query = new WP_Query($args);
+        $dealer_count = (int) $dealers_query->post_count;
+        $dealer_is_slider = $dealer_count > 4;
+        ?>
+
+        <div class="<?php echo $dealer_is_slider ? 'dealer-carousel color-slick-slider fade-right' : 'flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-4 no-scrollbar pb-6 fade-right'; ?>"
+            data-scroll data-scroll-class="is-inview"
+            data-prev-arrow="<?php echo esc_url(get_template_directory_uri() . '/images/chevron-left.png'); ?>"
+            data-next-arrow="<?php echo esc_url(get_template_directory_uri() . '/images/chevron-right.png'); ?>">
             <?php
-            $args = array(
-                'post_type' => 'dealer',
-                'posts_per_page' => -1,
-                'orderby' => 'title',
-                'order' => 'ASC'
-            );
-            $dealers_query = new WP_Query($args);
 
             if ($dealers_query->have_posts()):
                 while ($dealers_query->have_posts()):
                     $dealers_query->the_post(); ?>
 
-                    <div class="flex-none w-[75%] snap-start md:w-full">
+                    <div class="<?php echo $dealer_is_slider ? 'px-2' : 'flex-none w-[75%] snap-start md:w-full'; ?>">
                         <div class="mb-4">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
                                 alt="<?php the_title(); ?>" class="rounded-lg h-[318px] object-cover w-full">
@@ -152,6 +159,9 @@
                 wp_reset_postdata();
             endif; ?>
         </div>
+        <?php if ($dealer_is_slider): ?>
+            <div id="dealer-arrows" class="flex items-center justify-center gap-3 mt-8"></div>
+        <?php endif; ?>
     </div>
 </section>
 <section class="py-20 md:pt-32 md:pb-20 bg-jhl-foreground" data-scroll-section>

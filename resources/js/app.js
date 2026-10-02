@@ -61,6 +61,42 @@ $(document).ready(function ($) {
         ]
     });
 
+    $('.dealer-carousel').each(function () {
+        const $slider = $(this);
+
+        if ($slider.children().length <= 4 || $slider.hasClass('slick-initialized')) {
+            return;
+        }
+
+        const prevArrow = $slider.data('prev-arrow');
+        const nextArrow = $slider.data('next-arrow');
+
+        $slider.slick({
+            dots: false,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            appendArrows: $('#dealer-arrows'),
+            prevArrow: `<button type="button" class="dealer-carousel-arrow dealer-carousel-arrow-prev" aria-label="Previous dealer"><img src="${prevArrow}" alt=""></button>`,
+            nextArrow: `<button type="button" class="dealer-carousel-arrow dealer-carousel-arrow-next" aria-label="Next dealer"><img src="${nextArrow}" alt=""></button>`,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1.2,
+                    }
+                }
+            ]
+        });
+    });
+
     $('.vacancy-trigger').on('click', function () {
         if ($(this).hasClass('is-active')) return;
 
