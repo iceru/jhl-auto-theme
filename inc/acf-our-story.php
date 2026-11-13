@@ -17,6 +17,55 @@ add_action('acf/init', function () {
     }
 
     $fields = [];
+    $placeholders = [
+        'story_header_title' => 'Awal Perjalanan',
+        'story_header_desc_1' => 'Setiap perjalanan besar selalu dimulai dari satu keyakinan. Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi menghadirkan standar baru dalam pengalaman otomotif di Indonesia.',
+        'story_header_desc_2' => 'Berawal dari kepercayaan sebagai bagian dari jaringan resmi Jeep di Indonesia, JHL Auto membangun fondasi yang kuat melalui integritas, inovasi, dan pelayanan berkelas internasional. Perjalanan tersebut menjadi titik awal transformasi kami.',
+        'story_header_desc_3' => 'Seiring waktu, kami terus berkembang dan beradaptasi dengan dinamika industri. Pada Maret 2024, JHL Auto dipercaya sebagai Authorized BAIC Dealer, menandai babak baru dalam perjalanan kami sebagai mitra mobilitas premium yang progresif dan visioner.',
+        'timeline_closing_text' => 'Perjalanan ini Terus Berlanjut',
+        'panca_krida_title' => 'Pancakrida',
+        'panca_krida_subtitle' => 'The Power to Success',
+        'panca_krida_desc' => 'JHL Auto berpegang pada nilai-nilai Pancakrida yang menjadi dasar filosofi perusahaan. Fondasi ini selaras dengan visi, misi, dan budaya kerja yang meneguhkan identitas JHL Auto sebagai grup dealer otomotif yang inovatif dan terpercaya.',
+        'krida_1_title' => 'Kesempatan',
+        'krida_1_sub' => 'Opportunity',
+        'krida_2_title' => 'Kerja Keras',
+        'krida_2_sub' => 'Work Hard',
+        'krida_3_title' => 'Kerja Cerdas',
+        'krida_3_sub' => 'Work Smart',
+        'krida_4_title' => 'Kerja Tuntas',
+        'krida_4_sub' => 'Work Thoroughly',
+        'krida_5_title' => 'Loyalitas',
+        'krida_5_sub' => 'Loyalty',
+        'vision_heading' => 'Visi',
+        'visi_text' => 'Menjadi group dealer otomotif terdepan di Indonesia dalam inovasi, kualitas, dan layanan pelanggan',
+        'mission_heading' => 'Misi',
+        'misi_text' => 'Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia. Mendorong pengembangan organisasi yang berkelanjutan. Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik.',
+        'culture_label_1' => 'Integritas',
+        'culture_label_2' => 'Semangat',
+        'culture_label_3' => 'Kepuasan Pelanggan',
+        'culture_label_4' => 'Kerja Sama tim',
+        'director_name' => 'Johnnathan Salim',
+        'director_title' => 'President Director',
+        'director_desc' => 'Sebagai entrepreneur muda di industri otomotif, Johnnathan Salim memimpin JHL Auto dengan visi menghadirkan standar baru dalam pengalaman otomotif premium di Indonesia. Berbekal lebih dari satu dekade pengalaman serta kedekatannya dengan komunitas otomotif melalui platform digital, ia menggabungkan perspektif bisnis dengan passion terhadap dunia kendaraan. Di bawah kepemimpinannya, JHL Auto terus bertransformasi menjadi perusahaan yang progresif, adaptif, dan terhubung dengan generasi baru pecinta otomotif. Ia meyakini bahwa masa depan industri otomotif dibangun melalui inovasi, konektivitas digital, dan kedekatan yang autentik dengan komunitas.',
+        'team_section_title' => 'Tim Manajemen',
+        'team_section_desc' => 'Di balik transformasi JHL Auto, berdiri tim manajemen yang memimpin dengan visi strategis dan standar profesionalisme tinggi. Dengan pendekatan modern dan orientasi pada pertumbuhan berkelanjutan, mereka memastikan perusahaan terus berkembang sebagai pemain otomotif yang kompetitif dan terpercaya.',
+    ];
+
+    $timeline_placeholders = [
+        ['2012', 'Authorized Jeep Dealer', 'Menjadi dealer otomotif pertama JHL Auto sekaligus memperoleh penghargaan MURI atas konsep dealer inovatif “Amazon Jungle”, menandai awal komitmen menghadirkan pengalaman otomotif yang berbeda di Indonesia'],
+        ['2015', 'Strengthening the Jeep Community', 'Berpartisipasi dalam ajang nasional Garansindo Cup “Jeep Agility Off Road Competition” sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi komunitas Jeep Indonesia'],
+        ['2017', 'Best Authorized Jeep Dealer', 'Menerima penghargaan “Best Jeep Dealer Indonesia” sebagai pengakuan atas konsistensi performa, standar layanan premium, serta pencapaian penjualan unggul di tingkat nasional'],
+        ['2019', 'Best Seller Award – IIMS', 'Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama ajang “Indonesia International Motor Show”, memperkuat posisi JHL Auto sebagai salah satu dealer dengan performa terbaik secara nasional'],
+        ['2021', 'Outstanding Jeep Sales Performance', 'Mencatatkan pencapaian hingga 100 unit penjualan dalam satu tahun di tengah tantangan pandemi, menunjukkan ketahanan bisnis dan kepercayaan pasar yang kuat'],
+        ['2024', 'Authorized BAIC Dealer', 'Memulai babak baru sebagai Authorized BAIC Dealer di Indonesia dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar otomotif nasional'],
+        ['2025', 'Best Start of Business', 'Mendapatkan pengakuan dari BAIC Global atas pencapaian JHL Auto sebagai dealer resmi BAIC di Indonesia, menandai langkah strategis dalam ekspansi dan transformasi brand'],
+    ];
+    foreach ($timeline_placeholders as $index => $values) {
+        $number = $index + 1;
+        $placeholders['timeline_' . $number . '_year'] = $values[0];
+        $placeholders['timeline_' . $number . '_title'] = $values[1];
+        $placeholders['timeline_' . $number . '_description'] = $values[2];
+    }
     $add_tab = static function ($key, $label) use (&$fields) {
         $fields[] = [
             'key' => 'field_our_story_tab_' . $key,
@@ -26,7 +75,14 @@ add_action('acf/init', function () {
             'placement' => 'top',
         ];
     };
-    $add_field = static function ($key, $label, $name, $type = 'text', $extra = []) use (&$fields) {
+    $add_field = static function ($key, $label, $name, $type = 'text', $extra = []) use (&$fields, &$placeholders) {
+        if ($name && isset($placeholders[$name])) {
+            if (in_array($type, ['text', 'textarea'], true)) {
+                $extra['placeholder'] = $placeholders[$name];
+            } elseif ($type === 'wysiwyg') {
+                $extra['instructions'] = 'Current default: ' . $placeholders[$name];
+            }
+        }
         $fields[] = array_merge([
             'key' => 'field_our_story_' . $key,
             'label' => $label,
