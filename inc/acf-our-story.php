@@ -57,6 +57,7 @@ add_action('acf/init', function () {
         $add_field('timeline_' . $i . '_title', 'Title', 'timeline_' . $i . '_title', 'text', ['wrapper' => ['width' => '40']]);
         $add_field('timeline_' . $i . '_description', 'Description', 'timeline_' . $i . '_description', 'textarea', ['rows' => 4, 'new_lines' => 'br', 'wrapper' => ['width' => '40']]);
     }
+    $add_field('timeline_accordion_end', 'End Timeline Milestones', '', 'accordion', ['endpoint' => 1]);
     $add_field('timeline_end', 'Timeline Closing Text', 'timeline_closing_text');
 
     $add_tab('pancakrida', 'Pancakrida');
