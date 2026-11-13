@@ -1,4 +1,48 @@
-<?php get_header(); ?>
+<?php
+get_header();
+
+if (!function_exists('jhl_story_field')) {
+    function jhl_story_field($name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return ($value !== null && $value !== false && $value !== '') ? $value : $default;
+    }
+}
+
+if (!function_exists('jhl_story_image_url')) {
+    function jhl_story_image_url($name, $default)
+    {
+        $image = function_exists('get_field') ? get_field($name) : null;
+        if (is_array($image) && !empty($image['url'])) {
+            return $image['url'];
+        }
+        if (is_numeric($image)) {
+            return wp_get_attachment_image_url((int) $image, 'full') ?: $default;
+        }
+        return is_string($image) && $image !== '' ? $image : $default;
+    }
+}
+
+$story_timeline_defaults = [
+    ['2012', 'Authorized Jeep Dealer', 'Menjadi dealer otomotif pertama JHL Auto sekaligus memperoleh penghargaan MURI atas konsep dealer inovatif “Amazon Jungle”, menandai awal komitmen menghadirkan pengalaman otomotif yang berbeda di Indonesia'],
+    ['2015', 'Strengthening the Jeep Community', 'Berpartisipasi dalam ajang nasional Garansindo Cup “Jeep Agility Off Road Competition” sebagai wujud komitmen dalam memperkuat kolaborasi dan eksistensi komunitas Jeep Indonesia'],
+    ['2017', 'Best Authorized Jeep Dealer', 'Menerima penghargaan “Best Jeep Dealer Indonesia” sebagai pengakuan atas konsistensi performa, standar layanan premium, serta pencapaian penjualan unggul di tingkat nasional'],
+    ['2019', 'Best Seller Award – IIMS', 'Mencapai penjualan 60 unit Jeep dan 72 pemesanan selama ajang “Indonesia International Motor Show”, memperkuat posisi JHL Auto sebagai salah satu dealer dengan performa terbaik secara nasional'],
+    ['2021', 'Outstanding Jeep Sales Performance', 'Mencatatkan pencapaian hingga 100 unit penjualan dalam satu tahun di tengah tantangan pandemi, menunjukkan ketahanan bisnis dan kepercayaan pasar yang kuat'],
+    ['2024', 'Authorized BAIC Dealer', 'Memulai babak baru sebagai Authorized BAIC Dealer di Indonesia dengan komitmen menghadirkan solusi mobilitas yang unggul, relevan, dan terpercaya bagi pasar otomotif nasional'],
+    ['2025', 'Best Start of Business', 'Mendapatkan pengakuan dari BAIC Global atas pencapaian JHL Auto sebagai dealer resmi BAIC di Indonesia, menandai langkah strategis dalam ekspansi dan transformasi brand'],
+];
+
+$story_timeline = [];
+foreach ($story_timeline_defaults as $index => $defaults) {
+    $number = $index + 1;
+    $story_timeline[] = [
+        'year' => jhl_story_field('timeline_' . $number . '_year', $defaults[0]),
+        'title' => jhl_story_field('timeline_' . $number . '_title', $defaults[1]),
+        'description' => jhl_story_field('timeline_' . $number . '_description', $defaults[2]),
+    ];
+}
+?>
 
 <section class="h-[130vh] md:h-screen relative flex flex-col justify-end pb-14 md:pb-[107px]">
     <div class="absolute h-full w-full left-0 top-0" data-aos="zoom-out">
@@ -36,15 +80,15 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         </div>
 
         <div class="absolute mx-auto lg:hidden h-[67px] left-[40px] top-[160px]">
-            <img class="w-full h-full" src="<?php echo get_template_directory_uri() . '/images/timeline/j.png' ?>"
+            <img class="w-full h-full" src="<?php echo esc_url(jhl_story_image_url('timeline_mobile_j_image', get_template_directory_uri() . '/images/timeline/j.png')); ?>"
                 alt="">
         </div>
         <div class="absolute mx-auto lg:hidden h-[101px] left-[20px] top-[1009px]">
-            <img class="w-full h-full" src="<?php echo get_template_directory_uri() . '/images/timeline/h.png' ?>"
+            <img class="w-full h-full" src="<?php echo esc_url(jhl_story_image_url('timeline_mobile_h_image', get_template_directory_uri() . '/images/timeline/h.png')); ?>"
                 alt="">
         </div>
         <div class="absolute mx-auto lg:hidden h-[68px] left-[40px] top-[1728px]">
-            <img class="w-full h-full" src="<?php echo get_template_directory_uri() . '/images/timeline/l.png' ?>"
+            <img class="w-full h-full" src="<?php echo esc_url(jhl_story_image_url('timeline_mobile_l_image', get_template_directory_uri() . '/images/timeline/l.png')); ?>"
                 alt="">
         </div>
         <svg class="absolute hidden lg:block top-0 right-12 h-full pointer-events-none lg:scale-100 w-[290px] lg:w-[580px]"
@@ -74,7 +118,65 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         </div>
 
         <!-- Desktop Story Layer -->
+        <?php
+        $desktop_progress = ['0.04', '0.21', '0.38', '0.524', '0.715', '0.817', '0.97'];
+        $desktop_line_classes = ['w-32', 'w-60 lg:w-[720px]', 'w-60 lg:w-[600px]', 'w-10 lg:w-[300px]', 'w-20 lg:w-[200px]', 'w-24 lg:w-[820px]', 'w-16 lg:w-32'];
+        $desktop_text_classes = ['max-w-[300px]', 'max-w-[316px]', 'max-w-[243px]', 'max-w-[291px]', 'max-w-[264px]', 'max-w-[317px]', 'max-w-[300px]'];
+        ?>
         <div id="story-layer-desktop" class="absolute inset-0 pointer-events-none hidden lg:block">
+            <?php foreach ($story_timeline as $index => $milestone):
+                $is_right = $index === 0 || $index === 6;
+                ?>
+                <?php if ($is_right): ?>
+                    <div class="story-point absolute flex opacity-0 transition-opacity duration-500"
+                        data-path-progress="<?php echo esc_attr($desktop_progress[$index]); ?>">
+                        <div class="w-5 h-5 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0"></div>
+                        <div class="<?php echo esc_attr($desktop_line_classes[$index]); ?> border-b border-dashed border-jhl-gray-1 h-[1px] mt-4 mr-2"></div>
+                        <div class="<?php echo esc_attr($desktop_text_classes[$index]); ?>">
+                            <h3><?php echo esc_html($milestone['year']); ?></h3>
+                            <h4 class="font-bold text-sm my-2"><?php echo esc_html($milestone['title']); ?></h4>
+                            <p class="body"><?php echo wp_kses_post($milestone['description']); ?></p>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="story-point is-left absolute w-5 h-5 flex items-center justify-center opacity-0 transition-opacity duration-500"
+                        data-path-progress="<?php echo esc_attr($desktop_progress[$index]); ?>">
+                        <div class="w-5 h-5 rounded-full border-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0 z-10"></div>
+                        <div class="absolute right-full flex flex-row-reverse top-0 mr-2">
+                            <div class="<?php echo esc_attr($desktop_line_classes[$index]); ?> border-b border-dashed border-jhl-gray-1 h-[1px] mt-2"></div>
+                            <div class="<?php echo esc_attr($desktop_text_classes[$index]); ?> mr-4 text-right -mt-2">
+                                <h3><?php echo esc_html($milestone['year']); ?></h3>
+                                <h4 class="font-bold text-sm my-1"><?php echo esc_html($milestone['title']); ?></h4>
+                                <p class="body"><?php echo wp_kses_post($milestone['description']); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Mobile Story Layer -->
+        <?php $mobile_progress = ['0.05', '0.22', '0.33', '0.539', '0.645', '0.81', '0.94']; ?>
+        <div id="story-layer-mobile" class="absolute inset-0 pointer-events-none block lg:hidden">
+            <?php foreach ($story_timeline as $index => $milestone): ?>
+                <div class="story-point flex opacity-0 transition-opacity duration-500 mb-6 lg:mb-0<?php echo $index === 3 ? ' !left-[100px]' : ''; ?>"
+                    data-path-progress="<?php echo esc_attr($mobile_progress[$index]); ?>">
+                    <div class="w-6 h-6 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0"></div>
+                    <div class="<?php echo $index === 3 ? 'w-14' : 'w-20'; ?> shrink-0 border-b border-dashed border-jhl-gray-1 h-[1px] mt-5 mx-2"></div>
+                    <div class="w-[180px] lg:pr-4 flex-shrink-0">
+                        <h3 class="text-lg"><?php echo esc_html($milestone['year']); ?></h3>
+                        <h4 class="font-bold text-base my-1<?php echo $index === 6 ? ' mb-2' : ''; ?>"><?php echo esc_html($milestone['title']); ?></h4>
+                        <p class="body text-[10px] leading-relaxed"><?php echo wp_kses_post($milestone['description']); ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+<?php /*
+        The old duplicated desktop/mobile milestone markup is retained below in
+        this comment only as a patch boundary and is removed by the closing marker.
+*/ ?>
+        <?php if (false): ?>
+        <div id="story-layer-desktop-unused" class="hidden">
             <div class="story-point absolute flex opacity-0 transition-opacity duration-500" data-path-progress="0.04">
                 <div
                     class="w-5 h-5 rounded-full border-2 mt-2 border-jhl-foreground bg-jhl-black ring-1 ring-jhl-black shrink-0">
@@ -310,9 +412,10 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
                 </div>
             </div>
         </div>
+        <?php endif; ?>
     </div>
     <h3 class="flex justify-center text-center">
-        Perjalanan ini Terus Berlanjut
+        <?php echo esc_html(jhl_story_field('timeline_closing_text', 'Perjalanan ini Terus Berlanjut')); ?>
     </h3>
 </section>
 
@@ -494,14 +597,14 @@ Pada 12 Januari 2012, JHL Auto berdiri sebagai bagian dari JHL Group dengan visi
         <div class="flex flex-col md:flex-row md:space-x-6 mb-20 xl:ml-[420px] justify-center">
             <div class="bg-jhl-foreground p-11 rounded-lg mb-4 md:mb-0 lg:max-w-[380px] xxl:max-w-[403px] w-full"
                 data-aos="fade-right">
-                <h3 class="mb-8 font-light text-[27px]">Visi</h3>
+                <h3 class="mb-8 font-light text-[27px]"><?php echo esc_html(jhl_story_field('vision_heading', 'Visi')); ?></h3>
                 <div class="body max-w-[254px]">
                     <?php echo get_field('visi_text') ?: 'Menjadi group dealer otomotif terdepan di Indonesia dalam inovasi, kualitas, dan layanan pelanggan'; ?>
                 </div>
             </div>
             <div class="bg-jhl-foreground p-11 rounded-lg lg:max-w-[380px] xxl:max-w-[403px] w-full"
                 data-aos="fade-left">
-                <h3 class="mb-8 font-light text-[27px]">Misi</h3>
+                <h3 class="mb-8 font-light text-[27px]"><?php echo esc_html(jhl_story_field('mission_heading', 'Misi')); ?></h3>
                 <div class="body max-w-[254px]">
                     <?php echo get_field('misi_text') ?: '<ul class="list-disc body pl-4"><li>Bertransformasi dari single dealer menjadi group dealer otomotif besar di Indonesia.</li><li>Mendorong pengembangan organisasi yang berkelanjutan.</li><li>Memberikan layanan pelanggan yang unggul dengan standar profesionalisme terbaik</li></ul>'; ?>
                 </div>
